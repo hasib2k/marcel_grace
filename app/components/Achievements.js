@@ -6,17 +6,17 @@ import Image from "next/image";
 
 export default function Achievements() {
   return (
-    <div className="bg-[#F9F9F9]">
-      <div className="max-w-6xl mx-auto flex flex-col lg:flex-row items-center justify-between gap-8 py-10 sm:py-16 lg:py-20 px-4 sm:px-8 lg:px-10 bg-[#F9F9F9]">
+    <div className="bg-[#DCEBFF]">
+      <div className="max-w-6xl mx-auto flex flex-col lg:flex-row items-center justify-between gap-8 py-10 sm:py-16 lg:py-20 px-4 sm:px-8 lg:px-10 bg-[#DCEBFF]">
         <div className="text-center lg:text-left w-full lg:w-2/5">
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-semibold leading-tight lg:leading-[44px] text-[#4D4D4D]">
-            Helping a local{" "}
+            Marcel Grace {" "}
             <span className="text-[#06387A] block">
-              business reinvent itself
+              Modern tech solutions.
             </span>
           </h2>
           <p className="text-sm sm:text-base mt-2 sm:mt-4 text-[#717171]">
-            We reached here with our hard work and dedication
+           Professional content for Marcel Grace Infotech.
           </p>
         </div>
         <div className="w-full lg:w-3/5">

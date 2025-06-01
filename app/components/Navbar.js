@@ -2,10 +2,12 @@ import logo from "@/public/assets/logo.svg";
 import Image from "next/image";
 import Link from "next/link";
 import Button from "./Button";
+import logoText from "@/public/assets/MarcelGraceInfotechText.svg"
+import { GoArrowRight } from "react-icons/go";
 
 export default function Navbar() {
   return (
-    <div className="navbar bg-[#F5F7FA] shadow-sm px-4 md:px-8 lg:px-12 -mt-6">
+    <div className="navbar bg-[#DCEBFF] shadow-sm px-4 md:px-8 lg:px-12 -mt-6">
       <div className="navbar-start w-auto md:w-7xl mx-auto">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -50,11 +52,12 @@ export default function Navbar() {
         </div>
         <Link className="flex items-center  text-sm sm:text-base" href={"/"}>
           <div className="-ml-10 md:ml-0">
-            <Image className="" src={logo} alt="logo" width={150} />
+            <Image className=" w-[140px]" src={logo} alt="logo" />
           </div>
-          <p className=" -ml-10 leading-[20px] w-28 text-end font-bold">
+          {/* <p className=" -ml-10 leading-[20px] w-28 text-end font-bold">
             Marcel <span className="text-[#800080] ">Grace</span> Infotech
-          </p>
+          </p> */}
+          <Image className="-ml-4" src={logoText} alt="logo" width={300} />
         </Link>
       </div>
       <div className="navbar-center hidden lg:flex">
@@ -80,10 +83,7 @@ export default function Navbar() {
         </ul>
       </div>
       <div className="navbar-end">
-        <a className="text-[#06387A] mr-2 sm:mr-4 font-medium text-sm sm:text-base">
-          Login
-        </a>
-        <Button>Sign up</Button>
+        <Button>Contact Us <GoArrowRight /></Button>
       </div>
     </div>
   );

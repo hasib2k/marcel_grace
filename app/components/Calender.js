@@ -11,18 +11,10 @@ export default function Calender() {
         </div>
         <div className="w-full px-0 sm:px-4 md:px-8 lg:px-12">
           <h1 className="text-2xl sm:text-3xl md:text-4xl font-semibold leading-tight md:leading-[44px] text-[#4D4D4D]">
-            How to design your site footer like we did
+            Trust Marcel Grace Infotech for solutions
           </h1>
           <p className="py-4 sm:py-6 text-sm md:text-[14px] leading-tight md:leading-[20px] text-[#717171]">
-            Donec a eros justo. Fusce egestas tristique ultrices. Nam tempor,
-            augue nec tincidunt molestie, massa nunc varius arcu, at scelerisque
-            elit erat a magna. Donec quis erat at libero ultrices mollis. In hac
-            habitasse platea dictumst. Vivamus vehicula leo dui, at porta nisi
-            facilisis finibus. In euismod augue vitae nisi ultricies, non
-            aliquet urna tincidunt. Integer in nisi eget nulla commodo faucibus
-            efficitur quis massa. Praesent felis est, finibus et nisi ac,
-            hendrerit venenatis libero. Donec consectetur faucibus ipsum id
-            gravida.
+            Captivate with a headline reflecting our core values, featuring a tagline like Innovating Tomorrow, Today. Encourage visitors to connect with Let&apos;s Build Together. About Us: Outline our mission and purpose, emphasizing innovation, integrity, and customer-centricity. Highlight our collaborative team culture.
           </p>
           <Button className="btn btn-primary">Learn More</Button>
         </div>

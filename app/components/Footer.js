@@ -1,11 +1,24 @@
 import logo from "@/public/assets/logo.svg";
 import Image from "next/image";
+import logoText from "@/public/assets/MarcelGraceInfotechText.svg"
+
+
 export default function Footer() {
   return (
-    <footer className="footer p-6 sm:p-8 md:p-10 lg:p-20 bg-[#E3EFFE] text-[#06387A] grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
-      <aside className="mb-6 md:mb-0">
-        <Image src={logo} alt="logo" width={150} height={150} />
-        <p className="text-xl sm:text-xxl font-bold -mt-12">Marcel Grace Infotech</p>
+    <footer >
+     <div className="footer p-6 sm:p-8 md:p-10 lg:p-20 bg-[#E3EFFE] text-[#06387A] grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
+       <aside className="mb-6 md:mb-0 ">
+        <div className="">
+          <Image className="" src={logo} alt="logo" width={150} height={150} />
+        <Image
+          src={logoText}
+          alt="logoText"
+          width={250}
+          height={150}
+          className=" -mt-10"
+        />
+        </div>
+        
         
       </aside>
       <nav className="mb-6 md:mb-0">
@@ -54,6 +67,11 @@ export default function Footer() {
           Cookie policy
         </a>
       </nav>
+      
+     </div>
+     <div className=" bg-[#E3EFFE]  mx-auto text-center py-6">
+          <p className=" ">Copyright © 2025 Marcel Grace Infotech.</p>
+        </div>
     </footer>
   );
 }
