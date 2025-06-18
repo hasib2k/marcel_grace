@@ -1,4 +1,130 @@
-@import "tailwindcss";
-@plugin "daisyui" {
-  themes: light;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply bg-gradient-to-br from-neutral-50 to-neutral-100 text-neutral-800 min-h-screen;
+  }
+
+  ::selection {
+    @apply bg-primary-100 text-primary-900;
+  }
+}
+
+@layer components {
+  .container {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+  
+  .btn {
+    @apply inline-flex items-center justify-center px-6 py-3 border border-transparent 
+           text-base font-medium rounded-xl shadow-soft transition-all duration-300
+           focus:outline-none focus:ring-2 focus:ring-offset-2 hover:scale-105;
+  }
+  
+  .btn-primary {
+    @apply bg-primary-600 text-white hover:bg-primary-700 
+           focus:ring-primary-500 hover:shadow-glow;
+  }
+  
+  .btn-secondary {
+    @apply bg-secondary-600 text-white hover:bg-secondary-700 
+           focus:ring-secondary-500 hover:shadow-glow;
+  }
+  
+  .btn-accent {
+    @apply bg-accent-500 text-white hover:bg-accent-600 
+           focus:ring-accent-400 hover:shadow-glow;
+  }
+  
+  .btn-outline {
+    @apply border-2 border-primary-600 text-primary-600 bg-white/80 
+           hover:bg-primary-50 focus:ring-primary-500 backdrop-blur-sm;
+  }
+  
+  .heading-1 {
+    @apply text-4xl sm:text-5xl lg:text-6xl font-display font-bold 
+           tracking-tight text-neutral-900 animate-fade-in;
+  }
+  
+  .heading-2 {
+    @apply text-3xl sm:text-4xl font-display font-bold 
+           tracking-tight text-neutral-900 animate-slide-up;
+  }
+  
+  .card {
+    @apply bg-white/80 backdrop-blur-sm rounded-2xl shadow-card p-6 
+           transition-all duration-300 hover:shadow-glow hover:-translate-y-1
+           border border-neutral-100/50 animate-scale;
+  }
+  
+  .input {
+    @apply block w-full rounded-xl border-neutral-200 shadow-soft 
+           focus:border-primary-500 focus:ring-primary-500 bg-white/80
+           backdrop-blur-sm transition-all duration-200;
+  }
+  
+  .nav-link {
+    @apply text-neutral-600 hover:text-primary-600 transition-all duration-200 
+           font-medium px-4 py-2 rounded-xl hover:bg-primary-50/80
+           hover:scale-105;
+  }
+  
+  .section {
+    @apply py-20 sm:py-28;
+  }
+
+  .gradient-border {
+    @apply relative before:absolute before:-inset-1 before:rounded-xl
+           before:bg-gradient-to-r before:from-primary-500 before:to-secondary-500
+           before:opacity-20 before:blur-md hover:before:opacity-30
+           before:transition-all before:duration-300;
+  }
+}
+
+/* Modern Animations */
+.animate-in {
+  animation: slide-in 0.5s ease-out;
+}
+
+.animate-hover {
+  @apply transition-all duration-300 hover:scale-105 hover:shadow-glow;
+}
+
+/* Glass Effects */
+.glass {
+  @apply bg-white/80 backdrop-blur-sm border border-white/20;
+}
+
+.glass-dark {
+  @apply bg-neutral-900/80 backdrop-blur-sm border border-neutral-800/20;
+}
+
+/* Gradient Text */
+.gradient-text {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-primary-600 to-secondary-600;
+}
+
+/* Modern Card Variations */
+.card-gradient {
+  @apply bg-gradient-to-br from-primary-50 to-secondary-50 
+         hover:from-primary-100 hover:to-secondary-100;
+}
+
+.card-accent {
+  @apply border-l-4 border-accent-500;
+}
+
+/* Section Backgrounds */
+.bg-grid {
+  background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M96 95h4v1h-4v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9zm-1 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9z' fill='%23000000' fill-opacity='0.025' fill-rule='evenodd'/%3E%3C/svg%3E");
+}
+
+.bg-dots {
+  background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23000000' fill-opacity='0.025' fill-rule='evenodd'%3E%3Ccircle cx='3' cy='3' r='1'/%3E%3Ccircle cx='13' cy='13' r='1'/%3E%3C/g%3E%3C/svg%3E");
 }

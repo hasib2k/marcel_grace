@@ -1,12 +1,30 @@
+'use client';
+
+import { motion } from 'framer-motion';
+
 export default function SectionHeader({ title, subtitle }) {
   return (
-    <div className="text-center w-full max-w-[542px] mx-auto px-4 md:px-6">
-      <h2 className="font-semibold text-2xl sm:text-3xl md:text-4xl text-[#4D4D4D] mb-2">
-        {title}
-      </h2>
-      <p className="text-[#717171] text-sm sm:text-[14px] md:text-[16px]">
-        {subtitle}
-      </p>
+    <div className="text-center w-full max-w-[800px] mx-auto px-4 md:px-6">
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.5 }}
+      >
+        <span className="inline-block px-4 py-1.5 mb-4 text-sm font-medium text-primary-600 bg-primary-50 rounded-full">
+          Innovative Solutions
+        </span>
+        
+        <h2 className="heading-2 !leading-tight mb-4">
+          <span className="gradient-text font-bold">
+            {title}
+          </span>
+        </h2>
+        
+        <p className="text-lg text-neutral-600 max-w-2xl mx-auto">
+          {subtitle}
+        </p>
+      </motion.div>
     </div>
   );
 }
