@@ -1,11 +1,10 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import img1 from "@/public/assets/blog1.jpg";
-import Image from "next/image";
-import { FiArrowRight, FiCalendar, FiMessageCircle } from 'react-icons/fi';
+import Link from 'next/link';
+import { FiArrowRight, FiCalendar } from 'react-icons/fi';
 
-export default function SingleBlog() {
+export default function SingleBlog({ blog }) {
   return (
     <motion.div 
       className="relative h-full"
@@ -21,18 +20,16 @@ export default function SingleBlog() {
               className="px-4 py-1.5 rounded-full bg-white/90 backdrop-blur-sm text-primary-600 text-sm font-medium"
               whileHover={{ scale: 1.05 }}
               transition={{ duration: 0.2 }}
-            >
-              Technology
+            >              {blog.category}
             </motion.span>
           </div>
           
           {/* Image with hover effect */}
           <div className="relative h-full transform transition-transform duration-300 hover:scale-105">
-            <Image
+            <img
               className="w-full h-full object-cover"
-              src={img1}
-              alt="Blog Image"
-              placeholder="blur"
+              src={blog.image}
+              alt={blog.title}
             />
             <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/50" />
           </div>
@@ -43,36 +40,34 @@ export default function SingleBlog() {
           {/* Meta Info */}
           <div className="flex items-center justify-between text-sm text-neutral-600 mb-3">
             <div className="flex items-center">
-              <FiCalendar className="w-4 h-4 mr-2" />
-              <span>June 18, 2025</span>
+              <FiCalendar className="w-4 h-4 mr-2" />              <span>{blog.date}</span>
             </div>
             <div className="flex items-center">
-              <FiMessageCircle className="w-4 h-4 mr-2" />
-              <span>24 Comments</span>
+              <FiCalendar className="w-4 h-4 mr-2" />
+              <span>{blog.readTime}</span>
             </div>
           </div>
 
           {/* Title with hover effect */}
-          <h3 className="text-xl font-bold text-neutral-800 mb-3 line-clamp-2 transition-colors duration-300 hover:text-primary-600">
-            Revamping the Membership Model with Triathlon Australia
+          <h3 className="text-xl font-bold text-neutral-800 mb-3 line-clamp-2 transition-colors duration-300 hover:text-primary-600">            {blog.title}
           </h3>
 
           {/* Description */}
           <p className="text-neutral-600 mb-4 line-clamp-3">
-            Discover how we transformed Triathlon Australia's digital presence with modern technology solutions and innovative approaches to member engagement.
+            {blog.excerpt}
           </p>
 
           {/* Read More Link with independent hover effect */}
-          <div className="inline-block">
-            <motion.a
-              href="#"
-              className="inline-flex items-center text-primary-600 font-medium"
-              whileHover={{ x: 5 }}
-              transition={{ duration: 0.2 }}
-            >
-              Read More
-              <FiArrowRight className="ml-2 transition-transform duration-300 group-hover:translate-x-1" />
-            </motion.a>
+          <div className="inline-block">            <Link href={`/blog/${blog.id}`}>
+              <motion.div
+                className="inline-flex items-center text-primary-600 font-medium"
+                whileHover={{ x: 5 }}
+                transition={{ duration: 0.2 }}
+              >
+                Read More
+                <FiArrowRight className="ml-2 transition-transform duration-300 group-hover:translate-x-1" />
+              </motion.div>
+            </Link>
           </div>
         </div>
       </div>

@@ -12,19 +12,25 @@ const cardData = [
     image: community1,
     title: "Membership Organizations",
     description: "Create compelling content for Marcel Grace Infotech: confident, modern copy promoting innovation",
-    gradient: "from-blue-500/20 via-blue-400/10 to-transparent"
+    gradient: "from-blue-500/20 via-blue-400/10 to-transparent",
+    accentColor: "group-hover:border-blue-400",
+    hoverGradient: "group-hover:from-blue-500/30 group-hover:via-blue-400/20",
   },
   {
     image: community2,
     title: "National Associations",
     description: "Craft compelling content for Marcel Grace Infotech; modern, confident clarity for business clients.",
-    gradient: "from-purple-500/20 via-purple-400/10 to-transparent"
+    gradient: "from-purple-500/20 via-purple-400/10 to-transparent",
+    accentColor: "group-hover:border-purple-400",
+    hoverGradient: "group-hover:from-purple-500/30 group-hover:via-purple-400/20",
   },
   {
     image: community3,
     title: "Small Businesses",
     description: "Develop engaging content that showcases Marcel Grace Infotech's expertise in digital solutions.",
-    gradient: "from-orange-500/20 via-orange-400/10 to-transparent"
+    gradient: "from-orange-500/20 via-orange-400/10 to-transparent",
+    accentColor: "group-hover:border-orange-400",
+    hoverGradient: "group-hover:from-orange-500/30 group-hover:via-orange-400/20",
   }
 ];
 
@@ -50,86 +56,60 @@ export default function CommunityCard() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-          whileHover={{ translateY: -5 }}
-          className="relative h-full"
+          className="group relative"
         >
-          <div className="h-full relative rounded-2xl transition-all duration-500 cursor-pointer hover:shadow-2xl hover:shadow-primary-500/10">
-            {/* Card Background Effects */}
-            <div className="absolute inset-0 bg-gradient-radial from-white/80 via-white/60 to-transparent rounded-2xl opacity-0 hover:opacity-100 transition-opacity duration-500" />
-            <div className={`absolute inset-0 bg-gradient-to-br ${card.gradient} rounded-2xl opacity-0 hover:opacity-100 transition-opacity duration-500`} />
+          {/* Card wrapper with hover effects */}
+          <div className="relative h-full rounded-2xl bg-white/80 backdrop-blur-sm p-6 
+                          border border-neutral-100/50 transition-all duration-300 
+                          hover:shadow-lg hover:-translate-y-1 overflow-hidden 
+                          hover:border-primary-200/50 group cursor-pointer">
+            {/* Background gradient */}
+            <div className={`absolute inset-0 bg-gradient-to-br ${card.gradient} opacity-30 
+                           transition-opacity duration-300 ${card.hoverGradient}`} />
             
-            {/* Main Card */}
-            <div className="relative h-full bg-white/90 backdrop-blur-sm border border-neutral-100/50 rounded-2xl overflow-hidden flex flex-col">
-              {/* Top Decoration */}
-              <div className="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-primary-500 via-secondary-500 to-primary-500 transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500" />
-              
-              {/* Icon Container */}
-              <div className="relative pt-8">
-                <motion.div 
-                  className="w-[80px] h-[80px] mx-auto mb-6 relative"
-                  whileHover={{ rotate: [0, -5, 5, -5, 5, 0], scale: 1.05 }}
-                  transition={{ duration: 0.5 }}
-                >
-                  {/* Icon Background */}
-                  <motion.div 
-                    className="absolute inset-0 bg-gradient-to-br from-primary-100 to-secondary-100 rounded-2xl"
-                    whileHover={{ rotate: 12 }}
-                    transition={{ duration: 0.3 }}
+            {/* Content wrapper */}
+            <div className="relative z-10">
+              {/* Image container */}
+              <div className="relative w-16 h-16 mb-6">
+                <div className={`absolute inset-0 rounded-2xl bg-gradient-to-br ${card.gradient} 
+                               blur-xl transition-all duration-300 ${card.hoverGradient}`} />
+                <div className="relative z-10">
+                  <Image
+                    src={card.image}
+                    alt={card.title}
+                    className="w-16 h-16 object-contain transition-transform duration-300 
+                             group-hover:scale-110 group-hover:rotate-3"
                   />
-                  <motion.div 
-                    className="absolute inset-0 bg-white/80 backdrop-blur-sm rounded-2xl"
-                    whileHover={{ rotate: -12 }}
-                    transition={{ duration: 0.3 }}
-                  />
-                  
-                  {/* Icon */}
-                  <motion.div 
-                    className="absolute inset-0 flex items-center justify-center"
-                    whileHover={{ scale: 1.1 }}
-                    transition={{ duration: 0.3 }}
-                  >
-                    <Image
-                      src={card.image}
-                      alt={card.title}
-                      className="w-12 h-12 object-contain"
-                    />
-                  </motion.div>
-                </motion.div>
-              </div>
-              
-              {/* Content */}
-              <div className="text-center px-6 relative z-10 flex-1 flex flex-col">
-                <motion.h3 
-                  className="text-2xl font-bold text-neutral-800 mb-4"
-                  whileHover={{ color: '#0083df' }}
-                  transition={{ duration: 0.3 }}
-                >
-                  {card.title}
-                </motion.h3>
-                <p className="text-neutral-600 leading-relaxed mb-6 flex-1">
-                  {card.description}
-                </p>
-                
-                {/* Learn More Button */}
-                <div className="pb-6">
-                  <motion.button
-                    className="inline-flex items-center text-primary-600 hover:text-primary-700 transition-colors duration-300"
-                    whileHover={{ x: 5 }}
-                  >
-                    <span className="mr-2">Learn More</span>
-                    <motion.span
-                      whileHover={{ x: 3 }}
-                      transition={{ duration: 0.2 }}
-                    >
-                      <BsArrowRight />
-                    </motion.span>
-                  </motion.button>
                 </div>
               </div>
 
-              {/* Bottom Decoration */}
-              <div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-white/40 via-transparent to-transparent opacity-0 hover:opacity-100 transition-opacity duration-500" />
+              {/* Title */}
+              <h3 className="text-xl font-semibold mb-3 text-neutral-800 
+                           transition-colors duration-300 group-hover:text-primary-600">
+                {card.title}
+              </h3>
+
+              {/* Description */}
+              <p className="text-neutral-600 mb-6 line-clamp-3">
+                {card.description}
+              </p>
+
+              {/* Learn More link */}
+              <div className="flex items-center text-primary-600 font-medium 
+                            transition-all duration-300 group-hover:translate-x-2">
+                Learn More
+                <BsArrowRight className="ml-2 transition-transform duration-300 
+                                       group-hover:translate-x-1" />
+              </div>
             </div>
+
+            {/* Decorative elements */}
+            <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-radial 
+                          from-white/40 via-transparent to-transparent opacity-0 
+                          transition-opacity duration-300 group-hover:opacity-100" />
+            <div className="absolute bottom-0 left-0 w-24 h-24 bg-gradient-radial 
+                          from-white/40 via-transparent to-transparent opacity-0 
+                          transition-opacity duration-300 group-hover:opacity-100" />
           </div>
         </motion.div>
       ))}

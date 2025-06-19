@@ -11,9 +11,6 @@ export default function SectionHeader({ title, subtitle }) {
         viewport={{ once: true }}
         transition={{ duration: 0.5 }}
       >
-        <span className="inline-block px-4 py-1.5 mb-4 text-sm font-medium text-primary-600 bg-primary-50 rounded-full">
-          Innovative Solutions
-        </span>
         
         <h2 className="heading-2 !leading-tight mb-4">
           <span className="gradient-text font-bold">

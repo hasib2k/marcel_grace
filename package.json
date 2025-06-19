@@ -11,20 +11,21 @@
   "dependencies": {
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.0.0",
-    "framer-motion": "^10.12.17",
+    "framer-motion": "^10.18.0",
     "next": "13.4.7",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-icons": "^4.10.1",
+    "react-markdown": "^10.1.0",
     "tailwind-merge": "^1.13.2"
   },
   "devDependencies": {
     "@tailwindcss/forms": "^0.5.3",
     "@tailwindcss/typography": "^0.5.9",
-    "autoprefixer": "^10.4.14",
+    "autoprefixer": "^10.4.21",
     "eslint": "^8.43.0",
     "eslint-config-next": "13.4.7",
-    "postcss": "^8.4.24",
-    "tailwindcss": "^3.3.2"
+    "postcss": "^8.5.6",
+    "tailwindcss": "^3.4.17"
   }
 }

@@ -108,14 +108,16 @@ export default function Footer() {
 
         {/* Bottom Section */}
         <div className="pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-          <motion.p
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ duration: 0.5, delay: 0.4 }}
-            className="text-gray-400 text-sm"
-          >
-            © {new Date().getFullYear()} Marcel Grace. All rights reserved.
-          </motion.p>
+          <div className="w-full flex justify-center order-2 md:order-1">
+            <motion.p
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{ duration: 0.5, delay: 0.4 }}
+              className="text-gray-400 text-sm text-center"
+            >
+              © {new Date().getFullYear()} Marcel Grace Infotech. All rights reserved.
+            </motion.p>
+          </div>
 
           <motion.div
             initial={{ opacity: 0 }}

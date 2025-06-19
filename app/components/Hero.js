@@ -2,7 +2,8 @@
 
 import { motion } from 'framer-motion';
 import Image from "next/image";
-import heroImg from "@/public/assets/hero.svg";
+import Link from "next/link";
+import heroImg from "@/public/assets/hero1.png";
 import Button from "./Button";
 import { GoArrowRight } from "react-icons/go";
 
@@ -38,9 +39,9 @@ const stats = [
   { number: '95%', label: 'Success Rate' }
 ];
 
-export default function Hero() {
+const Hero = () => {
   return (
-    <div className="relative min-h-[90vh] overflow-hidden pt-16">
+    <div className="relative min-h-[90vh] overflow-hidden pt-16 pb-0">
       {/* Background decoration */}
       <div className="absolute inset-0 overflow-hidden">
         <motion.div 
@@ -52,97 +53,112 @@ export default function Hero() {
         <motion.div 
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ duration: 1.5, delay: 0.5 }}
-          className="absolute -bottom-1/2 -left-1/2 w-[800px] h-[800px] bg-gradient-radial from-accent-100/30 via-primary-100/20 to-transparent rounded-full blur-3xl"
+          transition={{ duration: 1.5, delay: 0.2 }}
+          className="absolute -bottom-1/4 -left-1/4 w-[800px] h-[800px] bg-gradient-radial from-secondary-100/20 via-accent-100/10 to-transparent rounded-full blur-3xl"
         />
+        {/* Grid background */}
+        <div className="absolute inset-0 opacity-[0.03] pointer-events-none">
+          <div className="h-full w-full bg-[linear-gradient(var(--grid-glow)_1px,transparent_1px),linear-gradient(90deg,var(--grid-glow)_1px,transparent_1px)] bg-[size:40px_40px]" />
+        </div>
       </div>
 
-      <motion.div 
-        variants={stagger}
-        initial="initial"
-        animate="animate"
-        className="container relative pt-12 lg:pt-20"
-      >
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+      {/* Content */}
+      <div className="container relative">
+        <div className="flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-24">
+          {/* Text content */}
           <motion.div 
-            variants={fadeInUp}
-            className="text-center lg:text-left space-y-8"
+            variants={stagger}
+            initial="initial"
+            animate="animate"
+            className="flex-1 text-center lg:text-left"
           >
-            <div className="space-y-4">
-              <motion.div
-                variants={fadeInUp}
-                className="inline-block px-4 py-2 rounded-full bg-primary-100/80 backdrop-blur-sm text-primary-700 text-sm font-medium mb-4"
-              >
-                Transforming Ideas into Reality
-              </motion.div>
-              <motion.h1 
-                variants={fadeInUp}
-                className="heading-1 !leading-tight"
-              >
-                Modern Tech Solutions for 
-                <span className="gradient-text block"> Digital Success</span>
-              </motion.h1>
-              <motion.p 
-                variants={fadeInUp}
-                className="text-lg text-neutral-600 mt-6 leading-relaxed"
-              >
-                We specialize in building MVPs and scaling digital products for startups and midsize companies. Let's turn your vision into a successful digital reality.
-              </motion.p>
-            </div>
-
-            <motion.div 
-              variants={fadeInUp}
-              className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start"
-            >
-              <Button variant="primary" href="/contact" className="group">
-                Get Started
-                <GoArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
-              </Button>
-              <Button variant="outline" href="/portfolio">
-                View Portfolio
-              </Button>
+            <motion.div variants={fadeInUp} className="relative">
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 bg-gradient-to-r from-primary-600 to-secondary-600 bg-clip-text text-transparent animate-gradient-x">
+                Next Generation Digital Solutions
+              </h1>
+              <div className="absolute -inset-1 bg-gradient-to-r from-primary-500/20 to-secondary-500/20 blur opacity-30 -z-10" />
             </motion.div>
 
-            <motion.div
+            <motion.p variants={fadeInUp} className="text-lg sm:text-xl text-neutral-600 mb-8 max-w-2xl mx-auto lg:mx-0">
+              We empower businesses with cutting-edge technology solutions that drive growth and innovation in the digital age.
+            </motion.p>
+
+            <motion.div variants={fadeInUp} className="flex flex-wrap gap-4 justify-center lg:justify-start">
+              <Link href="/get-started">
+                <Button 
+                  variant="primary"
+                  className="group"
+                >
+                  Get Started
+                  <GoArrowRight className="ml-2 transition-transform group-hover:translate-x-1" />
+                </Button>
+              </Link>
+              <Link href="/learn-more">
+                <Button 
+                  variant="outline"
+                  className="group bg-white/80 backdrop-blur-sm hover:bg-white/90"
+                >
+                  Learn More
+                  <GoArrowRight className="ml-2 transition-transform group-hover:translate-x-1" />
+                </Button>
+              </Link>
+            </motion.div>
+
+            {/* Stats */}
+            <motion.div 
               variants={fadeInUp}
-              className="grid grid-cols-3 gap-8 pt-8 border-t border-neutral-200/80"
+              className="mt-12 grid grid-cols-3 gap-8 max-w-2xl mx-auto lg:mx-0"
             >
               {stats.map((stat, index) => (
                 <motion.div
-                  key={index}
-                  variants={scaleUp}
-                  className="text-center"
+                  key={stat.label}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.5 + index * 0.1 }}
+                  className="glassmorphic rounded-2xl p-4 text-center"
                 >
-                  <div className="text-3xl font-bold gradient-text">{stat.number}</div>
-                  <div className="text-sm text-neutral-600 mt-1">{stat.label}</div>
+                  <div className="text-2xl sm:text-3xl font-bold bg-gradient-to-r from-primary-600 to-secondary-600 bg-clip-text text-transparent">
+                    {stat.number}
+                  </div>
+                  <div className="text-sm text-neutral-600">{stat.label}</div>
                 </motion.div>
               ))}
             </motion.div>
           </motion.div>
 
-          <motion.div
-            variants={scaleUp}
-            className="relative lg:h-[600px] flex items-center justify-center"
+          {/* Hero image */}
+          <motion.div 
+            variants={fadeIn}
+            initial="initial"
+            animate="animate"
+            className="flex-1 relative"
           >
-            <div className="relative w-full max-w-[500px] aspect-square">
-              <div className="absolute inset-0 bg-gradient-conic from-primary-200/30 via-secondary-200/30 to-accent-200/30 rounded-full blur-3xl animate-spin-slow" />
-              <motion.div
-                initial={{ scale: 0.8, opacity: 0 }}
-                animate={{ scale: 1, opacity: 1 }}
-                transition={{ duration: 0.8, delay: 0.2 }}
-                className="relative z-10"
-              >
-                <Image
-                  src={heroImg}
-                  alt="Hero illustration"
-                  className="w-full h-auto drop-shadow-2xl"
-                  priority
-                />
-              </motion.div>
-            </div>
+            <motion.div
+              animate={{
+                y: [0, -10, 0],
+              }}
+              transition={{
+                duration: 5,
+                repeat: Infinity,
+                ease: "easeInOut",
+              }}
+              className="relative z-10"
+            >
+              <Image
+                src={heroImg}
+                alt="Hero Illustration"
+                className="w-full max-w-[600px] mx-auto drop-shadow-2xl"
+                priority
+              />
+            </motion.div>
+            {/* Decorative elements */}
+            <div className="absolute inset-0 bg-gradient-conic from-primary-200/30 via-secondary-200/20 to-transparent rounded-full blur-2xl -z-10" />
           </motion.div>
         </div>
-      </motion.div>
+      </div>
     </div>
   );
 }
+
+Hero.displayName = 'Hero';
+export default Hero;

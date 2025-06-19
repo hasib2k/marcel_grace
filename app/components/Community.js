@@ -17,7 +17,7 @@ const containerVariants = {
 
 export default function Community() {
   return (
-    <section className="relative overflow-hidden py-20 lg:py-28">
+    <section className="relative overflow-hidden pt-0 pb-16">
       {/* Background gradients */}
       <div className="absolute inset-0 bg-gradient-to-br from-primary-50/50 via-white/50 to-secondary-50/50" />
       <div className="absolute inset-0 bg-dots opacity-20" />
