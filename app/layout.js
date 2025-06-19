@@ -1,7 +1,13 @@
-import { Inter, Plus_Jakarta_Sans } from "next/font/google";
+import { Inter, Plus_Jakarta_Sans, Iceberg  } from "next/font/google";
 import "./globals.css";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
+
+const iceberg = Iceberg({
+  subsets: ['latin'],
+  weight: '400', // Iceberg only has 400
+  display: 'swap',
+});
 
 const inter = Inter({
   subsets: ["latin"],

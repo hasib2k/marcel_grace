@@ -8,7 +8,14 @@ import { GoArrowRight } from "react-icons/go";
 import { HiMenuAlt4 } from "react-icons/hi";
 import { IoClose } from "react-icons/io5";
 import logo from "@/public/assets/logo_1.png";
-import logoText from "@/public/assets/MarcelGraceInfotechText.svg";
+import { Iceberg } from 'next/font/google';
+
+const iceberg = Iceberg({
+  subsets: ['latin'],
+  weight: '400',
+  display: 'swap',
+});
+
 
 const menuItems = [
   { name: 'Home', href: '/' },
@@ -69,13 +76,13 @@ export default function Navbar() {
               />
               <div className="absolute inset-0 bg-primary-500/20 blur-xl rounded-full -z-10" />
             </div>
-            <div className="hidden sm:block w-60">
+            <div className="md:w-100 w-50">
               {/* <Image
                 src={logoText}
                 alt="Marcel Grace Infotech"
                 className="w-full h-full object-contain"
               /> */}
-              <Link href="/" className="text-xl font-semibold bg-gradient-to-r from-primary-600 via-secondary-600 to-accent-600 bg-clip-text text-transparent [background-size:200%_auto] animate-text-shine">
+              <Link href="/" className={`${iceberg.className} text-xl md:text-4xl font-semibold bg-gradient-to-r from-primary-600 via-secondary-600 to-accent-600 bg-clip-text text-transparent [background-size:200%_auto] animate-text-shine`}>
                 Marcel Grace Infotech
               </Link>
             </div>
