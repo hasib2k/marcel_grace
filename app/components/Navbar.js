@@ -60,7 +60,7 @@ export default function Navbar() {
         <div className="flex justify-between items-center h-20">
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-2">
-            <div className="relative w-10 h-10">
+            <div className="relative w-20 h-20">
               <Image
                 src={logo}
                 alt="Marcel Grace Infotech Logo"
@@ -69,12 +69,15 @@ export default function Navbar() {
               />
               <div className="absolute inset-0 bg-primary-500/20 blur-xl rounded-full -z-10" />
             </div>
-            <div className="hidden sm:block w-40">
-              <Image
+            <div className="hidden sm:block w-60">
+              {/* <Image
                 src={logoText}
                 alt="Marcel Grace Infotech"
                 className="w-full h-full object-contain"
-              />
+              /> */}
+              <Link href="/" className="text-xl font-semibold bg-gradient-to-r from-primary-600 via-secondary-600 to-accent-600 bg-clip-text text-transparent [background-size:200%_auto] animate-text-shine">
+                Marcel Grace Infotech
+              </Link>
             </div>
           </Link>
 

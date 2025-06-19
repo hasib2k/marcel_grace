@@ -3,6 +3,7 @@
 import React from 'react';
 import Button from './Button';
 import { motion } from 'framer-motion';
+import Link from 'next/link';
 
 export default function CallToAction() {
   return (
@@ -49,9 +50,11 @@ export default function CallToAction() {
                 • Implementation roadmap
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button>
-                  Get Started Now
-                </Button>
+                <Link href="/contact" >
+                  <Button>
+                    Get Started Now
+                  </Button>
+                </Link>
                 <motion.button
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
