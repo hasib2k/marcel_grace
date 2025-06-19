@@ -7,7 +7,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { GoArrowRight } from "react-icons/go";
 import { HiMenuAlt4 } from "react-icons/hi";
 import { IoClose } from "react-icons/io5";
-import logo from "@/public/assets/logo.svg";
+import logo from "@/public/assets/logo_1.png";
 import logoText from "@/public/assets/MarcelGraceInfotechText.svg";
 
 const menuItems = [
