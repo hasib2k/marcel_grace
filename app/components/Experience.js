@@ -1,6 +1,6 @@
 'use client';
 
-import img1 from "@/public/assets/programming_background.svg";
+import img1 from "@/public/assets/Expertise.png";
 import Image from "next/image";
 import Button from "./Button";
 import { motion } from "framer-motion";
