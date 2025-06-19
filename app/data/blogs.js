@@ -5,7 +5,7 @@ export const blogs = [
     excerpt: 'In a fast-changing digital world, businesses can no longer rely solely on generic, off-the-shelf software. Discover why custom software is crucial for long-term success.',
     category: 'Technology',
     date: 'June 19, 2025',
-    image: '/assets/blog/custom-software.jpg',
+    image: '/assets/blog/blog_1.jpg',
     readTime: '5 min read',
     content: `In a fast-changing digital world, businesses can no longer rely solely on generic, off-the-shelf software. While these solutions may work in the early stages, they often lack the flexibility, efficiency, and scalability required to support long-term growth. This is where custom software comes in.
 
@@ -37,7 +37,7 @@ Ready to build software that works exactly how you want?
     excerpt: 'When it comes to digital products, how it looks and feels matters just as much as what it does. Learn why UI/UX design is crucial for product success.',
     category: 'Design',
     date: 'June 18, 2025',
-    image: '/assets/blog/ui-ux.jpg',
+    image: '/assets/blog/blog_2.png',
     readTime: '4 min read',
     content: `When it comes to digital products, how it looks and feels matters just as much as what it does. User Interface (UI) and User Experience (UX) design have moved beyond buzzwords to become critical pillars of product success.
 
@@ -69,7 +69,7 @@ Want a product your users will love?
     excerpt: 'Discover why startups trust us as their technology partner for building smart, scalable products with our innovative solutions and flexible engagement models.',
     category: 'Business',
     date: 'June 17, 2025',
-    image: '/assets/blog/startup.jpg',
+    image: '/assets/blog/blog_3.jpg',
     readTime: '4 min read',
     content: `Startups are driven by passion, speed, and innovation. They need partners who understand the urgency of launching, the importance of market fit, and the reality of limited resources. At Marcel Grace Infotech, we've become a trusted technology partner for startups looking to build smart, scalable products.
 

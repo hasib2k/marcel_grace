@@ -16,6 +16,11 @@
       rgba(1, 65, 255, 0),
       rgba(1, 65, 255, 0.3),
       rgba(1, 65, 255, 0));
+  
+  /* New CSS Variables */
+  --primary-100: rgb(224 242 254);
+  --secondary-100: rgb(242 234 254);
+  --accent-100: rgb(254 226 242);
 }
 
 @layer base {
@@ -125,6 +130,39 @@
   .animate-gradient-x {
     animation: gradient-x 15s linear infinite;
     background-size: 200% 200%;
+  }
+
+  /* New Animation Classes */
+  .animate-text-shine {
+    animation: text-shine 3s linear infinite;
+  }
+
+  @keyframes text-shine {
+    from {
+      background-position: 0% center;
+    }
+    to {
+      background-position: 200% center;
+    }
+  }
+
+  .hover-lift {
+    @apply transition-all duration-300 hover:-translate-y-1 hover:shadow-lg;
+  }
+
+  .gradient-shine {
+    @apply relative overflow-hidden;
+    &::after {
+      content: '';
+      @apply absolute inset-0 transform translate-x-[-100%] bg-gradient-to-r from-transparent via-white/20 to-transparent;
+      animation: shine 2s infinite;
+    }
+  }
+
+  @keyframes shine {
+    100% {
+      transform: translateX(100%);
+    }
   }
 }
 
