@@ -1,6 +1,6 @@
 'use client';
 
-import img1 from "@/public/assets/Expertise.png";
+import img1 from "@/public/assets/Expertise_2.jpg";
 import Image from "next/image";
 import Button from "./Button";
 import { motion } from "framer-motion";
