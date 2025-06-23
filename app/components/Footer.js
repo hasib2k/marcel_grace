@@ -1,8 +1,40 @@
 "use client";
+import { useState } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 
 export default function Footer() {
+  const [email, setEmail] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState(null);
+
+  const handleNewsletterSubmit = async (e) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    setSubmitStatus(null);
+
+    try {
+      const response = await fetch('/api/newsletter', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ email }),
+      });
+
+      if (response.ok) {
+        setSubmitStatus('success');
+        setEmail('');
+      } else {
+        setSubmitStatus('error');
+      }
+    } catch (error) {
+      console.error('Newsletter subscription error:', error);
+      setSubmitStatus('error');
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
   return (
     <footer className="relative bg-gradient-to-b from-gray-900/95 to-gray-950/90 overflow-hidden">
       {/* Decorative Elements */}
@@ -88,21 +120,49 @@ export default function Footer() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.3 }}
             className="lg:col-span-2 space-y-6"
-          >
-            <h3 className="text-white font-semibold text-lg">Stay Updated</h3>
+          >            <h3 className="text-white font-semibold text-lg">Stay Updated</h3>
             <p className="text-gray-400">
               Subscribe to our newsletter for the latest updates and insights.
             </p>
-            <div className="flex gap-2">
+            
+            {submitStatus === 'success' && (
+              <motion.div
+                initial={{ opacity: 0, y: -10 }}
+                animate={{ opacity: 1, y: 0 }}
+                className="bg-green-500/20 border border-green-500/30 rounded-lg p-3 text-green-300 text-sm"
+              >
+                ✅ Successfully subscribed to our newsletter!
+              </motion.div>
+            )}
+
+            {submitStatus === 'error' && (
+              <motion.div
+                initial={{ opacity: 0, y: -10 }}
+                animate={{ opacity: 1, y: 0 }}
+                className="bg-red-500/20 border border-red-500/30 rounded-lg p-3 text-red-300 text-sm"
+              >
+                ❌ Failed to subscribe. Please try again.
+              </motion.div>
+            )}
+            
+            <form onSubmit={handleNewsletterSubmit} className="flex gap-2">
               <input
                 type="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
                 placeholder="Enter your email"
-                className="flex-1 px-4 py-2 rounded-lg bg-white/5 border border-white/10 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all duration-300"
+                required
+                disabled={isSubmitting}
+                className="flex-1 px-4 py-2 rounded-lg bg-white/5 border border-white/10 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all duration-300 disabled:opacity-50"
               />
-              <button className="px-6 py-2 rounded-lg bg-gradient-to-r from-blue-500 to-purple-500 text-white font-medium hover:from-purple-500 hover:to-blue-500 transform hover:scale-105 transition-all duration-300">
-                Subscribe
+              <button 
+                type="submit"
+                disabled={isSubmitting}
+                className="px-6 py-2 rounded-lg bg-gradient-to-r from-blue-500 to-purple-500 text-white font-medium hover:from-purple-500 hover:to-blue-500 transform hover:scale-105 transition-all duration-300 disabled:opacity-50 disabled:transform-none"
+              >
+                {isSubmitting ? 'Subscribing...' : 'Subscribe'}
               </button>
-            </div>
+            </form>
           </motion.div>
         </div>
 
@@ -124,17 +184,26 @@ export default function Footer() {
             whileInView={{ opacity: 1 }}
             transition={{ duration: 0.5, delay: 0.5 }}
             className="flex gap-6"
-          >
-            {["Twitter", "LinkedIn", "GitHub", "Instagram"].map((social) => (
+          >            {["Twitter", "LinkedIn", "GitHub", "Instagram"].map((social) => (
               <Link
                 key={social}
-                href={`https://${social.toLowerCase()}.com`}
+                href={
+                  social === "Twitter" ? "https://twitter.com/marcelgraceit" :
+                  social === "LinkedIn" ? "https://linkedin.com/company/marcel-grace-infotech" :
+                  social === "GitHub" ? "https://github.com/marcel-grace-infotech" :
+                  "https://instagram.com/marcelgraceinfotech"
+                }
                 className="text-gray-400 hover:text-white transform hover:scale-110 transition-all duration-300"
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 <span className="sr-only">{social}</span>
-                <i className={`fab fa-${social.toLowerCase()}`}></i>
+                <div className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-white/20 transition-all duration-300">
+                  {social === "Twitter" && "🐦"}
+                  {social === "LinkedIn" && "💼"}
+                  {social === "GitHub" && "💻"}
+                  {social === "Instagram" && "📷"}
+                </div>
               </Link>
             ))}
           </motion.div>
