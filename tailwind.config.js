@@ -7,16 +7,16 @@ module.exports = {
     extend: {
       colors: {
         primary: {
-          50: '#eef9ff',
-          100: '#ddf2ff',
-          200: '#b3e5ff',
-          300: '#75d3ff',
-          400: '#2cbdff',
-          500: '#00a3ff',
-          600: '#0083df',
-          700: '#0068b5',
-          800: '#005694',
-          900: '#004879',
+          50: '#F0F7FA',
+          100: '#E1F0F7',
+          200: '#B3E0EF',
+          300: '#87CEEB', // sky blue
+          400: '#5CB6D6',
+          500: '#0B6285', // deep blue
+          600: '#09516B',
+          700: '#073F52',
+          800: '#052F3A',
+          900: '#031F22',
         },
         secondary: {
           50: '#f4f7ff',
@@ -58,15 +58,9 @@ module.exports = {
       fontFamily: {
         display: ['var(--font-display)', 'sans-serif'],
         body: ['var(--font-body)', 'sans-serif'],
+        museo: ['MuseoModerno', 'sans-serif'],
       },
-      animation: {
-        'fade-in': 'fadeIn 0.5s ease-out',
-        'slide-up': 'slideUp 0.5s ease-out',
-        'slide-down': 'slideDown 0.5s ease-out',
-        scale: 'scale 0.3s ease-out',
-        'gradient-x': 'gradient-x 15s ease infinite',
-        float: 'float 6s ease-in-out infinite',
-      },
+      animation: {},
       keyframes: {
         fadeIn: {
           '0%': { opacity: '0' },

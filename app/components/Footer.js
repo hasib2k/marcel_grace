@@ -36,75 +36,51 @@ export default function Footer() {
     }
   };
   return (
-    <footer className="relative bg-gradient-to-b from-gray-900/95 to-gray-950/90 overflow-hidden">
-      {/* Decorative Elements */}
-      <div className="absolute inset-0 opacity-30">
-        <div className="absolute top-10 left-10 w-72 h-72 bg-purple-500 rounded-full mix-blend-multiply filter blur-3xl animate-blob"></div>
-        <div className="absolute top-0 right-20 w-72 h-72 bg-blue-500 rounded-full mix-blend-multiply filter blur-3xl animate-blob animation-delay-2000"></div>
-      </div>
-
-      <div className="relative max-w-7xl mx-auto px-4 py-16 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-12 pb-16 border-b border-white/10">
+    <footer className="relative bg-white">
+      <div className="w-full max-w-7xl mx-auto px-2 py-3 relative overflow-hidden">
+        {/* Background Effects */}
+        <div className="absolute inset-0 pointer-events-none">
+          <div className="absolute inset-0 bg-[linear-gradient(var(--grid-glow)_1px,transparent_1px),linear-gradient(90deg,var(--grid-glow)_1px,transparent_1px)] bg-[size:40px_40px] opacity-[0.04]" />
+        </div>
+        <div className="relative grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-1 pb-0 items-start">
           {/* Brand Section */}
-          <div className="lg:col-span-2 space-y-6">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-              className="space-y-4"
+          <div className="lg:col-span-2 flex flex-col gap-0.5">
+            <Link
+              href="/"
+              className="text-lg sm:text-xl font-extrabold bg-gradient-to-r from-primary-500 to-secondary-500 bg-clip-text text-transparent tracking-tight mb-0.5"
             >
-              <Link
-                href="/"
-                className="text-2xl font-bold bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent hover:from-purple-400 hover:to-blue-500 transition-all duration-300"
-              >
-                Marcel Grace Infotech
-              </Link>
-              <p className="text-gray-400 leading-relaxed">
-                Empowering businesses through innovative digital solutions and
-                cutting-edge technology services.
-              </p>
-            </motion.div>
+              Marcel Grace Infotech
+            </Link>
+            <p className="text-primary-700 text-xs leading-snug max-w-xs mb-0.5">
+              Empowering businesses through innovative digital solutions and cutting-edge technology services.
+            </p>
           </div>
-
           {/* Quick Links */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.1 }}
-            className="space-y-4"
-          >
-            <h3 className="text-white font-semibold text-lg">Quick Links</h3>
-            <ul className="space-y-3">
-              {["About", "Services", "Portfolio", "Blog"].map((item) => (
+          <div className="flex flex-col gap-0.5">
+            <h3 className="text-primary-700 font-semibold text-xs uppercase tracking-wide mb-0.5">Quick Links</h3>
+            <ul className="flex flex-col gap-0.5">
+              {['About', 'Services', 'Portfolio', 'Blog'].map((item) => (
                 <li key={item}>
                   <Link
                     href={`/${item.toLowerCase()}`}
-                    className="text-gray-400 hover:text-white hover:translate-x-1 transition-all duration-300 inline-block"
+                    className="text-primary-600 hover:text-primary-500 font-medium text-xs"
                   >
                     {item}
                   </Link>
                 </li>
               ))}
             </ul>
-          </motion.div>
-
+          </div>
           {/* Services */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-            className="space-y-4"
-          >
-            <h3 className="text-white font-semibold text-lg">Services</h3>
-            <ul className="space-y-3">
-              {["Web Development", "App Development", "UI/UX Design", "Consulting"].map(
+          <div className="flex flex-col gap-0.5">
+            <h3 className="text-primary-700 font-semibold text-xs uppercase tracking-wide mb-0.5">Services</h3>
+            <ul className="flex flex-col gap-0.5">
+              {['Web Development', 'App Development', 'UI/UX Design', 'Consulting'].map(
                 (service) => (
                   <li key={service}>
                     <Link
-                      href={`/services/${service
-                        .toLowerCase()
-                        .replace(/\s+/g, '-')}`}
-                      className="text-gray-400 hover:text-white hover:translate-x-1 transition-all duration-300 inline-block"
+                      href={`/services/${service.toLowerCase().replace(/\s+/g, '-')}`}
+                      className="text-primary-600 hover:text-primary-500 font-medium text-xs"
                     >
                       {service}
                     </Link>
@@ -112,40 +88,24 @@ export default function Footer() {
                 )
               )}
             </ul>
-          </motion.div>
-
+          </div>
           {/* Newsletter */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.3 }}
-            className="lg:col-span-2 space-y-6"
-          >            <h3 className="text-white font-semibold text-lg">Stay Updated</h3>
-            <p className="text-gray-400">
+          <div className="sm:col-span-2 lg:col-span-1 lg:col-start-5 flex flex-col gap-0.5 mt-2 sm:mt-0 max-w-xs ml-auto">
+            <h3 className="text-primary-700 font-semibold text-xs uppercase tracking-wide mb-0.5">Stay Updated</h3>
+            <p className="text-primary-900/90 text-xs mb-0.5">
               Subscribe to our newsletter for the latest updates and insights.
             </p>
-            
             {submitStatus === 'success' && (
-              <motion.div
-                initial={{ opacity: 0, y: -10 }}
-                animate={{ opacity: 1, y: 0 }}
-                className="bg-green-500/20 border border-green-500/30 rounded-lg p-3 text-green-300 text-sm"
-              >
-                ✅ Successfully subscribed to our newsletter!
-              </motion.div>
+              <div className="bg-green-500/10 rounded p-0.5 text-green-700 text-xs flex items-center gap-1">
+                <span>✅</span> Subscribed!
+              </div>
             )}
-
             {submitStatus === 'error' && (
-              <motion.div
-                initial={{ opacity: 0, y: -10 }}
-                animate={{ opacity: 1, y: 0 }}
-                className="bg-red-500/20 border border-red-500/30 rounded-lg p-3 text-red-300 text-sm"
-              >
-                ❌ Failed to subscribe. Please try again.
-              </motion.div>
+              <div className="bg-red-500/10 rounded p-0.5 text-red-700 text-xs flex items-center gap-1">
+                <span>❌</span> Failed.
+              </div>
             )}
-            
-            <form onSubmit={handleNewsletterSubmit} className="flex gap-2">
+            <form onSubmit={handleNewsletterSubmit} className="flex flex-col sm:flex-row gap-0.5">
               <input
                 type="email"
                 value={email}
@@ -153,60 +113,17 @@ export default function Footer() {
                 placeholder="Enter your email"
                 required
                 disabled={isSubmitting}
-                className="flex-1 px-4 py-2 rounded-lg bg-white/5 border border-white/10 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all duration-300 disabled:opacity-50"
+                className="flex-1 px-1 py-0.5 rounded bg-white/60 text-primary-700 placeholder-primary-400 focus:outline-none focus:ring-2 focus:ring-primary-200 focus:border-transparent disabled:opacity-50 text-xs shadow-sm"
               />
-              <button 
+              <button
                 type="submit"
                 disabled={isSubmitting}
-                className="px-6 py-2 rounded-lg bg-gradient-to-r from-blue-500 to-purple-500 text-white font-medium hover:from-purple-500 hover:to-blue-500 transform hover:scale-105 transition-all duration-300 disabled:opacity-50 disabled:transform-none"
+                className="px-2 py-0.5 rounded bg-gradient-to-r from-primary-500 to-secondary-500 text-white font-semibold disabled:opacity-50 text-xs shadow hover:from-secondary-500 hover:to-primary-500"
               >
-                {isSubmitting ? 'Subscribing...' : 'Subscribe'}
+                {isSubmitting ? '...' : <span className="text-primary-50">Subscribe</span>}
               </button>
             </form>
-          </motion.div>
-        </div>
-
-        {/* Bottom Section */}
-        <div className="pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-          <div className="w-full flex justify-center order-2 md:order-1">
-            <motion.p
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              transition={{ duration: 0.5, delay: 0.4 }}
-              className="text-gray-400 text-sm text-center"
-            >
-              © {new Date().getFullYear()} Marcel Grace Infotech. All rights reserved.
-            </motion.p>
           </div>
-
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ duration: 0.5, delay: 0.5 }}
-            className="flex gap-6"
-          >            {["Twitter", "LinkedIn", "GitHub", "Instagram"].map((social) => (
-              <Link
-                key={social}
-                href={
-                  social === "Twitter" ? "https://twitter.com/marcelgraceit" :
-                  social === "LinkedIn" ? "https://linkedin.com/company/marcel-grace-infotech" :
-                  social === "GitHub" ? "https://github.com/marcel-grace-infotech" :
-                  "https://instagram.com/marcelgraceinfotech"
-                }
-                className="text-gray-400 hover:text-white transform hover:scale-110 transition-all duration-300"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <span className="sr-only">{social}</span>
-                <div className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-white/20 transition-all duration-300">
-                  {social === "Twitter" && "🐦"}
-                  {social === "LinkedIn" && "💼"}
-                  {social === "GitHub" && "💻"}
-                  {social === "Instagram" && "📷"}
-                </div>
-              </Link>
-            ))}
-          </motion.div>
         </div>
       </div>
     </footer>

@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=MuseoModerno:wght@400;500;700&display=swap');
+@import url('./museomoderno.css');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -29,10 +32,16 @@
   }
   
   body {
-    @apply bg-gradient-to-br from-neutral-50 via-neutral-100 to-neutral-200 text-neutral-800 min-h-screen;
+    /* Match Hero section background */
+    @apply bg-gradient-to-b from-white to-neutral-50/80 text-neutral-800 min-h-screen;
+    /* Subtle grid overlay for liquid glass effect, matching Hero */
     background-image: 
-      radial-gradient(50% 50% at 50% 50%, rgba(1, 65, 255, 0.05) 0%, rgba(1, 65, 255, 0) 100%),
-      linear-gradient(180deg, rgba(1, 65, 255, 0.05) 0%, rgba(1, 65, 255, 0) 100%);
+      linear-gradient(180deg, rgba(255,255,255,0.95) 0%, rgba(245,247,250,0.8) 100%),
+      linear-gradient(rgba(135,206,235,0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(135,206,235,0.03) 1px, transparent 1px);
+    background-size: 100% 100%, 64px 64px, 64px 64px;
+    background-position: 0 0, 0 0, 0 0;
+    font-family: 'MuseoModerno', sans-serif !important;
   }
 
   ::selection {
@@ -85,8 +94,7 @@
   }
   
   .heading-2 {
-    @apply text-3xl sm:text-4xl font-display font-bold 
-           tracking-tight text-neutral-900 animate-slide-up;
+    @apply text-3xl sm:text-4xl font-display font-bold tracking-tight text-neutral-900;
   }
 
   .nav-link {

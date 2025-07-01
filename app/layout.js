@@ -31,9 +31,10 @@ export default function RootLayout({ children }) {
   return (
     <html
       lang="en"
-      className={`${inter.variable} ${plusJakarta.variable} scroll-smooth`}
+      className="scroll-smooth"
     >
-      <body className={`font-sans antialiased bg-dots min-h-screen`}>
+      <body className="font-sans antialiased bg-dots min-h-screen">
+        <div className="fixed inset-0 glass pointer-events-none z-[-1]" style={{backdropFilter: 'blur(24px) saturate(180%)', background: 'rgba(255,255,255,0.08)'}}></div>
         <div className="relative">
           {/* Background gradient */}
           <div className="fixed inset-0 bg-gradient-to-br from-primary-50/50 via-neutral-50/80 to-secondary-50/50 -z-10" />
