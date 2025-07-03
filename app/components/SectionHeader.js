@@ -18,7 +18,7 @@ export default function SectionHeader({ title, subtitle }) {
           </span>
         </h2>
         
-        <p className="text-lg text-neutral-600 max-w-2xl mx-auto">
+        <p className="text-lg text-primary-700 max-w-2xl mx-auto font-medium">
           {subtitle}
         </p>
       </motion.div>

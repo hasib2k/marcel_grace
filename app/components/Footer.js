@@ -36,34 +36,35 @@ export default function Footer() {
     }
   };
   return (
-    <footer className="relative bg-white">
-      <div className="w-full max-w-7xl mx-auto px-2 py-3 relative overflow-hidden">
+    <footer className="relative">
+      <div className="deep-glass-card w-full max-w-7xl mx-auto px-6 py-12 relative overflow-hidden border-t border-white/10">
         {/* Background Effects */}
         <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute inset-0 bg-[linear-gradient(var(--grid-glow)_1px,transparent_1px),linear-gradient(90deg,var(--grid-glow)_1px,transparent_1px)] bg-[size:40px_40px] opacity-[0.04]" />
+          <div className="absolute inset-0 bg-[linear-gradient(rgba(106,137,167,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(106,137,167,0.05)_1px,transparent_1px)] bg-[size:40px_40px] opacity-50" />
         </div>
-        <div className="relative grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-1 pb-0 items-start">
+        <div className="relative grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8 items-start">
           {/* Brand Section */}
-          <div className="lg:col-span-2 flex flex-col gap-0.5">
+          <div className="lg:col-span-2 flex flex-col gap-4">
             <Link
               href="/"
-              className="text-lg sm:text-xl font-extrabold bg-gradient-to-r from-primary-500 to-secondary-500 bg-clip-text text-transparent tracking-tight mb-0.5"
+              className="text-2xl sm:text-3xl font-bold bg-gradient-to-r from-deep-primary via-deep-secondary to-deep-accent bg-clip-text text-transparent tracking-tight"
             >
               Marcel Grace Infotech
             </Link>
-            <p className="text-primary-700 text-xs leading-snug max-w-xs mb-0.5">
+            <p className="text-deep-primary text-base leading-relaxed max-w-sm font-semibold">
               Empowering businesses through innovative digital solutions and cutting-edge technology services.
             </p>
           </div>
+          
           {/* Quick Links */}
-          <div className="flex flex-col gap-0.5">
-            <h3 className="text-primary-700 font-semibold text-xs uppercase tracking-wide mb-0.5">Quick Links</h3>
-            <ul className="flex flex-col gap-0.5">
+          <div className="flex flex-col gap-4">
+            <h3 className="text-deep-primary font-bold text-lg uppercase tracking-wide">Quick Links</h3>
+            <ul className="flex flex-col gap-3">
               {['About', 'Services', 'Portfolio', 'Blog'].map((item) => (
                 <li key={item}>
                   <Link
                     href={`/${item.toLowerCase()}`}
-                    className="text-primary-600 hover:text-primary-500 font-medium text-xs"
+                    className="text-deep-secondary hover:text-secondary font-medium text-base transition-colors duration-200"
                   >
                     {item}
                   </Link>
@@ -71,16 +72,17 @@ export default function Footer() {
               ))}
             </ul>
           </div>
+          
           {/* Services */}
-          <div className="flex flex-col gap-0.5">
-            <h3 className="text-primary-700 font-semibold text-xs uppercase tracking-wide mb-0.5">Services</h3>
-            <ul className="flex flex-col gap-0.5">
+          <div className="flex flex-col gap-4">
+            <h3 className="text-deep-primary font-bold text-lg uppercase tracking-wide">Services</h3>
+            <ul className="flex flex-col gap-3">
               {['Web Development', 'App Development', 'UI/UX Design', 'Consulting'].map(
                 (service) => (
                   <li key={service}>
                     <Link
                       href={`/services/${service.toLowerCase().replace(/\s+/g, '-')}`}
-                      className="text-primary-600 hover:text-primary-500 font-medium text-xs"
+                      className="text-deep-secondary hover:text-secondary font-medium text-base transition-colors duration-200"
                     >
                       {service}
                     </Link>
@@ -89,23 +91,24 @@ export default function Footer() {
               )}
             </ul>
           </div>
+          
           {/* Newsletter */}
-          <div className="sm:col-span-2 lg:col-span-1 lg:col-start-5 flex flex-col gap-0.5 mt-2 sm:mt-0 max-w-xs ml-auto">
-            <h3 className="text-primary-700 font-semibold text-xs uppercase tracking-wide mb-0.5">Stay Updated</h3>
-            <p className="text-primary-900/90 text-xs mb-0.5">
+          <div className="sm:col-span-2 lg:col-span-1 lg:col-start-5 flex flex-col gap-4">
+            <h3 className="text-deep-primary font-bold text-lg uppercase tracking-wide">Stay Updated</h3>
+            <p className="text-deep-secondary text-base leading-relaxed font-medium">
               Subscribe to our newsletter for the latest updates and insights.
             </p>
             {submitStatus === 'success' && (
-              <div className="bg-green-500/10 rounded p-0.5 text-green-700 text-xs flex items-center gap-1">
-                <span>✅</span> Subscribed!
+              <div className="glassmorphic bg-green-500/20 rounded-xl p-3 text-green-300 text-sm flex items-center gap-2">
+                <span>✅</span> Successfully subscribed!
               </div>
             )}
             {submitStatus === 'error' && (
-              <div className="bg-red-500/10 rounded p-0.5 text-red-700 text-xs flex items-center gap-1">
-                <span>❌</span> Failed.
+              <div className="glassmorphic bg-red-500/20 rounded-xl p-3 text-red-300 text-sm flex items-center gap-2">
+                <span>❌</span> Subscription failed.
               </div>
             )}
-            <form onSubmit={handleNewsletterSubmit} className="flex flex-col sm:flex-row gap-0.5">
+            <form onSubmit={handleNewsletterSubmit} className="flex flex-col gap-3">
               <input
                 type="email"
                 value={email}
@@ -113,14 +116,14 @@ export default function Footer() {
                 placeholder="Enter your email"
                 required
                 disabled={isSubmitting}
-                className="flex-1 px-1 py-0.5 rounded bg-white/60 text-primary-700 placeholder-primary-400 focus:outline-none focus:ring-2 focus:ring-primary-200 focus:border-transparent disabled:opacity-50 text-xs shadow-sm"
+                className="glassmorphic px-4 py-3 rounded-xl text-deep-primary placeholder-deep-tertiary focus:outline-none focus:ring-2 focus:ring-secondary/50 disabled:opacity-30 text-base font-medium"
               />
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="px-2 py-0.5 rounded bg-gradient-to-r from-primary-500 to-secondary-500 text-white font-semibold disabled:opacity-50 text-xs shadow hover:from-secondary-500 hover:to-primary-500"
+                className="bg-gradient-to-r from-secondary to-accent text-Black px-6 py-3 rounded-xl font-semibold disabled:opacity-50 text-base transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-secondary/25"
               >
-                {isSubmitting ? '...' : <span className="text-primary-50">Subscribe</span>}
+                {isSubmitting ? 'Subscribing...' : 'Subscribe'}
               </button>
             </form>
           </div>

@@ -96,17 +96,17 @@ const TestimonialCard = ({ testimonial, index }) => {
 					>
 						<path d="M9.352 4C4.456 7.456 1 13.12 1 19.36c0 5.088 3.072 8.064 6.624 8.064 3.36 0 5.856-2.688 5.856-5.856 0-3.168-2.208-5.472-5.088-5.472-.576 0-1.344.096-1.536.192.48-3.264 3.552-7.104 6.624-9.024L9.352 4zm16.512 0c-4.8 3.456-8.256 9.12-8.256 15.36 0 5.088 3.072 8.064 6.624 8.064 3.264 0 5.856-2.688 5.856-5.856 0-3.168-2.304-5.472-5.184-5.472-.576 0-1.248.096-1.44.192.48-3.264 3.456-7.104 6.528-9.024L25.864 4z" />
 					</svg>
-					<p className="text-lg text-neutral-700 leading-relaxed mb-6 italic">
+					<p className="text-lg text-primary-700 leading-relaxed mb-6 italic font-medium">
 						{testimonial.content}
 					</p>
 				</div>
 				<div className="flex items-center justify-between">
 					<div>
-						<h4 className="font-semibold text-neutral-900">
+						<h4 className="font-semibold text-primary-800">
 							{testimonial.author}
 						</h4>
-						<p className="text-neutral-500">{testimonial.position}</p>
-						<p className="text-primary-600 font-medium">
+						<p className="text-primary-600 font-medium">{testimonial.position}</p>
+						<p className="text-secondary-500 font-semibold">
 							{testimonial.company}
 						</p>
 					</div>
@@ -139,7 +139,7 @@ export default function TestimonialPage() {
                        from-primary-700 to-primary-900 bg-clip-text text-transparent">
 						What Our Clients Say
 					</h1>
-					<p className="text-xl text-neutral-600 leading-relaxed">
+					<p className="text-xl text-primary-700 leading-relaxed font-medium">
 						At Marcel Grace Infotech, client satisfaction is at the heart of
 						everything we do. We're proud to work with startups, enterprises, and
 						organizations across industries — delivering quality solutions and
@@ -170,7 +170,7 @@ export default function TestimonialPage() {
 							Your feedback drives our excellence.
 						</span>
 					</h2>
-					<p className="text-lg text-neutral-600 mb-8">
+					<p className="text-lg text-primary-700 mb-8 font-medium">
 						We take pride in every project and strive to deliver results that make
 						a lasting impact.
 					</p>

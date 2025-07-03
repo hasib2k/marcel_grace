@@ -13,48 +13,125 @@ export default function Home() {
   return (
     <div className="overflow-hidden min-h-screen">
       <Hero />
-      <section className="w-full py-12 bg-white border-t flex justify-center items-center">
-        <div className="glassy-card w-full max-w-6xl mx-2 px-8 py-10 rounded-2xl shadow border border-primary-100 bg-white/70 backdrop-blur-md text-center">
-          <h2 className="text-xl sm:text-2xl font-bold text-primary-700 mb-3">About Us</h2>
-          <p className="text-sm sm:text-base text-neutral-700 mb-3">
-            Marcel Grace Infotech empowers businesses with innovative digital solutions. Our mission is to deliver reliable, modern, and scalable technology that drives real growth and value for our clients.
-          </p>
-          <p className="text-sm sm:text-base text-neutral-700">
-            We value integrity, collaboration, and a relentless pursuit of excellence. Our team transforms ideas into impactful results, ensuring every partnership is built on trust and success.
-          </p>
+      
+      {/* Enhanced About Section with Liquid Glass Effect */}
+      <section className="w-full py-20 relative overflow-hidden">
+        {/* Background Effects */}
+        <div className="absolute inset-0 pointer-events-none">
+          <div className="absolute inset-0 bg-[linear-gradient(rgba(106,137,167,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(106,137,167,0.03)_1px,transparent_1px)] bg-[size:40px_40px] opacity-60" />
+          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-gradient-to-r from-secondary-300/10 via-accent-400/8 to-secondary-300/10 rounded-full blur-3xl animate-pulse" />
+          <div className="absolute bottom-1/3 right-1/4 w-80 h-80 bg-gradient-to-r from-accent-300/8 via-secondary-400/6 to-accent-300/8 rounded-full blur-3xl animate-pulse animation-delay-2000" />
+        </div>
+
+        <div className="container mx-auto px-2 relative">
+          <div className="max-w-6xl mx-auto">
+            <div className="liquid-glass p-8 lg:p-16 xl:p-20 rounded-3xl text-center group hover:scale-[1.02] transition-all duration-500">
+              {/* Decorative Icon */}
+              <div className="mb-6 flex justify-center">
+                <div className="p-4 rounded-2xl bg-gradient-to-r from-secondary-500 to-accent-500 shadow-lg">
+                  <FiCpu className="w-8 h-8 text-white" />
+                </div>
+              </div>
+
+              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold bg-gradient-to-r from-secondary-600 to-accent-600 bg-clip-text text-transparent mb-8">
+                About Us
+              </h2>
+              
+              {/* Mission Statement */}
+              <div className="space-y-6 mb-8">
+                <p className="text-base sm:text-lg lg:text-xl text-deep-primary leading-relaxed font-semibold">
+                  Marcel Grace Infotech empowers businesses with innovative digital solutions. Our mission is to deliver reliable, modern, and scalable technology that drives real growth and value for our clients.
+                </p>
+                <p className="text-base sm:text-lg lg:text-xl text-deep-primary leading-relaxed font-semibold">
+                  We value integrity, collaboration, and a relentless pursuit of excellence. Our team transforms ideas into impactful results, ensuring every partnership is built on trust and success.
+                </p>
+              </div>
+
+              {/* Core Values */}
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-8">
+                {[
+                  { icon: FiShield, title: "Integrity", desc: "Building trust through transparency" },
+                  { icon: FiCpu, title: "Innovation", desc: "Cutting-edge technology solutions" },
+                  { icon: FiBarChart2, title: "Excellence", desc: "Delivering exceptional results" }
+                ].map((value, index) => (
+                  <div 
+                    key={index}
+                    className="deep-glass-card p-4 rounded-xl group/card hover:scale-105 transition-all duration-300"
+                  >
+                    <value.icon className="w-6 h-6 text-secondary-600 mx-auto mb-2 group-hover/card:text-accent-600 transition-colors" />
+                    <h3 className="text-deep-secondary font-bold mb-1">{value.title}</h3>
+                    <p className="text-medium-primary text-sm font-medium">{value.desc}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
         </div>
       </section>
-      <section className="w-full py-10 flex justify-center items-center bg-white">
-        <div className="glassy-card w-full max-w-6xl mx-2 px-8 py-8 rounded-2xl shadow border border-primary-100 bg-white/70 backdrop-blur-md text-center">
-          <h2 className="text-lg sm:text-xl font-bold text-primary-700 mb-2">Transform Your Business with Our Expertise</h2>
-          <p className="text-xs sm:text-sm text-neutral-700 mb-4 max-w-2xl mx-auto leading-snug font-normal">
+
+      {/* Enhanced Features Section */}
+      <section className="w-full py-16 flex justify-center items-center relative">
+        <div className="liquid-glass w-full max-w-6xl mx-4 px-8 py-10 rounded-3xl text-center">
+          <h2 className="text-xl sm:text-2xl font-bold bg-gradient-to-r from-secondary-600 to-accent-600 bg-clip-text text-transparent mb-4">
+            Transform Your Business with Our Expertise
+          </h2>
+          <p className="text-sm sm:text-base text-deep-primary mb-8 max-w-3xl mx-auto leading-relaxed font-semibold">
             Experience the power of cutting-edge technology solutions designed to elevate your business. Our approach combines industry expertise with advanced technology for exceptional results.
           </p>
-          <ul className="text-xs sm:text-sm text-neutral-800 mb-6 grid grid-cols-1 sm:grid-cols-2 gap-2 items-stretch justify-center max-w-2xl mx-auto font-normal">
-            <li className="flex items-center gap-2 px-3 py-2 rounded-lg bg-white/90 backdrop-blur border border-primary-50 shadow-sm w-full justify-center"><FiCpu className="w-4 h-4 text-primary-600" /><span>Advanced AI Technology Integration</span></li>
-            <li className="flex items-center gap-2 px-3 py-2 rounded-lg bg-white/90 backdrop-blur border border-primary-50 shadow-sm w-full justify-center"><FiCloud className="w-4 h-4 text-primary-600" /><span>Cloud-Native Architecture</span></li>
-            <li className="flex items-center gap-2 px-3 py-2 rounded-lg bg-white/90 backdrop-blur border border-primary-50 shadow-sm w-full justify-center"><FiBarChart2 className="w-4 h-4 text-primary-600" /><span>Real-time Analytics Dashboard</span></li>
-            <li className="flex items-center gap-2 px-3 py-2 rounded-lg bg-white/90 backdrop-blur border border-primary-50 shadow-sm w-full justify-center"><FiShield className="w-4 h-4 text-primary-600" /><span>Secure Data Management</span></li>
-          </ul>
-          <a href="/get-started" className="inline-block px-4 py-2 rounded-full bg-primary-600 text-white text-xs sm:text-sm font-semibold hover:bg-primary-700 transition-colors shadow min-w-0 h-8">Get Started Today</a>
+          
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8 max-w-4xl mx-auto">
+            {[
+              { icon: FiCpu, text: "Advanced AI Technology Integration" },
+              { icon: FiCloud, text: "Cloud-Native Architecture" },
+              { icon: FiBarChart2, text: "Real-time Analytics Dashboard" },
+              { icon: FiShield, text: "Secure Data Management" }
+            ].map((item, index) => (
+              <div 
+                key={index}
+                className="deep-glass-card flex items-center gap-3 px-4 py-3 rounded-xl group hover:scale-105 transition-all duration-300"
+              >
+                <item.icon className="w-5 h-5 text-secondary-600 group-hover:text-accent-600 transition-colors" />
+                <span className="text-deep-secondary text-sm font-bold">{item.text}</span>
+              </div>
+            ))}
+          </div>
+          
+          <a 
+            href="/get-started" 
+            className="inline-flex items-center px-6 py-3 rounded-full bg-gradient-to-r from-secondary-400 to-accent-500 text-white font-semibold hover:from-secondary-300 hover:to-accent-400 transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-secondary-400/25"
+          >
+            Get Started Today
+          </a>
         </div>
       </section>
-      <div className="bg-white border-b border-primary-100">
+      
+      {/* Services Section with Dark Glass */}
+      <div className="relative">
         <Services />
       </div>
-      <div className="bg-white border-b border-primary-100">
+      
+      {/* Experience Section */}
+      <div className="relative">
         <Experience />
       </div>
-      <div className="bg-white border-b border-primary-100">
+      
+      {/* Clients Section */}
+      <div className="relative">
         <OurClients />
       </div>
-      <div className="bg-white border-b border-primary-100">
+      
+      {/* Community Section */}
+      <div className="relative">
         <Community />
       </div>
-      <div className="bg-white border-b border-primary-100">
+      
+      {/* Blog Section */}
+      <div className="relative">
         <Blog />
       </div>
-      <div className="bg-gradient-to-r from-primary-500 to-secondary-500">
+      
+      {/* Call to Action with Gradient Glass */}
+      <div className="relative bg-gradient-to-r from-secondary-400/20 to-accent-500/20">
         <CallToAction />
       </div>
     </div>

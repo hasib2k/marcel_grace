@@ -15,60 +15,63 @@ const features = [
 
 export default function Experience() {
   return (
-    <section className="relative overflow-hidden pt-0 pb-10 bg-white">
-      {/* Background Effects */}
+    <section className="relative overflow-hidden py-20">
+      {/* Enhanced Background Effects */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute inset-0 bg-[linear-gradient(var(--grid-glow)_1px,transparent_1px),linear-gradient(90deg,var(--grid-glow)_1px,transparent_1px)] bg-[size:40px_40px] opacity-[0.04]" />
+        <div className="absolute inset-0 bg-[linear-gradient(rgba(106,137,167,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(106,137,167,0.03)_1px,transparent_1px)] bg-[size:40px_40px] opacity-60" />
+        <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-gradient-to-r from-secondary-300/10 via-accent-400/8 to-secondary-300/10 rounded-full blur-3xl animate-pulse" />
       </div>
 
-      <div className="container mx-auto px-2 relative">
-        <div className="flex flex-col lg:flex-row items-center gap-6 lg:gap-8">
-          {/* Image Section */}
+      <div className="container mx-auto px-4 relative">
+        <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
+          {/* Enhanced Image Section */}
           <div className="w-full lg:w-1/2">
             <div className="relative">
-              <div className="relative z-10 overflow-hidden rounded-xl bg-white p-3 border border-primary-100 shadow-sm">
+              <div className="liquid-glass p-6 rounded-3xl">
                 <Image
                   src={img1}
                   alt="Experience Illustration"
-                  className="w-full h-auto"
+                  className="w-full h-auto rounded-2xl"
                   priority
                 />
               </div>
             </div>
           </div>
 
-          {/* Content Section */}
-          <div className="w-full lg:w-1/2">
+          {/* Enhanced Content Section with deeper colors */}
+          <div className="w-full lg:w-1/2 space-y-6">
             <div className="relative">
-              <h2 className="text-lg sm:text-xl font-bold mb-2 text-neutral-900">
+              <h2 className="text-2xl sm:text-3xl font-bold mb-4 bg-gradient-to-r from-secondary-600 to-accent-600 bg-clip-text text-transparent">
                 Transform Your Business with Our Expertise
               </h2>
             </div>
 
-            <p className="text-xs text-neutral-600 mb-3 leading-snug">
+            <p className="text-base sm:text-lg text-deep-primary leading-relaxed font-semibold">
               Experience the power of cutting-edge technology solutions designed to elevate 
               your business to new heights. Our innovative approach combines industry expertise 
               with advanced technology to deliver exceptional results.
             </p>
 
-            {/* Features List */}
-            <ul className="space-y-1 mb-4">
+            {/* Enhanced Features List */}
+            <div className="space-y-3">
               {features.map((feature, index) => (
-                <li
+                <div
                   key={feature}
-                  className="flex items-center text-xs text-neutral-700"
+                  className="deep-glass-card flex items-center p-4 rounded-xl group hover:scale-105 transition-all duration-300"
                 >
-                  <FiCheckCircle className="w-3.5 h-3.5 text-primary-600 mr-2" />
-                  <span>{feature}</span>
-                </li>
+                  <FiCheckCircle className="w-5 h-5 text-secondary-600 mr-3 group-hover:text-accent-600 transition-colors flex-shrink-0" />
+                  <span className="text-deep-secondary font-bold">{feature}</span>
+                </div>
               ))}
-            </ul>
+            </div>
 
-            {/* CTA Button */}
-            <Button variant="primary" className="px-3 py-1 text-xs h-7 min-w-0">
-              Get Started Today
-              <BsArrowRight className="ml-1 w-3 h-3" />
-            </Button>
+            {/* Enhanced CTA Button */}
+            <div className="pt-4">
+              <button className="bg-gradient-to-r from-secondary-600 to-accent-600 text-white px-6 py-3 rounded-full font-bold transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-secondary-400/25 flex items-center gap-2">
+                Get Started Today
+                <BsArrowRight className="w-4 h-4" />
+              </button>
+            </div>
           </div>
         </div>
       </div>

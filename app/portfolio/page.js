@@ -82,10 +82,12 @@ export default function PortfolioPage() {
     : projects.filter(project => project.category === selectedCategory);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-primary-50 via-white to-secondary-50 dark:from-gray-900 dark:via-gray-800 dark:to-slate-900">
+    <div className="min-h-screen">
       {/* Hero Section */}
       <section className="relative py-32 overflow-hidden">
-        <div className="absolute inset-0 bg-grid-pattern opacity-10"></div>
+        <div className="absolute inset-0 pointer-events-none">
+          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-secondary/20 rounded-full blur-3xl animate-pulse" />
+        </div>
         <div className="container mx-auto px-4 relative">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -93,10 +95,10 @@ export default function PortfolioPage() {
             transition={{ duration: 0.5 }}
             className="text-center max-w-4xl mx-auto"
           >
-            <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-primary-600 to-secondary-600 bg-clip-text text-transparent">
+            <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-deep-primary via-deep-secondary to-deep-accent bg-clip-text text-transparent">
               Our Portfolio
             </h1>
-            <p className="text-xl text-gray-600 dark:text-gray-300 leading-relaxed mb-12">
+            <p className="text-xl text-deep-primary leading-relaxed mb-12">
               Explore our collection of successful projects that showcase our expertise 
               in creating innovative digital solutions.
             </p>
@@ -119,8 +121,8 @@ export default function PortfolioPage() {
                 onClick={() => setSelectedCategory(category)}
                 className={`px-6 py-3 rounded-xl font-semibold transition-all duration-300 ${
                   selectedCategory === category
-                    ? 'bg-gradient-to-r from-primary-500 to-secondary-500 text-white shadow-lg'
-                    : 'bg-white/80 dark:bg-gray-800/80 text-gray-700 dark:text-gray-300 hover:bg-primary-50 dark:hover:bg-gray-700'
+                    ? 'bg-gradient-to-r from-secondary to-accent text-white shadow-lg'
+                    : 'glassmorphic text-deep-primary hover:text-deep-secondary'
                 }`}
               >
                 {category}
@@ -140,7 +142,7 @@ export default function PortfolioPage() {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-3xl overflow-hidden shadow-xl border border-white/20 hover:shadow-2xl transition-all duration-300 group"
+                className="deep-glass-card rounded-3xl overflow-hidden hover:scale-105 transition-all duration-300 group"
               >
                 <div className="relative h-64 overflow-hidden">
                   <Image

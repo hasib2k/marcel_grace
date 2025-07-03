@@ -11,17 +11,17 @@ export default function AppDevelopmentPage() {
       description: "One codebase for iOS and Android with native performance."
     },
     {
-      icon: "🚀",
+      icon: "",
       title: "Fast Development",
       description: "Rapid prototyping and deployment using modern frameworks."
     },
     {
-      icon: "🔄",
+      icon: "",
       title: "Real-time Sync",
       description: "Live data synchronization across all devices and platforms."
     },
     {
-      icon: "🛡️",
+      icon: "",
       title: "Secure",
       description: "Enterprise-grade security and data protection measures."
     }

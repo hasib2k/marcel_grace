@@ -8,14 +8,13 @@ import { HiMenuAlt4 } from "react-icons/hi";
 import { IoClose } from "react-icons/io5";
 import { FiCpu, FiGlobe, FiCode, FiHome, FiStar, FiHelpCircle, FiBox } from "react-icons/fi";
 import logo from "@/public/assets/logo_1.png";
-import { Iceberg } from 'next/font/google';
+import { Inter } from 'next/font/google';
 
-const iceberg = Iceberg({
+const inter = Inter({
   subsets: ['latin'],
   weight: '400',
   display: 'swap',
 });
-
 
 const menuItems = [
   { name: 'Home', href: '/', icon: FiHome },
@@ -43,16 +42,15 @@ export default function Navbar() {
     <nav
       className={`fixed w-full z-50 transition-all duration-300 ${
         scrolled
-          ? 'bg-white/80 backdrop-blur-lg shadow-lg'
+          ? 'liquid-glass shadow-lg'
           : 'bg-transparent'
       }`}
-      style={{}}
     >
-      <div className="container mx-auto px-2 sm:px-4 lg:px-6">
-        <div className="flex justify-between items-center h-14">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex justify-between items-center h-16">
           {/* Logo */}
-          <Link href="/" className="flex items-center space-x-1">
-            <div className="relative w-12 h-12">
+          <Link href="/" className="flex items-center space-x-3">
+            <div className="relative w-10 h-10">
               <Image
                 src={logo}
                 alt="Marcel Grace Infotech Logo"
@@ -61,86 +59,70 @@ export default function Navbar() {
                 style={{ background: 'transparent' }}
               />
             </div>
-            <span className={`md:w-60 w-32 ${iceberg.className} text-base md:text-2xl font-semibold bg-gradient-to-r from-primary-600 via-secondary-600 to-accent-600 bg-clip-text text-transparent [background-size:200%_auto] animate-text-shine`}>
+            <span className="text-lg md:text-xl font-bold bg-gradient-to-r from-secondary-600 to-accent-600 bg-clip-text text-transparent font-museomoderno">
               Marcel Grace Infotech
             </span>
           </Link>
 
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-0.5">
+          {/* Desktop Navigation with deeper colors */}
+          <div className="hidden md:flex items-center space-x-1">
             {menuItems.map((item, i) => {
               const Icon = item.icon;
               return (
-                <div
+                <Link
                   key={item.name}
+                  href={item.href}
+                  className="deep-glass-card text-deep-primary hover:text-deep-secondary px-3 py-2 rounded-full font-semibold transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-secondary-300/50 flex items-center gap-2 group"
                 >
-                  <Link
-                    href={item.href}
-                    className="text-primary-700 hover:text-white px-2 py-1 rounded-full font-semibold border border-primary-200 bg-white/70 hover:bg-gradient-to-r hover:from-primary-500 hover:to-primary-300 hover:shadow-md transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-primary-200 relative overflow-hidden group text-xs flex items-center gap-1"
-                  >
-                    <Icon className="w-3.5 h-3.5" />
-                    <span className="relative z-10 drop-shadow-sm tracking-wide">{item.name}</span>
-                    <span className="absolute left-0 top-0 w-full h-full rounded-full opacity-0 group-hover:opacity-100 bg-gradient-to-r from-primary-500 to-primary-300 transition-opacity duration-200 -z-10"></span>
-                  </Link>
-                </div>
+                  <Icon className="w-4 h-4 group-hover:text-secondary-600 transition-colors" />
+                  <span className="text-sm font-bold">{item.name}</span>
+                </Link>
               );
             })}
-            <div>
-              <Link href="/contact">
-                <button
-                  className="bg-gradient-to-r from-primary-600 to-primary-500 text-white px-3 py-1 rounded-full font-semibold border border-primary-200 hover:shadow-md transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-primary-200 relative overflow-hidden group text-xs flex items-center gap-1"
-                >
-                  <GoArrowRight className="w-3.5 h-3.5" />
-                  <span className="relative z-10 drop-shadow-sm tracking-wide">Contact Us</span>
-                  <span className="absolute left-0 top-0 w-full h-full rounded-full opacity-0 group-hover:opacity-100 bg-gradient-to-r from-primary-500 to-primary-300 transition-opacity duration-200 -z-10"></span>
-                </button>
-              </Link>
-            </div>
+            <Link href="/contact">
+              <button className="bg-gradient-to-r from-secondary-600 to-accent-600 text-white px-4 py-2 rounded-full font-bold transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-secondary-400/25 flex items-center gap-2">
+                <GoArrowRight className="w-4 h-4" />
+                <span className="text-sm">Contact Us</span>
+              </button>
+            </Link>
           </div>
 
           {/* Mobile Navigation Toggle */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden p-2 rounded-xl bg-neutral-100/80 backdrop-blur-sm hover:bg-neutral-200/80 transition-colors"
+            className="md:hidden deep-glass-card p-2 rounded-xl transition-colors"
           >
             {isOpen ? (
-              <IoClose className="w-6 h-6 text-neutral-600" />
+              <IoClose className="w-6 h-6 text-deep-primary" />
             ) : (
-              <HiMenuAlt4 className="w-6 h-6 text-neutral-600" />
+              <HiMenuAlt4 className="w-6 h-6 text-deep-primary" />
             )}
           </button>
         </div>
       </div>
 
-      {/* Mobile Navigation Menu */}
+      {/* Enhanced Mobile Navigation Menu */}
       {isOpen && (
-        <div
-          className="md:hidden bg-white/95 backdrop-blur-lg border-t border-neutral-100"
-        >
+        <div className="md:hidden liquid-glass border-t border-white/20">
           <div className="container mx-auto px-4 py-4">
-            <div className="flex flex-col space-y-1">
+            <div className="flex flex-col space-y-2">
               {menuItems.map((item, i) => (
-                <div
-                  key={item.name}
-                >
-                  <Link
-                    href={item.href}
-                    className="block px-4 py-2 text-neutral-600 hover:text-primary-600 rounded-xl hover:bg-primary-50/80 transition-all duration-200"
-                    onClick={() => setIsOpen(false)}
-                  >
-                    {item.name}
-                  </Link>
-                </div>
-              ))}
-              <div>
                 <Link
-                  href="/contact"
-                  className="block px-4 py-2 mt-2 text-center text-white bg-gradient-to-r from-primary-600 to-primary-500 rounded-xl font-medium hover:shadow-glow transition-all duration-300"
+                  key={item.name}
+                  href={item.href}
+                  className="block px-4 py-3 text-deep-primary hover:text-deep-secondary rounded-xl deep-glass-card transition-all duration-300 font-semibold"
                   onClick={() => setIsOpen(false)}
                 >
-                  Contact Us <GoArrowRight className="inline-block ml-1" />
+                  {item.name}
                 </Link>
-              </div>
+              ))}
+              <Link
+                href="/contact"
+                className="block px-4 py-3 mt-2 text-center text-white bg-gradient-to-r from-secondary-600 to-accent-600 rounded-xl font-bold transition-all duration-300 hover:scale-105"
+                onClick={() => setIsOpen(false)}
+              >
+                Contact Us <GoArrowRight className="inline-block ml-1" />
+              </Link>
             </div>
           </div>
         </div>

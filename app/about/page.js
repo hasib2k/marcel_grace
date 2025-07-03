@@ -61,10 +61,10 @@ export default function AboutPage() {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-primary-50 via-white to-secondary-50 dark:from-gray-900 dark:via-gray-800 dark:to-slate-900">
+    <div className="min-h-screen">
       {/* Hero Section */}
       <section className="relative py-32 overflow-hidden">
-        <div className="absolute inset-0 bg-grid-pattern opacity-10"></div>
+        <div className="absolute inset-0 bg-[linear-gradient(rgba(106,137,167,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(106,137,167,0.05)_1px,transparent_1px)] bg-[size:40px_40px] opacity-50"></div>
         <div className="container mx-auto px-4 relative">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -72,10 +72,10 @@ export default function AboutPage() {
             transition={{ duration: 0.5 }}
             className="text-center max-w-4xl mx-auto"
           >
-            <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-primary-600 to-secondary-600 bg-clip-text text-transparent">
+            <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-deep-primary via-deep-secondary to-deep-accent bg-clip-text text-transparent">
               About Marcel Grace
             </h1>
-            <p className="text-xl text-gray-600 dark:text-gray-300 leading-relaxed mb-12">
+            <p className="text-xl text-deep-primary leading-relaxed mb-12 font-medium">
               We are a passionate team of innovators, developers, and designers committed to 
               transforming ideas into powerful digital experiences that drive business growth.
             </p>
@@ -86,12 +86,12 @@ export default function AboutPage() {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
-                  className="text-center"
+                  className="deep-glass-card p-6 rounded-xl text-center"
                 >
-                  <div className="text-3xl md:text-4xl font-bold text-primary-600 dark:text-primary-400 mb-2">
+                  <div className="text-3xl md:text-4xl font-bold text-deep-accent mb-2">
                     {stat.number}
                   </div>
-                  <div className="text-gray-600 dark:text-gray-300 font-medium">
+                  <div className="text-deep-secondary font-medium">
                     {stat.label}
                   </div>
                 </motion.div>
@@ -111,10 +111,10 @@ export default function AboutPage() {
               transition={{ duration: 0.5 }}
               className="space-y-8"
             >
-              <h2 className="text-4xl md:text-5xl font-bold text-gray-800 dark:text-white">
+              <h2 className="text-4xl md:text-5xl font-bold text-deep-primary">
                 Our Story
               </h2>
-              <div className="space-y-6 text-gray-600 dark:text-gray-300 leading-relaxed">
+              <div className="space-y-6 text-deep-secondary leading-relaxed">
                 <p>
                   Founded in 2019, Marcel Grace Infotech emerged from a simple vision: 
                   to bridge the gap between innovative technology and practical business solutions. 
@@ -139,7 +139,7 @@ export default function AboutPage() {
               transition={{ duration: 0.5 }}
               className="relative"
             >
-              <div className="relative bg-white/10 backdrop-blur-sm rounded-3xl p-8 border border-white/20">
+              <div className="deep-glass-card p-8 rounded-3xl">
                 <Image
                   src="/assets/hero.svg"
                   alt="Our Story"
@@ -154,18 +154,21 @@ export default function AboutPage() {
       </section>
 
       {/* Our Values Section */}
-      <section className="py-20 bg-white/50 dark:bg-gray-800/50">
-        <div className="container mx-auto px-4">
+      <section className="py-20 relative">
+        <div className="absolute inset-0 pointer-events-none">
+          <div className="absolute top-1/4 right-1/4 w-64 h-64 bg-accent/10 rounded-full blur-3xl animate-pulse animation-delay-2000" />
+        </div>
+        <div className="container mx-auto px-4 relative">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gray-800 dark:text-white">
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-deep-primary via-deep-secondary to-deep-accent bg-clip-text text-transparent">
               Our Values
             </h2>
-            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+            <p className="text-xl text-deep-primary max-w-3xl mx-auto">
               These core principles guide everything we do and shape how we work with our clients.
             </p>
           </motion.div>
@@ -177,13 +180,13 @@ export default function AboutPage() {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-2xl p-8 text-center shadow-lg border border-white/20 hover:shadow-xl transition-all duration-300"
+                className="deep-glass-card p-8 rounded-2xl text-center hover:scale-105 transition-all duration-300"
               >
                 <div className="text-4xl mb-4">{value.icon}</div>
-                <h3 className="text-xl font-bold mb-4 text-gray-800 dark:text-white">
+                <h3 className="text-xl font-bold mb-4 text-deep-primary">
                   {value.title}
                 </h3>
-                <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
+                <p className="text-deep-secondary leading-relaxed">
                   {value.description}
                 </p>
               </motion.div>

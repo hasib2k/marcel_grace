@@ -15,7 +15,7 @@ const services = [
 			'API Integration',
 			'Legacy System Modernization',
 		],
-		gradient: 'from-blue-500 to-blue-600',
+		gradient: 'from-secondary-400 to-secondary-600',
 	},
 	{
 		icon: FiLayout,
@@ -23,7 +23,7 @@ const services = [
 		description:
 			'Creating intuitive, engaging user experiences that drive conversion and satisfaction.',
 		features: ['User Research', 'Interactive Prototypes', 'Responsive Design'],
-		gradient: 'from-primary-500 to-primary-600',
+		gradient: 'from-accent-400 to-accent-600',
 	},
 	{
 		icon: FiSmartphone,
@@ -35,7 +35,7 @@ const services = [
 			'Cross-Platform Solutions',
 			'App Store Optimization',
 		],
-		gradient: 'from-secondary-500 to-secondary-600',
+		gradient: 'from-secondary-300 to-accent-400',
 	},
 	{
 		icon: FiCloud,
@@ -43,7 +43,7 @@ const services = [
 		description:
 			'Scalable cloud infrastructure and services to power your digital transformation.',
 		features: ['Cloud Migration', 'AWS & Azure', 'DevOps Implementation'],
-		gradient: 'from-purple-500 to-purple-600',
+		gradient: 'from-accent-500 to-secondary-500',
 	},
 	{
 		icon: FiDatabase,
@@ -51,7 +51,7 @@ const services = [
 		description:
 			'Transform your data into actionable insights with advanced analytics solutions.',
 		features: ['Big Data Processing', 'BI Solutions', 'Predictive Analytics'],
-		gradient: 'from-teal-500 to-teal-600',
+		gradient: 'from-secondary-500 to-accent-600',
 	},
 	{
 		icon: FiShield,
@@ -59,7 +59,7 @@ const services = [
 		description:
 			'Protect your digital assets with comprehensive security solutions and best practices.',
 		features: ['Security Audits', 'Threat Prevention', 'Compliance Solutions'],
-		gradient: 'from-red-500 to-red-600',
+		gradient: 'from-accent-400 to-secondary-400',
 	},
 ];
 
@@ -86,16 +86,17 @@ const itemVariants = {
 
 export default function Services() {
 	return (
-		<section className="relative pt-0 pb-6 overflow-hidden bg-white">
-			{/* Background Effects */}
+		<section className="relative py-20 overflow-hidden">
+			{/* Enhanced Background Effects */}
 			<div className="absolute inset-0 pointer-events-none">
-				<div className="absolute inset-0 bg-[linear-gradient(var(--grid-glow)_1px,transparent_1px),linear-gradient(90deg,var(--grid-glow)_1px,transparent_1px)] bg-[size:40px_40px] opacity-[0.04]" />
+				<div className="absolute inset-0 bg-[linear-gradient(rgba(106,137,167,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(106,137,167,0.03)_1px,transparent_1px)] bg-[size:40px_40px] opacity-60" />
+				<div className="absolute top-1/3 left-1/4 w-96 h-96 bg-gradient-to-r from-secondary-300/10 via-accent-400/8 to-secondary-300/10 rounded-full blur-3xl animate-pulse" />
 			</div>
 
-			<div className="container mx-auto px-2 relative">
+			<div className="container mx-auto px-4 relative">
 				<SectionHeader
-					title={<span className="text-base sm:text-lg font-bold text-primary-700">Comprehensive Tech Solutions</span>}
-					subtitle={<span className="text-xs sm:text-sm text-primary-600">Empowering your business with innovative technology solutions tailored to your needs</span>}
+					title={<span className="text-2xl sm:text-3xl font-bold bg-gradient-to-r from-secondary-600 to-accent-600 bg-clip-text text-transparent">Comprehensive Tech Solutions</span>}
+					subtitle={<span className="text-base sm:text-lg text-deep-primary font-bold">Empowering your business with innovative technology solutions tailored to your needs</span>}
 					centered
 				/>
 
@@ -104,7 +105,7 @@ export default function Services() {
 					initial="hidden"
 					whileInView="visible"
 					viewport={{ once: true }}
-					className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 mt-4"
+					className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-12"
 				>
 					{services.map((service, index) => {
 						const Icon = service.icon;
@@ -112,27 +113,29 @@ export default function Services() {
 							<motion.div
 								key={index}
 								variants={itemVariants}
-								className="group relative"
+								className="group relative h-full"
 							>
-								<div className="relative overflow-hidden rounded-xl border border-primary-100 bg-white p-3 shadow-sm">
+								<div className="liquid-glass p-6 rounded-2xl hover:scale-105 transition-all duration-300 h-full flex flex-col">
 									{/* Icon */}
-									<div className="relative mb-1 flex items-center justify-center">
-										<Icon className="w-6 h-6 text-primary-600" style={{opacity: 1}} />
+									<div className="relative mb-4 flex items-center justify-center">
+										<div className={`p-3 rounded-xl bg-gradient-to-r ${service.gradient} shadow-lg`}>
+											<Icon className="w-6 h-6 text-white" />
+										</div>
 									</div>
 
-									{/* Content */}
-									<h3 className="text-sm font-semibold mb-0.5 text-primary-800">
+									{/* Content with deeper colors */}
+									<h3 className="text-xl font-bold mb-3 text-deep-secondary group-hover:text-secondary-600 transition-colors">
 										{service.title}
 									</h3>
-									<p className="text-xs text-primary-600 mb-1 leading-snug">
+									<p className="text-deep-primary mb-4 leading-relaxed font-semibold flex-grow">
 										{service.description}
 									</p>
 
 									{/* Features */}
-									<ul className="space-y-0.5">
+									<ul className="space-y-2 mt-auto">
 										{service.features.map((feature, i) => (
-											<li key={i} className="flex items-center text-xs text-primary-600">
-												<span className={`w-1.5 h-1.5 rounded-full bg-gradient-to-r ${service.gradient} mr-2`} />
+											<li key={i} className="flex items-center text-medium-primary font-semibold">
+												<div className="w-1.5 h-1.5 bg-secondary-600 rounded-full mr-3" />
 												{feature}
 											</li>
 										))}
