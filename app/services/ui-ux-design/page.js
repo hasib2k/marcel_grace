@@ -1,6 +1,5 @@
 'use client';
 import { motion } from 'framer-motion';
-import Image from 'next/image';
 import Link from 'next/link';
 
 export default function UIUXDesignPage() {
@@ -63,19 +62,16 @@ export default function UIUXDesignPage() {
     {
       title: "E-Commerce Mobile App",
       category: "Mobile UI/UX",
-      image: "/assets/hero.svg",
       description: "Complete redesign of shopping experience with 40% increase in conversions."
     },
     {
       title: "SaaS Dashboard",
       category: "Web UI/UX", 
-      image: "/assets/experience.svg",
       description: "Complex data visualization made simple and intuitive for business users."
     },
     {
       title: "Healthcare Platform",
       category: "Web UI/UX",
-      image: "/assets/hero.svg",
       description: "Patient portal design focusing on accessibility and ease of use."
     }
   ];
@@ -187,13 +183,9 @@ export default function UIUXDesignPage() {
                 className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-2xl overflow-hidden shadow-lg border border-white/20 hover:shadow-xl transition-all duration-300 group"
               >
                 <div className="relative h-48 overflow-hidden">
-                  <Image
-                    src={item.image}
-                    alt={item.title}
-                    width={400}
-                    height={300}
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
-                  />
+                  <div className="w-full h-full bg-gradient-to-br from-secondary-400 to-accent-500 flex items-center justify-center">
+                    <span className="text-lg font-bold text-white text-center px-4">{item.title}</span>
+                  </div>
                   <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
                   <div className="absolute bottom-4 left-4">
                     <span className="bg-white/20 backdrop-blur-sm text-white px-3 py-1 rounded-full text-sm font-medium">
@@ -320,13 +312,9 @@ export default function UIUXDesignPage() {
               className="relative"
             >
               <div className="relative bg-white/10 backdrop-blur-sm rounded-3xl p-8 border border-white/20">
-                <Image
-                  src="/assets/hero.svg"
-                  alt="UI/UX Design Tools"
-                  width={500}
-                  height={400}
-                  className="w-full h-auto rounded-2xl"
-                />
+                <div className="w-full h-64 rounded-2xl bg-gradient-to-br from-secondary-400 to-accent-500 flex items-center justify-center">
+                  <span className="text-2xl font-bold text-white">UI/UX Design</span>
+                </div>
               </div>
             </motion.div>
           </div>

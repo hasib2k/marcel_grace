@@ -56,10 +56,10 @@ module.exports = {
         },
       },
       fontFamily: {
-        sans: ['MuseoModerno', 'sans-serif'],
-        display: ['MuseoModerno', 'sans-serif'],
-        body: ['MuseoModerno', 'sans-serif'],
-        museo: ['MuseoModerno', 'sans-serif'],
+        sans: ['var(--font-nunito)', 'Nunito', 'sans-serif'],
+        display: ['var(--font-nunito)', 'Nunito', 'sans-serif'],
+        body: ['var(--font-nunito)', 'Nunito', 'sans-serif'],
+        'nunito': ['var(--font-nunito)', 'Nunito', 'sans-serif'],
       },
       animation: {
         'fade-in': 'fadeIn 0.5s ease-in-out',

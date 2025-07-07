@@ -96,17 +96,17 @@ const TestimonialCard = ({ testimonial, index }) => {
 					>
 						<path d="M9.352 4C4.456 7.456 1 13.12 1 19.36c0 5.088 3.072 8.064 6.624 8.064 3.36 0 5.856-2.688 5.856-5.856 0-3.168-2.208-5.472-5.088-5.472-.576 0-1.344.096-1.536.192.48-3.264 3.552-7.104 6.624-9.024L9.352 4zm16.512 0c-4.8 3.456-8.256 9.12-8.256 15.36 0 5.088 3.072 8.064 6.624 8.064 3.264 0 5.856-2.688 5.856-5.856 0-3.168-2.304-5.472-5.184-5.472-.576 0-1.248.096-1.44.192.48-3.264 3.456-7.104 6.528-9.024L25.864 4z" />
 					</svg>
-					<p className="text-lg text-primary-700 leading-relaxed mb-6 italic font-medium">
+					<p className="text-lg text-deep-primary leading-relaxed mb-6 italic font-medium">
 						{testimonial.content}
 					</p>
 				</div>
 				<div className="flex items-center justify-between">
 					<div>
-						<h4 className="font-semibold text-primary-800">
+						<h4 className="font-semibold text-deep-primary">
 							{testimonial.author}
 						</h4>
-						<p className="text-primary-600 font-medium">{testimonial.position}</p>
-						<p className="text-secondary-500 font-semibold">
+						<p className="text-deep-secondary font-medium">{testimonial.position}</p>
+						<p className="text-secondary-600 font-semibold">
 							{testimonial.company}
 						</p>
 					</div>
@@ -127,8 +127,16 @@ const TestimonialCard = ({ testimonial, index }) => {
 
 export default function TestimonialPage() {
 	return (
-		<div className="min-h-screen bg-gradient-to-br from-primary-50 via-white to-secondary-50">
-			<div className="container mx-auto px-4 py-32">
+		<div className="min-h-screen relative overflow-hidden">
+			{/* Background Effects matching the footer/theme */}
+			<div className="absolute inset-0 pointer-events-none">
+				<div className="absolute inset-0 bg-[linear-gradient(rgba(106,137,167,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(106,137,167,0.05)_1px,transparent_1px)] bg-[size:40px_40px] opacity-50" />
+				<div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary-400/10 rounded-full blur-3xl animate-pulse" />
+				<div className="absolute top-3/4 right-1/4 w-80 h-80 bg-secondary-400/10 rounded-full blur-3xl animate-pulse animation-delay-2000" />
+				<div className="absolute bottom-1/4 left-1/3 w-72 h-72 bg-accent-400/10 rounded-full blur-3xl animate-pulse animation-delay-4000" />
+			</div>
+
+			<div className="container mx-auto px-4 py-32 relative z-10">
 				<motion.div
 					initial={{ opacity: 0, y: -20 }}
 					animate={{ opacity: 1, y: 0 }}
@@ -136,10 +144,10 @@ export default function TestimonialPage() {
 					className="max-w-3xl mx-auto text-center mb-20"
 				>
 					<h1 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r 
-                       from-primary-700 to-primary-900 bg-clip-text text-transparent">
+                       from-secondary-600 via-accent-600 to-primary-600 bg-clip-text text-transparent">
 						What Our Clients Say
 					</h1>
-					<p className="text-xl text-primary-700 leading-relaxed font-medium">
+					<p className="text-xl text-deep-primary leading-relaxed font-medium">
 						At Marcel Grace Infotech, client satisfaction is at the heart of
 						everything we do. We're proud to work with startups, enterprises, and
 						organizations across industries — delivering quality solutions and
@@ -156,33 +164,6 @@ export default function TestimonialPage() {
 						/>
 					))}
 				</div>
-
-				<motion.div
-					initial={{ opacity: 0, y: 20 }}
-					animate={{ opacity: 1, y: 0 }}
-					transition={{ duration: 0.5, delay: 0.5 }}
-					className="max-w-2xl mx-auto text-center"
-				>
-					<h2 className="text-2xl font-bold mb-4 flex items-center justify-center gap-2">
-						<span>📣</span>
-						<span className="bg-gradient-to-r from-primary-700 to-primary-900 
-                         bg-clip-text text-transparent">
-							Your feedback drives our excellence.
-						</span>
-					</h2>
-					<p className="text-lg text-primary-700 mb-8 font-medium">
-						We take pride in every project and strive to deliver results that make
-						a lasting impact.
-					</p>
-					<button className="px-8 py-4 bg-gradient-to-r from-primary-600 to-primary-700 
-                         text-white rounded-xl font-semibold hover:from-primary-700 
-                         hover:to-primary-800 transition-all duration-300 shadow-lg 
-                         hover:shadow-xl transform hover:-translate-y-0.5 flex items-center 
-                         justify-center gap-2 mx-auto">
-						<span>👉</span>
-						<span>Get Started Today</span>
-					</button>
-				</motion.div>
 			</div>
 		</div>
 	);

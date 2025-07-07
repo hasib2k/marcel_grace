@@ -2,11 +2,9 @@
 
 import Hero from './components/Hero';
 import Services from './components/Services';
-import Experience from './components/Experience';
 import OurClients from './components/OurClients';
 import Community from './components/Community';
 import Blog from './components/Blog';
-import CallToAction from './components/CallToAction';
 import { FiCpu, FiCloud, FiBarChart2, FiShield } from "react-icons/fi";
 
 export default function Home() {
@@ -68,51 +66,10 @@ export default function Home() {
           </div>
         </div>
       </section>
-
-      {/* Enhanced Features Section */}
-      <section className="w-full py-16 flex justify-center items-center relative">
-        <div className="liquid-glass w-full max-w-6xl mx-4 px-8 py-10 rounded-3xl text-center">
-          <h2 className="text-xl sm:text-2xl font-bold bg-gradient-to-r from-secondary-600 to-accent-600 bg-clip-text text-transparent mb-4">
-            Transform Your Business with Our Expertise
-          </h2>
-          <p className="text-sm sm:text-base text-deep-primary mb-8 max-w-3xl mx-auto leading-relaxed font-semibold">
-            Experience the power of cutting-edge technology solutions designed to elevate your business. Our approach combines industry expertise with advanced technology for exceptional results.
-          </p>
-          
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8 max-w-4xl mx-auto">
-            {[
-              { icon: FiCpu, text: "Advanced AI Technology Integration" },
-              { icon: FiCloud, text: "Cloud-Native Architecture" },
-              { icon: FiBarChart2, text: "Real-time Analytics Dashboard" },
-              { icon: FiShield, text: "Secure Data Management" }
-            ].map((item, index) => (
-              <div 
-                key={index}
-                className="deep-glass-card flex items-center gap-3 px-4 py-3 rounded-xl group hover:scale-105 transition-all duration-300"
-              >
-                <item.icon className="w-5 h-5 text-secondary-600 group-hover:text-accent-600 transition-colors" />
-                <span className="text-deep-secondary text-sm font-bold">{item.text}</span>
-              </div>
-            ))}
-          </div>
-          
-          <a 
-            href="/get-started" 
-            className="inline-flex items-center px-6 py-3 rounded-full bg-gradient-to-r from-secondary-400 to-accent-500 text-white font-semibold hover:from-secondary-300 hover:to-accent-400 transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-secondary-400/25"
-          >
-            Get Started Today
-          </a>
-        </div>
-      </section>
       
       {/* Services Section with Dark Glass */}
       <div className="relative">
         <Services />
-      </div>
-      
-      {/* Experience Section */}
-      <div className="relative">
-        <Experience />
       </div>
       
       {/* Clients Section */}
@@ -128,11 +85,6 @@ export default function Home() {
       {/* Blog Section */}
       <div className="relative">
         <Blog />
-      </div>
-      
-      {/* Call to Action with Gradient Glass */}
-      <div className="relative bg-gradient-to-r from-secondary-400/20 to-accent-500/20">
-        <CallToAction />
       </div>
     </div>
   );

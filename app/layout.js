@@ -1,12 +1,13 @@
-import { MuseoModerno } from "next/font/google";
+import { Nunito } from "next/font/google";
 import "./globals.css";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
+import ScrollToTop from "./components/ScrollToTop";
 
-const museoModerno = MuseoModerno({
+const nunito = Nunito({
   subsets: ["latin"],
-  variable: "--font-museo",
-  weight: ['300', '400', '500', '600', '700', '800', '900'],
+  variable: "--font-nunito",
+  weight: ['300', '400', '500', '600', '700'],
   display: "swap",
 });
 
@@ -22,7 +23,7 @@ export default function RootLayout({ children }) {
       lang="en"
       className="scroll-smooth"
     >
-      <body className={`${museoModerno.variable} font-sans antialiased min-h-screen`}>
+      <body className={`${nunito.variable} font-sans antialiased min-h-screen`}>
         {/* Glassmorphism background layers */}
         <div className="fixed inset-0 bg-gradient-to-br from-neutral-50 via-secondary-100 to-accent-200 -z-20" />
         <div className="fixed inset-0 bg-gradient-to-tr from-primary-300/20 via-transparent to-secondary-400/20 -z-19" />
@@ -39,6 +40,7 @@ export default function RootLayout({ children }) {
           <Navbar />
           <main className="min-h-screen">{children}</main>
           <Footer />
+          <ScrollToTop />
         </div>
       </body>
     </html>

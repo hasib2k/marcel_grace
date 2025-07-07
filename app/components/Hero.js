@@ -54,15 +54,9 @@ const Hero = () => {
 
 								<div className="flex flex-wrap gap-3 justify-center lg:justify-start">
 									<Link href="/contact">
-										<button className="bg-gradient-to-r from-secondary to-accent text-Black px-8 py-4 rounded-full font-semibold transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-secondary/25 flex items-center gap-2">
+										<button className="bg-gradient-to-r from-secondary to-accent text-Black border-2 border-deep-primary px-8 py-4 rounded-full font-semibold transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-secondary/25 flex items-center gap-2">
 											<FiArrowUpRight className="w-5 h-5" />
 											<span>Get Started</span>
-										</button>
-									</Link>
-									<Link href="/portfolio">
-										<button className="deep-glass-card px-8 py-4 rounded-full font-semibold transition-all duration-300 hover:scale-105 flex items-center gap-2 text-deep-secondary">
-											<span>View Portfolio</span>
-											<FiArrowUpRight className="w-5 h-5" />
 										</button>
 									</Link>
 								</div>
@@ -84,49 +78,6 @@ const Hero = () => {
 											</div>
 										</div>
 									))}
-								</div>
-							</div>
-
-							{/* Enhanced Hero image */}
-							<div className="flex-1 relative flex items-center justify-center">
-								<div className="relative z-10">
-									<div className="liquid-glass p-8 rounded-3xl">
-										<div className="relative">
-											{/* Company Logo/Branding */}
-											<div className="text-center mb-6">
-												<div className="w-32 h-32 mx-auto bg-gradient-to-r from-secondary to-accent rounded-full flex items-center justify-center mb-4 shadow-2xl">
-													<span className="text-4xl font-bold text-Black">MG</span>
-												</div>
-												<h3 className={`${inter.className} text-2xl font-bold text-deep-primary mb-2`}>Marcel Grace</h3>
-												<p className={`${inter.className} text-deep-secondary font-semibold`}>Infotech</p>
-											</div>
-											
-											{/* Technology Stack */}
-											<div className="grid grid-cols-2 gap-3 mt-6">
-												{[
-													{ name: "React", icon: "" },
-													{ name: "Node.js", icon: "" },
-													{ name: "Python", icon: "" },
-													{ name: "Flutter", icon: "" }
-												].map((tech, index) => (
-													<div key={tech.name} className="deep-glass-card p-3 rounded-xl text-center group hover:scale-105 transition-all duration-300">
-														<div className="text-2xl mb-1">{tech.icon}</div>
-														<div className="text-xs text-deep-primary font-semibold">{tech.name}</div>
-													</div>
-												))}
-											</div>
-
-											{/* Quality Badges */}
-											<div className="flex justify-center gap-2 mt-6">
-												<div className="deep-glass-card px-3 py-2 rounded-full">
-													<span className="text-xs text-deep-secondary font-semibold">ISO Certified</span>
-												</div>
-												<div className="deep-glass-card px-3 py-2 rounded-full">
-													<span className="text-xs text-deep-secondary font-semibold">24/7 Support</span>
-												</div>
-											</div>
-										</div>
-									</div>
 								</div>
 							</div>
 						</div>

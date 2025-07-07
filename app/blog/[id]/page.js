@@ -2,7 +2,6 @@
 
 import { blogs } from '@/app/data/blogs';
 import { motion } from 'framer-motion';
-import Image from 'next/image';
 import Link from 'next/link';
 import { FiArrowLeft, FiCalendar, FiTag } from 'react-icons/fi';
 
@@ -60,27 +59,11 @@ export default function BlogPost({ params }) {
         </motion.div>
       </div>
 
-      {/* Featured Image */}
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.4 }}
-        className="relative w-full h-[400px] rounded-2xl overflow-hidden mb-12"
-      >
-        <Image
-          src={`/assets/blog/${blog.image.split('/').pop()}`}
-          alt={blog.title}
-          fill
-          className="object-cover"
-          priority
-        />
-      </motion.div>
-
       {/* Content */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.5 }}
+        transition={{ delay: 0.4 }}
         className="prose prose-lg max-w-none prose-headings:text-neutral-800 prose-p:text-neutral-600
                    prose-strong:text-neutral-800 prose-strong:font-semibold"
       >

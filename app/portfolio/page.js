@@ -1,7 +1,6 @@
 'use client';
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import Image from 'next/image';
 import Link from 'next/link';
 
 export default function PortfolioPage() {
@@ -11,7 +10,6 @@ export default function PortfolioPage() {
       title: "E-Commerce Platform",
       category: "Web Development",
       description: "A comprehensive e-commerce solution with advanced features and modern design.",
-      image: "/assets/hero.svg",
       technologies: ["React", "Node.js", "MongoDB", "Stripe"],
       link: "/portfolio/ecommerce-platform",
       status: "Completed",
@@ -22,7 +20,6 @@ export default function PortfolioPage() {
       title: "Healthcare Mobile App",
       category: "App Development", 
       description: "Patient management system with appointment scheduling and telemedicine features.",
-      image: "/assets/experience.svg",
       technologies: ["React Native", "Firebase", "Express", "Socket.io"],
       link: "/portfolio/healthcare-app",
       status: "Completed",
@@ -33,7 +30,6 @@ export default function PortfolioPage() {
       title: "Financial Dashboard",
       category: "UI/UX Design",
       description: "Modern dashboard for financial data visualization and analytics.",
-      image: "/assets/hero.svg",
       technologies: ["Figma", "React", "D3.js", "TypeScript"],
       link: "/portfolio/financial-dashboard",
       status: "Completed",
@@ -44,7 +40,6 @@ export default function PortfolioPage() {
       title: "Restaurant Management System",
       category: "Web Development",
       description: "Complete restaurant management solution with POS and inventory management.",
-      image: "/assets/experience.svg",
       technologies: ["Next.js", "PostgreSQL", "Prisma", "Tailwind"],
       link: "/portfolio/restaurant-system",
       status: "In Progress",
@@ -55,7 +50,6 @@ export default function PortfolioPage() {
       title: "Fitness Tracking App",
       category: "App Development",
       description: "Comprehensive fitness app with workout plans and progress tracking.",
-      image: "/assets/hero.svg",
       technologies: ["Flutter", "Dart", "Firebase", "Google Fit API"],
       link: "/portfolio/fitness-app",
       status: "Completed",
@@ -66,7 +60,6 @@ export default function PortfolioPage() {
       title: "Educational Platform",
       category: "Web Development",
       description: "Online learning platform with video streaming and interactive features.",
-      image: "/assets/experience.svg",
       technologies: ["React", "AWS", "GraphQL", "PostgreSQL"],
       link: "/portfolio/educational-platform",
       status: "Completed",
@@ -144,16 +137,11 @@ export default function PortfolioPage() {
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 className="deep-glass-card rounded-3xl overflow-hidden hover:scale-105 transition-all duration-300 group"
               >
-                <div className="relative h-64 overflow-hidden">
-                  <Image
-                    src={project.image}
-                    alt={project.title}
-                    width={400}
-                    height={300}
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
-                  <div className="absolute top-4 right-4">
+                <div className="p-6">
+                  <div className="flex justify-between items-start mb-4">
+                    <h3 className="text-xl font-bold text-gray-800 dark:text-white">
+                      {project.title}
+                    </h3>
                     <span className={`px-3 py-1 rounded-full text-xs font-semibold ${
                       project.status === 'Completed' 
                         ? 'bg-green-500 text-white' 
@@ -162,17 +150,11 @@ export default function PortfolioPage() {
                       {project.status}
                     </span>
                   </div>
-                  <div className="absolute bottom-4 left-4">
-                    <span className="bg-white/20 backdrop-blur-sm text-white px-3 py-1 rounded-full text-sm font-medium">
+                  <div className="mb-3">
+                    <span className="bg-gradient-to-r from-secondary-500 to-accent-500 text-white px-3 py-1 rounded-full text-sm font-medium">
                       {project.category}
                     </span>
                   </div>
-                </div>
-                
-                <div className="p-6">
-                  <h3 className="text-xl font-bold mb-2 text-gray-800 dark:text-white">
-                    {project.title}
-                  </h3>
                   <p className="text-gray-600 dark:text-gray-300 text-sm mb-1">
                     Client: {project.client}
                   </p>

@@ -1,5 +1,6 @@
 'use client';
 import { motion } from 'framer-motion';
+import Link from 'next/link';
 
 const features = [
 	{
@@ -163,27 +164,22 @@ const FeatureCard = ({ feature, index }) => {
 				className="absolute inset-0 rounded-3xl bg-gradient-to-r opacity-0 group-hover:opacity-100 
                     transition-opacity duration-500 -z-10 blur-xl"
 				style={{
-					background: `radial-gradient(circle at 50% 50%, ${feature.gradient.split(
-						' '
-					)[1]}, transparent 70%)`,
+					background: `radial-gradient(circle at 50% 50%, rgba(106, 137, 167, 0.15), transparent 70%)`,
 				}}
 			></div>
-			<div className="bg-white/80 backdrop-blur-lg rounded-3xl p-8 shadow-lg border border-neutral-200/50 
-                    transition-all duration-500 hover:shadow-2xl hover:border-primary-200 h-full
-                    hover:bg-gradient-to-br hover:from-white hover:to-primary-50/30">
-				<div
-					className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${feature.gradient} 
-                      flex items-center justify-center text-primary-600 mb-6 
-                      group-hover:scale-110 transition-transform duration-300`}
-				>
+			<div className="liquid-glass rounded-3xl p-8 shadow-lg border border-white/10 
+                    transition-all duration-500 hover:shadow-xl h-full">
+				<div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-secondary-100 to-accent-100 
+                      flex items-center justify-center text-secondary-600 mb-6 
+                      group-hover:scale-110 transition-transform duration-300">
 					{feature.icon}
 				</div>
-				<h3 className="text-2xl font-bold mb-4 bg-gradient-to-r from-primary-700 to-primary-900 
-                     bg-clip-text text-transparent group-hover:from-primary-600 
-                     group-hover:to-primary-800 transition-colors duration-300">
+				<h3 className="text-2xl font-bold mb-4 bg-gradient-to-r from-secondary-600 to-accent-600 
+                     bg-clip-text text-transparent group-hover:from-secondary-500 
+                     group-hover:to-accent-500 transition-colors duration-300">
 					{feature.title}
 				</h3>
-				<p className="text-neutral-600 leading-relaxed group-hover:text-neutral-700 
+				<p className="text-deep-primary leading-relaxed group-hover:text-secondary-600 
                     transition-colors duration-300">
 					{feature.description}
 				</p>
@@ -194,19 +190,23 @@ const FeatureCard = ({ feature, index }) => {
 
 export default function FeaturePage() {
 	return (
-		<div className="min-h-screen bg-gradient-to-br from-primary-50 via-white to-secondary-50">
-			<div className="container mx-auto px-4 py-32">
+		<div className="min-h-screen deep-glass-card">
+			{/* Enhanced Background Effects */}
+			<div className="absolute inset-0 pointer-events-none">
+				<div className="absolute inset-0 bg-[linear-gradient(rgba(106,137,167,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(106,137,167,0.05)_1px,transparent_1px)] bg-[size:40px_40px] opacity-50" />
+			</div>
+			<div className="container mx-auto px-4 py-32 relative">
 				<motion.div
 					initial={{ opacity: 0, y: -20 }}
 					animate={{ opacity: 1, y: 0 }}
 					transition={{ duration: 0.5 }}
 					className="max-w-3xl mx-auto text-center mb-20"
 				>
-					<h1 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-primary-700 
-                       to-primary-900 bg-clip-text text-transparent">
+					<h1 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-secondary-600 
+                       to-accent-600 bg-clip-text text-transparent">
 						What We Offer
 					</h1>
-					<p className="text-xl text-neutral-600 leading-relaxed">
+					<p className="text-xl text-deep-primary leading-relaxed">
 						Transform your business with our comprehensive suite of software
 						development services. We blend innovation with expertise to deliver
 						solutions that drive growth and success.
@@ -225,12 +225,14 @@ export default function FeaturePage() {
 					transition={{ duration: 0.5, delay: 0.5 }}
 					className="mt-20 text-center"
 				>
-					<button className="px-8 py-4 bg-gradient-to-r from-primary-600 to-primary-700 text-white 
-                         rounded-xl font-semibold hover:from-primary-700 hover:to-primary-800 
-                         transition-all duration-300 shadow-lg hover:shadow-xl 
-                         transform hover:-translate-y-0.5">
-						Start Your Project
-					</button>
+					<Link href="/contact">
+						<button className="px-8 py-4 bg-gradient-to-r from-secondary-600 to-accent-600 text-white 
+	                         rounded-xl font-semibold hover:from-secondary-700 hover:to-accent-700 
+	                         transition-all duration-300 shadow-lg hover:shadow-xl 
+	                         transform hover:-translate-y-0.5">
+							Start Your Project
+						</button>
+					</Link>
 				</motion.div>
 			</div>
 		</div>

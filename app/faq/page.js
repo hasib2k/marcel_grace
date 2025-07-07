@@ -50,45 +50,13 @@ export default function FAQPage() {
 	const [open, setOpen] = useState(null);
 
 	return (
-		<div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-blue-100 relative overflow-hidden">
-			{/* Animated Background Elements */}
-			<div className="absolute inset-0 overflow-hidden">
-				<motion.div
-					animate={{
-						scale: [1, 1.2, 1],
-						rotate: [0, 180, 360],
-					}}
-					transition={{
-						duration: 20,
-						repeat: Infinity,
-						ease: "linear"
-					}}
-					className="absolute -top-32 -left-32 w-64 h-64 bg-gradient-to-br from-blue-200/30 to-blue-400/20 rounded-full blur-3xl"
-				/>
-				<motion.div
-					animate={{
-						scale: [1.2, 1, 1.2],
-						rotate: [360, 180, 0],
-					}}
-					transition={{
-						duration: 25,
-						repeat: Infinity,
-						ease: "linear"
-					}}
-					className="absolute -bottom-32 -right-32 w-80 h-80 bg-gradient-to-br from-indigo-200/30 to-purple-300/20 rounded-full blur-3xl"
-				/>
-				<motion.div
-					animate={{
-						x: [0, 100, 0],
-						y: [0, -50, 0],
-					}}
-					transition={{
-						duration: 15,
-						repeat: Infinity,
-						ease: "easeInOut"
-					}}
-					className="absolute top-1/2 left-1/4 w-40 h-40 bg-gradient-to-br from-cyan-200/20 to-blue-300/20 rounded-full blur-2xl"
-				/>
+		<div className="min-h-screen relative overflow-hidden">
+			{/* Background Effects matching the footer/theme */}
+			<div className="absolute inset-0 pointer-events-none">
+				<div className="absolute inset-0 bg-[linear-gradient(rgba(106,137,167,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(106,137,167,0.05)_1px,transparent_1px)] bg-[size:40px_40px] opacity-50" />
+				<div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary-400/10 rounded-full blur-3xl animate-pulse" />
+				<div className="absolute top-3/4 right-1/4 w-80 h-80 bg-secondary-400/10 rounded-full blur-3xl animate-pulse animation-delay-2000" />
+				<div className="absolute bottom-1/4 left-1/3 w-72 h-72 bg-accent-400/10 rounded-full blur-3xl animate-pulse animation-delay-4000" />
 			</div>
 
 			<div className="relative z-10 flex flex-col items-center justify-center pt-32 pb-16 px-4">
@@ -100,21 +68,11 @@ export default function FAQPage() {
 				>
 					{/* Header Section */}
 					<div className="text-center mb-16">
-						<motion.div
-							initial={{ opacity: 0, scale: 0.8 }}
-							animate={{ opacity: 1, scale: 1 }}
-							transition={{ duration: 0.6, delay: 0.2 }}
-							className="inline-flex items-center gap-3 mb-6 px-6 py-3 rounded-full bg-gradient-to-r from-blue-500/10 to-indigo-500/10 backdrop-blur-sm border border-blue-200/30"
-						>
-							<FiHelpCircle className="text-blue-600 text-xl" />
-							<span className="text-blue-700 font-semibold">Frequently Asked Questions</span>
-						</motion.div>
-						
 						<motion.h1
 							initial={{ opacity: 0, y: 20 }}
 							animate={{ opacity: 1, y: 0 }}
 							transition={{ duration: 0.8, delay: 0.3 }}
-							className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-blue-900 via-blue-700 to-indigo-700 bg-clip-text text-transparent leading-tight font-MuseoModerno"
+							className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-secondary-600 via-accent-600 to-primary-600 bg-clip-text text-transparent leading-tight"
 						>
 							Get Instant Answers
 						</motion.h1>
@@ -123,7 +81,7 @@ export default function FAQPage() {
 							initial={{ opacity: 0, y: 20 }}
 							animate={{ opacity: 1, y: 0 }}
 							transition={{ duration: 0.8, delay: 0.4 }}
-							className="text-xl text-gray-600 leading-relaxed max-w-3xl mx-auto"
+							className="text-xl text-deep-primary leading-relaxed max-w-3xl mx-auto font-medium"
 						>
 							Having questions about our services, process, or products? We\'ve got answers. 
 							At Marcel Grace Infotech, we believe in clear communication and complete transparency.
@@ -146,7 +104,7 @@ export default function FAQPage() {
 								className="group relative"
 							>
 								{/* Glassmorphism Card */}
-								<div className="relative rounded-2xl bg-white/10 backdrop-blur-xl border border-white/20 shadow-xl hover:shadow-2xl transition-all duration-500 overflow-hidden group-hover:border-blue-300/50">
+								<div className="relative rounded-2xl bg-white/10 backdrop-blur-xl border border-white/20 shadow-xl hover:shadow-2xl transition-all duration-500 overflow-hidden group-hover:border-secondary/50">
 									{/* Liquid Glass Effect */}
 									<div className="absolute inset-0 bg-gradient-to-br from-white/20 via-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 									
@@ -156,14 +114,14 @@ export default function FAQPage() {
 										onClick={() => setOpen(open === idx ? null : idx)}
 										aria-expanded={open === idx}
 									>
-										<span className="text-lg font-semibold text-gray-800 group-hover:text-blue-900 transition-colors duration-300 pr-4 font-MuseoModerno">
+										<span className="text-lg font-semibold text-deep-primary group-hover:text-secondary-700 transition-colors duration-300 pr-4">
 											{faq.q}
 										</span>
 										
 										<motion.div
 											animate={{ rotate: open === idx ? 45 : 0 }}
 											transition={{ duration: 0.3 }}
-											className="flex-shrink-0 w-8 h-8 rounded-full bg-gradient-to-r from-blue-500 to-indigo-600 flex items-center justify-center shadow-lg group-hover:shadow-xl transition-shadow duration-300"
+											className="flex-shrink-0 w-8 h-8 rounded-full bg-gradient-to-r from-secondary to-accent flex items-center justify-center shadow-lg group-hover:shadow-xl transition-shadow duration-300"
 										>
 											{open === idx ? (
 												<FiMinus className="text-white text-lg" />
@@ -185,7 +143,7 @@ export default function FAQPage() {
 											>
 												<div className="px-6 pb-6">
 													<div className="pt-2 border-t border-white/20">
-														<p className="text-gray-600 leading-relaxed text-base">
+														<p className="text-deep-secondary leading-relaxed text-base font-medium">
 															{faq.a}
 														</p>
 													</div>
@@ -196,45 +154,6 @@ export default function FAQPage() {
 								</div>
 							</motion.div>
 						))}
-					</motion.div>
-
-					{/* Contact CTA */}
-					<motion.div
-						initial={{ opacity: 0, y: 30 }}
-						animate={{ opacity: 1, y: 0 }}
-						transition={{ duration: 0.8, delay: 0.8 }}
-						className="text-center"
-					>
-						<div className="relative inline-block">
-							{/* Glassmorphism CTA Card */}
-							<div className="relative rounded-2xl bg-white/10 backdrop-blur-xl border border-white/20 p-8 shadow-xl hover:shadow-2xl transition-all duration-500 group cursor-pointer">
-								{/* Animated Background */}
-								<div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 via-indigo-500/10 to-purple-500/10 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-								
-								<div className="relative z-10">
-									<div className="flex items-center justify-center gap-3 mb-4">
-										<FiMessageCircle className="text-blue-600 text-2xl" />
-										<h3 className="text-2xl font-bold text-gray-800 font-MuseoModerno">
-											Still have questions?
-										</h3>
-									</div>
-									
-									<p className="text-gray-600 mb-6 text-lg">
-										Reach out to our team — we\'re happy to help you make the right
-										decision for your digital journey.
-									</p>
-									
-									<motion.button
-										whileHover={{ scale: 1.05 }}
-										whileTap={{ scale: 0.95 }}
-										className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-semibold rounded-xl hover:from-blue-700 hover:to-indigo-700 transition-all duration-300 shadow-lg hover:shadow-xl"
-									>
-										<span>Contact Our Team</span>
-										<FiArrowRight className="text-lg" />
-									</motion.button>
-								</div>
-							</div>
-						</div>
 					</motion.div>
 				</motion.div>
 			</div>

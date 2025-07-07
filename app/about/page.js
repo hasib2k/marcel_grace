@@ -1,31 +1,26 @@
 'use client';
 import { motion } from 'framer-motion';
-import Image from 'next/image';
 
 export default function AboutPage() {
   const teamMembers = [
     {
       name: "Marcel Grace",
       role: "Founder & CEO",
-      image: "/assets/hero.svg",
       description: "Visionary leader with 10+ years in tech innovation"
     },
     {
       name: "Sarah Johnson",
       role: "CTO",
-      image: "/assets/experience.svg",
       description: "Technical architect specializing in scalable solutions"
     },
     {
       name: "David Chen",
       role: "Lead Developer",
-      image: "/assets/hero.svg",
       description: "Full-stack expert with passion for clean code"
     },
     {
       name: "Emily Rodriguez",
       role: "Design Director",
-      image: "/assets/experience.svg",
       description: "UX/UI specialist creating intuitive experiences"
     }
   ];
@@ -133,22 +128,6 @@ export default function AboutPage() {
                 </p>
               </div>
             </motion.div>
-            <motion.div
-              initial={{ opacity: 0, x: 20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.5 }}
-              className="relative"
-            >
-              <div className="deep-glass-card p-8 rounded-3xl">
-                <Image
-                  src="/assets/hero.svg"
-                  alt="Our Story"
-                  width={500}
-                  height={400}
-                  className="w-full h-auto rounded-2xl"
-                />
-              </div>
-            </motion.div>
           </div>
         </div>
       </section>
@@ -221,16 +200,6 @@ export default function AboutPage() {
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-2xl overflow-hidden shadow-lg border border-white/20 hover:shadow-xl transition-all duration-300 group"
               >
-                <div className="relative h-64 overflow-hidden">
-                  <Image
-                    src={member.image}
-                    alt={member.name}
-                    width={300}
-                    height={300}
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
-                </div>
                 <div className="p-6">
                   <h3 className="text-xl font-bold mb-2 text-gray-800 dark:text-white">
                     {member.name}

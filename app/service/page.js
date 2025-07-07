@@ -87,25 +87,18 @@ const ServiceCard = ({ service, index }) => {
 			<div className="liquid-glass p-6 lg:p-8 rounded-3xl hover:scale-105 transition-all duration-500 h-full flex flex-col">
 				{/* Icon Header */}
 				<div className="flex items-center gap-4 mb-6">
-					<div className={`p-4 rounded-2xl bg-gradient-to-r ${service.gradient} shadow-lg group-hover:scale-110 transition-transform duration-300`}>
-						<Icon className="w-8 h-8 text-white" />
+					<div className="p-4 rounded-2xl bg-gradient-to-r from-secondary-100 to-accent-100 shadow-lg group-hover:scale-110 transition-transform duration-300">
+						<Icon className="w-8 h-8 text-secondary-600" />
 					</div>
-					<h3 className="text-xl lg:text-2xl font-bold text-deep-secondary group-hover:text-secondary-600 transition-colors font-museomoderno">
+					<h3 className="text-xl lg:text-2xl font-bold text-deep-secondary group-hover:text-secondary-600 transition-colors">
 						{service.title}
 					</h3>
 				</div>
 
 				{/* Description */}
-				<p className="text-deep-primary leading-relaxed font-semibold text-base lg:text-lg flex-grow">
+				<p className="text-deep-primary leading-relaxed font-medium text-base lg:text-lg flex-grow">
 					{service.description}
 				</p>
-
-				{/* Action Arrow */}
-				<div className="mt-6 flex justify-end">
-					<div className="p-2 rounded-full bg-gradient-to-r from-secondary-100 to-accent-100 group-hover:from-secondary-200 group-hover:to-accent-200 transition-all duration-300">
-						<FiArrowRight className="w-5 h-5 text-secondary-600 group-hover:translate-x-1 transition-transform" />
-					</div>
-				</div>
 			</div>
 		</motion.div>
 	);
@@ -113,10 +106,10 @@ const ServiceCard = ({ service, index }) => {
 
 export default function ServicePage() {
 	return (
-		<div className="min-h-screen relative overflow-hidden">
+		<div className="min-h-screen relative overflow-hidden deep-glass-card">
 			{/* Enhanced Background Effects */}
 			<div className="absolute inset-0 pointer-events-none">
-				<div className="absolute inset-0 bg-[linear-gradient(rgba(106,137,167,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(106,137,167,0.03)_1px,transparent_1px)] bg-[size:50px_50px] opacity-60" />
+				<div className="absolute inset-0 bg-[linear-gradient(rgba(106,137,167,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(106,137,167,0.05)_1px,transparent_1px)] bg-[size:40px_40px] opacity-50" />
 				<div className="absolute top-20 left-1/4 w-96 h-96 bg-gradient-to-r from-secondary-300/10 via-accent-400/8 to-secondary-300/10 rounded-full blur-3xl animate-pulse" />
 				<div className="absolute bottom-20 right-1/4 w-80 h-80 bg-gradient-to-r from-accent-300/8 via-secondary-400/6 to-accent-300/8 rounded-full blur-3xl animate-pulse animation-delay-2000" />
 				<div className="absolute top-1/2 left-1/6 w-64 h-64 bg-gradient-to-r from-secondary-200/6 via-accent-300/4 to-secondary-200/6 rounded-full blur-3xl animate-pulse animation-delay-4000" />
@@ -132,7 +125,7 @@ export default function ServicePage() {
 					className="max-w-4xl mx-auto text-center mb-16 lg:mb-20"
 				>
 					<div className="liquid-glass p-8 lg:p-12 rounded-3xl">
-						<h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold mb-6 bg-gradient-to-r from-secondary-600 to-accent-600 bg-clip-text text-transparent font-museomoderno">
+						<h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold mb-6 bg-gradient-to-r from-secondary-600 to-accent-600 bg-clip-text text-transparent">
 							What We Offer
 						</h1>
 						<p className="text-base sm:text-lg lg:text-xl text-deep-primary leading-relaxed font-semibold max-w-3xl mx-auto">
@@ -154,27 +147,6 @@ export default function ServicePage() {
 					))}
 				</motion.div>
 
-				{/* Call to Action */}
-				<motion.div
-					initial={{ opacity: 0, y: 20 }}
-					whileInView={{ opacity: 1, y: 0 }}
-					transition={{ duration: 0.6, delay: 0.3 }}
-					viewport={{ once: true }}
-					className="text-center"
-				>
-					<div className="liquid-glass p-8 lg:p-12 rounded-3xl max-w-3xl mx-auto">
-						<h2 className="text-2xl lg:text-3xl font-bold bg-gradient-to-r from-secondary-600 to-accent-600 bg-clip-text text-transparent mb-4 font-museomoderno">
-							Ready to Transform Your Business?
-						</h2>
-						<p className="text-deep-primary mb-6 font-semibold text-base lg:text-lg">
-							Let's discuss how our expertise can help you achieve your digital goals and drive measurable results.
-						</p>
-						<button className="bg-gradient-to-r from-secondary-600 to-accent-600 text-white px-8 py-4 rounded-full font-bold transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-secondary-400/25 inline-flex items-center gap-2">
-							Start Your Project
-							<FiArrowRight className="w-5 h-5" />
-						</button>
-					</div>
-				</motion.div>
 			</div>
 		</div>
 	);

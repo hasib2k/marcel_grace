@@ -47,7 +47,7 @@ export default function Footer() {
           <div className="lg:col-span-2 flex flex-col gap-4">
             <Link
               href="/"
-              className="text-2xl sm:text-3xl font-bold bg-gradient-to-r from-deep-primary via-deep-secondary to-deep-accent bg-clip-text text-transparent tracking-tight"
+              className="text-2xl sm:text-3xl font-bold bg-gradient-to-r from-secondary-600 to-accent-600 bg-clip-text text-transparent tracking-tight"
             >
               Marcel Grace Infotech
             </Link>
@@ -64,8 +64,9 @@ export default function Footer() {
                 <li key={item}>
                   <Link
                     href={`/${item.toLowerCase()}`}
-                    className="text-deep-secondary hover:text-secondary font-medium text-base transition-colors duration-200"
+                    className="text-deep-secondary hover:text-secondary font-medium text-base transition-all duration-300 hover:translate-x-2 hover:font-semibold group flex items-center gap-2"
                   >
+                    <span className="w-0 h-0.5 bg-gradient-to-r from-secondary-500 to-accent-500 group-hover:w-4 transition-all duration-300"></span>
                     {item}
                   </Link>
                 </li>
@@ -82,8 +83,9 @@ export default function Footer() {
                   <li key={service}>
                     <Link
                       href={`/services/${service.toLowerCase().replace(/\s+/g, '-')}`}
-                      className="text-deep-secondary hover:text-secondary font-medium text-base transition-colors duration-200"
+                      className="text-deep-secondary hover:text-secondary font-medium text-base transition-all duration-300 hover:translate-x-2 hover:font-semibold group flex items-center gap-2"
                     >
+                      <span className="w-0 h-0.5 bg-gradient-to-r from-secondary-500 to-accent-500 group-hover:w-4 transition-all duration-300"></span>
                       {service}
                     </Link>
                   </li>
@@ -116,12 +118,12 @@ export default function Footer() {
                 placeholder="Enter your email"
                 required
                 disabled={isSubmitting}
-                className="glassmorphic px-4 py-3 rounded-xl text-deep-primary placeholder-deep-tertiary focus:outline-none focus:ring-2 focus:ring-secondary/50 disabled:opacity-30 text-base font-medium"
+                className="glassmorphic px-4 py-3 rounded-xl text-deep-primary placeholder-deep-tertiary focus:outline-none focus:ring-2 focus:ring-secondary/50 disabled:opacity-30 text-base font-medium hover:shadow-lg hover:shadow-secondary/20 transition-all duration-300 border border-transparent hover:border-secondary/30"
               />
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="bg-gradient-to-r from-secondary to-accent text-Black px-6 py-3 rounded-xl font-semibold disabled:opacity-50 text-base transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-secondary/25"
+                className="bg-gradient-to-r from-secondary to-accent text-black px-6 py-3 rounded-xl font-semibold disabled:opacity-50 text-base transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-secondary/25 hover:from-secondary-500 hover:to-accent-500 focus:outline-none focus:ring-2 focus:ring-secondary/50 focus:ring-offset-2 focus:ring-offset-transparent"
               >
                 {isSubmitting ? 'Subscribing...' : 'Subscribe'}
               </button>

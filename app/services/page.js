@@ -112,7 +112,7 @@ export default function ServicesPage() {
           className="max-w-4xl mx-auto text-center mb-16 lg:mb-20"
         >
           <div className="liquid-glass p-8 lg:p-12 rounded-3xl">
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold mb-6 bg-gradient-to-r from-secondary-600 to-accent-600 bg-clip-text text-transparent font-museomoderno">
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold mb-6 bg-gradient-to-r from-secondary-600 to-accent-600 bg-clip-text text-transparent">
               Our Services
             </h1>
             <p className="text-base sm:text-lg lg:text-xl text-deep-primary leading-relaxed font-semibold max-w-3xl mx-auto">
@@ -146,7 +146,7 @@ export default function ServicesPage() {
                         <div className="p-3 rounded-2xl bg-white/20 backdrop-blur-sm">
                           <Icon className="w-8 h-8 text-white" />
                         </div>
-                        <h3 className="text-2xl lg:text-3xl font-bold text-white font-museomoderno">
+                        <h3 className="text-2xl lg:text-3xl font-bold text-white">
                           {service.title}
                         </h3>
                       </div>
@@ -174,28 +174,6 @@ export default function ServicesPage() {
               </motion.div>
             );
           })}
-        </motion.div>
-
-        {/* Call to Action */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.3 }}
-          viewport={{ once: true }}
-          className="text-center"
-        >
-          <div className="liquid-glass p-8 lg:p-12 rounded-3xl max-w-4xl mx-auto">
-            <h2 className="text-2xl lg:text-3xl font-bold bg-gradient-to-r from-secondary-600 to-accent-600 bg-clip-text text-transparent mb-4 font-museomoderno">
-              Let's Build the Future Together
-            </h2>
-            <p className="text-deep-primary mb-6 font-semibold text-base lg:text-lg">
-              At Marcel Grace Infotech, we don't just develop software — we develop solutions that work for you. Contact us today to discuss how we can help bring your digital vision to life.
-            </p>
-            <button className="bg-gradient-to-r from-secondary-600 to-accent-600 text-white px-8 py-4 rounded-full font-bold transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-secondary-400/25 inline-flex items-center gap-2">
-              Get Started
-              <FiArrowRight className="w-5 h-5" />
-            </button>
-          </div>
         </motion.div>
       </div>
     </div>

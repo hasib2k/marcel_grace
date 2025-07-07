@@ -1,6 +1,5 @@
 'use client';
 import { motion } from 'framer-motion';
-import Image from 'next/image';
 import Link from 'next/link';
 
 export default function WebDevelopmentPage() {
@@ -201,13 +200,9 @@ export default function WebDevelopmentPage() {
               className="relative"
             >
               <div className="relative bg-white/10 backdrop-blur-sm rounded-3xl p-8 border border-white/20">
-                <Image
-                  src="/assets/hero.svg"
-                  alt="Web Development Technologies"
-                  width={500}
-                  height={400}
-                  className="w-full h-auto rounded-2xl"
-                />
+                <div className="w-full h-64 rounded-2xl bg-gradient-to-br from-secondary-400 to-accent-500 flex items-center justify-center">
+                  <span className="text-2xl font-bold text-white">Web Development</span>
+                </div>
               </div>
             </motion.div>
           </div>

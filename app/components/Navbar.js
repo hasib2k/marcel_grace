@@ -59,7 +59,7 @@ export default function Navbar() {
                 style={{ background: 'transparent' }}
               />
             </div>
-            <span className="text-lg md:text-xl font-bold bg-gradient-to-r from-secondary-600 to-accent-600 bg-clip-text text-transparent font-museomoderno">
+            <span className="text-lg md:text-xl font-bold bg-gradient-to-r from-secondary-600 to-accent-600 bg-clip-text text-transparent">
               Marcel Grace Infotech
             </span>
           </Link>

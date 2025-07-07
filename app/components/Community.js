@@ -79,22 +79,33 @@ export default function Community() {
                   hidden: { opacity: 0, y: 20 },
                   visible: { opacity: 1, y: 0 }
                 }}
-                className="deep-glass-card p-6 rounded-2xl text-center group hover:scale-105 transition-all duration-300 h-full flex flex-col"
+                className="deep-glass-card p-6 rounded-2xl text-center group hover:scale-105 hover:shadow-xl hover:shadow-secondary/20 transition-all duration-500 h-full flex flex-col cursor-pointer relative overflow-hidden border border-transparent hover:border-secondary/30"
               >
-                <div className="mb-4 flex items-center justify-center">
-                  <div className={`p-3 rounded-xl bg-gradient-to-r ${stat.gradient} shadow-lg`}>
-                    <Icon className="w-6 h-6 text-Black" />
+                {/* Hover Background Effect */}
+                <div className="absolute inset-0 bg-gradient-to-br from-secondary/5 via-accent/5 to-primary/5 opacity-0 group-hover:opacity-100 transition-all duration-500 rounded-2xl" />
+                
+                {/* Animated Border Glow */}
+                <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-secondary/20 via-accent/20 to-primary/20 opacity-0 group-hover:opacity-100 transition-all duration-500 blur-sm" />
+                
+                <div className="relative z-10">
+                  <div className="mb-4 flex items-center justify-center">
+                    <div className={`p-3 rounded-xl bg-gradient-to-r ${stat.gradient} shadow-lg group-hover:shadow-xl group-hover:scale-110 transition-all duration-300`}>
+                      <Icon className="w-6 h-6 text-black group-hover:text-black transition-colors duration-300" />
+                    </div>
+                  </div>
+                  <div className="text-3xl font-bold bg-gradient-to-r from-secondary-600 via-accent-600 to-primary-600 bg-clip-text text-transparent mb-2 group-hover:from-secondary-500 group-hover:via-accent-500 group-hover:to-primary-500 transition-all duration-300">
+                    {stat.number}
+                  </div>
+                  <div className="text-lg font-bold text-slate-800 mb-2 group-hover:text-secondary-700 group-hover:scale-105 transition-all duration-300">
+                    {stat.label}
+                  </div>
+                  <div className="text-slate-600 text-sm leading-relaxed font-semibold mt-auto group-hover:text-slate-700 transition-colors duration-300">
+                    {stat.description}
                   </div>
                 </div>
-                <div className="text-3xl font-bold bg-gradient-to-r from-slate-700 via-slate-600 to-slate-500 bg-clip-text text-transparent mb-2">
-                  {stat.number}
-                </div>
-                <div className="text-lg font-bold text-slate-800 mb-2 group-hover:text-slate-600 transition-colors">
-                  {stat.label}
-                </div>
-                <div className="text-slate-600 text-sm leading-relaxed font-semibold mt-auto">
-                  {stat.description}
-                </div>
+                
+                {/* Subtle Shine Effect */}
+                <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-in-out" />
               </motion.div>
             );
           })}

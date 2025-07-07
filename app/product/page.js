@@ -108,26 +108,26 @@ const ProductCard = ({ product, index }) => {
 			variants={itemVariants}
 			className="group relative h-full"
 		>
-			<div className="liquid-glass rounded-3xl overflow-hidden hover:scale-[1.02] transition-all duration-500 h-full flex flex-col">
-				{/* Header with Gradient Background */}
-				<div className={`relative bg-gradient-to-r ${product.gradient} p-6 lg:p-8`}>
+			<div className="bg-white/60 backdrop-blur-sm border border-gray-200/30 rounded-3xl overflow-hidden hover:scale-[1.02] transition-all duration-500 h-full flex flex-col shadow-lg hover:shadow-xl">
+				{/* Header with Soft Gradient Background */}
+				<div className="relative bg-gradient-to-r from-gray-100 to-gray-200 p-6 lg:p-8">
 					{/* Background Effects */}
-					<div className="absolute inset-0 bg-white/10 backdrop-blur-sm"></div>
+					<div className="absolute inset-0 bg-white/20 backdrop-blur-sm"></div>
 					<div className="relative z-10">
 						<div className="flex items-start gap-4 mb-4">
-							<div className="text-4xl lg:text-5xl filter drop-shadow-lg">
+							<div className="text-4xl lg:text-5xl filter drop-shadow-sm">
 								{product.emoji}
 							</div>
 							<div className="flex-1">
-								<h3 className="text-2xl lg:text-3xl font-bold text-white mb-2 font-museomoderno">
+								<h3 className="text-2xl lg:text-3xl font-bold text-gray-800 mb-2">
 									{product.title}
 								</h3>
-								<p className="text-white/90 font-semibold text-base lg:text-lg">
+								<p className="text-gray-600 font-semibold text-base lg:text-lg">
 									{product.subtitle}
 								</p>
 							</div>
 						</div>
-						<p className="text-white/85 leading-relaxed font-medium text-sm lg:text-base">
+						<p className="text-gray-700 leading-relaxed font-medium text-sm lg:text-base">
 							{product.description}
 						</p>
 					</div>
@@ -136,26 +136,18 @@ const ProductCard = ({ product, index }) => {
 				{/* Content Section */}
 				<div className="p-6 lg:p-8 flex-grow flex flex-col">
 					<div className="mb-6">
-						<h4 className="font-bold text-lg lg:text-xl mb-4 text-deep-secondary flex items-center gap-2">
-							<FiStar className="w-5 h-5 text-secondary-600" />
+						<h4 className="font-bold text-lg lg:text-xl mb-4 text-gray-700 flex items-center gap-2">
+							<FiStar className="w-5 h-5 text-gray-500" />
 							Key Features
 						</h4>
 						<div className="space-y-3">
 							{product.features.map((feature, idx) => (
-								<div key={idx} className="deep-glass-card p-3 rounded-xl flex items-center gap-3 group/feature hover:scale-105 transition-all duration-300">
-									<FiCheck className="w-4 h-4 text-secondary-600 group-hover/feature:text-accent-600 transition-colors flex-shrink-0" />
-									<span className="text-deep-primary font-semibold text-sm lg:text-base">{feature}</span>
+								<div key={idx} className="bg-gray-50/80 border border-gray-200/50 p-3 rounded-xl flex items-center gap-3 group/feature hover:bg-gray-100/80 hover:scale-105 transition-all duration-300">
+									<FiCheck className="w-4 h-4 text-gray-500 group-hover/feature:text-gray-600 transition-colors flex-shrink-0" />
+									<span className="text-gray-700 font-medium text-sm lg:text-base">{feature}</span>
 								</div>
 							))}
 						</div>
-					</div>
-
-					{/* CTA Button */}
-					<div className="mt-auto pt-4">
-						<button className="w-full bg-gradient-to-r from-secondary-600 to-accent-600 text-white px-6 py-3 rounded-full font-bold transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-secondary-400/25 flex items-center justify-center gap-2 group/btn">
-							Learn More
-							<FiArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
-						</button>
 					</div>
 				</div>
 			</div>
@@ -183,11 +175,11 @@ export default function ProductPage() {
 					transition={{ duration: 0.6 }}
 					className="max-w-4xl mx-auto text-center mb-16 lg:mb-20"
 				>
-					<div className="liquid-glass p-8 lg:p-12 rounded-3xl">
-						<h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold mb-6 bg-gradient-to-r from-secondary-600 to-accent-600 bg-clip-text text-transparent font-museomoderno">
+					<div className="bg-white/60 backdrop-blur-sm border border-gray-200/30 p-8 lg:p-12 rounded-3xl shadow-lg">
+						<h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold mb-6 bg-gradient-to-r from-gray-700 to-gray-600 bg-clip-text text-transparent">
 							Our Products
 						</h1>
-						<p className="text-base sm:text-lg lg:text-xl text-deep-primary leading-relaxed font-semibold max-w-3xl mx-auto">
+						<p className="text-base sm:text-lg lg:text-xl text-gray-700 leading-relaxed font-semibold max-w-3xl mx-auto">
 							At Marcel Grace Infotech, we don't just build for clients — we build for
 							the future. Our in-house products are designed to solve real-world
 							problems with smart, scalable, and user-friendly technology.
@@ -208,27 +200,6 @@ export default function ProductPage() {
 					))}
 				</motion.div>
 
-				{/* Call to Action */}
-				<motion.div
-					initial={{ opacity: 0, y: 20 }}
-					whileInView={{ opacity: 1, y: 0 }}
-					transition={{ duration: 0.6, delay: 0.3 }}
-					viewport={{ once: true }}
-					className="text-center mt-16 lg:mt-20"
-				>
-					<div className="liquid-glass p-8 lg:p-12 rounded-3xl max-w-3xl mx-auto">
-						<h2 className="text-2xl lg:text-3xl font-bold bg-gradient-to-r from-secondary-600 to-accent-600 bg-clip-text text-transparent mb-4 font-museomoderno">
-							Ready to Transform Your Business?
-						</h2>
-						<p className="text-deep-primary mb-6 font-semibold text-base lg:text-lg">
-							Discover how our innovative products can streamline your operations and drive growth.
-						</p>
-						<button className="bg-gradient-to-r from-secondary-600 to-accent-600 text-white px-8 py-4 rounded-full font-bold transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-secondary-400/25 inline-flex items-center gap-2">
-							Get Started Today
-							<FiArrowRight className="w-5 h-5" />
-						</button>
-					</div>
-				</motion.div>
 			</div>
 		</div>
 	);

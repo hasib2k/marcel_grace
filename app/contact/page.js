@@ -26,7 +26,7 @@ export default function ContactPage() {
           transition={{ duration: 0.5 }}
           className="max-w-3xl mx-auto text-center mb-20"
         >
-          <h1 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-deep-primary via-deep-secondary to-deep-accent bg-clip-text text-transparent">
+          <h1 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-deep-primary via-deep-secondary to-deep-accent bg-clip-text">
             Let's Build Something Great Together
           </h1>
           <p className="text-xl text-deep-primary leading-relaxed font-medium">
@@ -172,7 +172,7 @@ export default function ContactPage() {
                 <button
                   type="submit"
                   className="w-full px-8 py-4 bg-gradient-to-r from-secondary to-accent 
-                           text-white rounded-xl font-semibold hover:scale-105
+                           text-black rounded-xl font-semibold hover:scale-105
                            transition-all duration-300 shadow-lg hover:shadow-lg hover:shadow-secondary/25"
                 >
                   Send Message

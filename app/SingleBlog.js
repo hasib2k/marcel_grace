@@ -2,7 +2,6 @@
 
 import { motion } from 'framer-motion';
 import Link from 'next/link';
-import Image from 'next/image';
 import { FiArrowRight, FiCalendar } from 'react-icons/fi';
 
 export default function SingleBlog({ blog }) {
@@ -26,21 +25,6 @@ export default function SingleBlog({ blog }) {
               >
                 {blog.category}
               </motion.span>
-            </div>
-            
-            {/* Image with hover effect */}
-            <div className="relative h-full w-full">
-              <div className="relative w-full h-full transform transition-transform duration-300 group-hover:scale-105">
-                <Image
-                  src={`/assets/blog/${blog.image.split('/').pop()}`}
-                  alt={blog.title}
-                  fill
-                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                  priority={true}
-                  className="object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/50" />
-              </div>
             </div>
           </div>
 
