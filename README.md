@@ -241,7 +241,7 @@ The project can be deployed to any platform that supports Next.js static sites.
 ## 📧 Contact
 
 **Marcel Grace Infotech**
-- Email: info@marcelgrace.com
+- Email: info.marcelgrce@gmail.com
 - Phone: +880 170 6776 711
 - Location: Dhaka, Bangladesh
 - Website: [https://marcelgrace.com](https://marcelgrace.com)

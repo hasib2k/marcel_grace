@@ -113,7 +113,7 @@ const process = [
 
 export default function Services() {
   return (
-    <main className="min-h-screen bg-dark-950 pt-20 lg:pt-24">
+    <main className="min-h-screen bg-black pt-20 lg:pt-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20">
         {/* Header */}
         <div className="text-center mb-12 sm:mb-16">

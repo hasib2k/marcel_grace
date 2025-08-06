@@ -1,5 +1,5 @@
 import Hero from './components/Hero';
-import About from './components/About';
+import About from './components/About_new';
 import FeaturedProjects from './components/FeaturedProjects';
 import FeaturedServices from './components/FeaturedAITools';
 import Contact from './components/Contact';

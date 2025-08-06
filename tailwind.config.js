@@ -147,8 +147,7 @@ module.exports = {
         },
       },
       fontFamily: {
-        sans: ['Inter', 'ui-sans-serif', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
-        inter: ['Inter', 'sans-serif'],
+        sans: ['Segoe UI', 'Microsoft Sans Serif', 'Segoe UI Variable', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Tahoma', 'Arial', 'sans-serif'],
       },
       boxShadow: {
         'glass': '0 8px 32px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.1)',

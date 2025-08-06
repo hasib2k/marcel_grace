@@ -2,17 +2,18 @@
 
 import { motion } from 'framer-motion';
 import Link from 'next/link';
-import { FiMail, FiPhone, FiGithub, FiLinkedin, FiArrowRight, FiMessageCircle } from 'react-icons/fi';
-import { SiTelegram, SiWhatsapp } from 'react-icons/si';
+import { FiMail, FiPhone, FiLinkedin, FiArrowRight, FiMessageCircle } from 'react-icons/fi';
+import { SiTelegram, SiWhatsapp, SiFacebook, SiInstagram } from 'react-icons/si';
 
 export default function Contact() {
   return (
-    <section className="relative py-20 overflow-hidden">
+    <section className="relative py-20 overflow-hidden bg-black">
       {/* Background Effects */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute inset-0 bg-[linear-gradient(rgba(106,137,167,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(106,137,167,0.03)_1px,transparent_1px)] bg-[size:40px_40px] opacity-60" />
-        <div className="absolute top-1/3 left-1/4 w-96 h-96 bg-gradient-to-r from-secondary-300/10 via-accent-400/8 to-secondary-300/10 rounded-full blur-3xl animate-pulse" />
-        <div className="absolute bottom-1/4 right-1/6 w-80 h-80 bg-gradient-to-r from-accent-200/8 via-secondary-300/6 to-accent-200/8 rounded-full blur-3xl animate-pulse animation-delay-2000" />
+        <div className="absolute inset-0 bg-[linear-gradient(rgba(16,185,129,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(16,185,129,0.03)_1px,transparent_1px)] bg-[size:40px_40px] opacity-60" />
+        <div className="absolute top-1/3 left-1/4 w-96 h-96 bg-gradient-to-r from-emerald-400/10 via-cyan-400/8 to-emerald-400/10 rounded-full blur-3xl animate-pulse" />
+        <div className="absolute bottom-1/4 right-1/6 w-80 h-80 bg-gradient-to-r from-cyan-400/8 via-emerald-400/6 to-cyan-400/8 rounded-full blur-3xl animate-pulse animation-delay-2000" />
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-32 h-32 bg-emerald-400/5 rounded-full blur-2xl animate-pulse animation-delay-4000" />
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
@@ -24,55 +25,78 @@ export default function Contact() {
             viewport={{ once: true }}
             className="mb-16"
           >
-            <div className="liquid-glass p-8 lg:p-12 rounded-3xl max-w-4xl mx-auto mb-12">
-              <h2 className="text-3xl lg:text-4xl xl:text-5xl font-bold mb-6 bg-gradient-to-r from-secondary-600 to-accent-600 bg-clip-text text-transparent">
-                Get In Touch
-              </h2>
-              <p className="text-base lg:text-lg xl:text-xl text-deep-primary leading-relaxed font-semibold max-w-3xl mx-auto">
-                Ready to start your next project? Let's discuss how we can bring your vision to life with cutting-edge technology solutions.
-              </p>
+            <div className="relative overflow-hidden rounded-3xl bg-white/5 backdrop-blur-sm border border-white/10 p-8 lg:p-12 max-w-4xl mx-auto mb-12">
+              {/* Background gradient */}
+              <div className="absolute inset-0 bg-gradient-to-br from-emerald-400/5 via-cyan-400/5 to-emerald-400/5"></div>
+              
+              <div className="relative">
+                <h2 className="text-3xl lg:text-4xl xl:text-5xl font-bold mb-6 bg-gradient-to-r from-emerald-400 via-cyan-400 to-emerald-400 bg-clip-text text-transparent">
+                  Get In Touch
+                </h2>
+                <p className="text-base lg:text-lg xl:text-xl text-gray-300 leading-relaxed max-w-3xl mx-auto">
+                  Ready to start your next project? Let's discuss how we can bring your vision to life with cutting-edge technology solutions.
+                </p>
+              </div>
             </div>
             
             {/* Contact Info */}
-            <div className="liquid-glass p-8 max-w-4xl mx-auto">
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <div className="deep-glass-card p-6 rounded-2xl hover:scale-105 transition-all duration-300 group">
-                  <div className="flex flex-col items-center text-center">
-                    <div className="p-3 rounded-2xl bg-gradient-to-r from-emerald-400 to-cyan-400 shadow-lg mb-4">
+            <div className="relative overflow-hidden rounded-3xl bg-white/5 backdrop-blur-sm border border-white/10 p-8 max-w-4xl mx-auto">
+              {/* Background gradient */}
+              <div className="absolute inset-0 bg-gradient-to-br from-emerald-400/5 via-cyan-400/5 to-emerald-400/5"></div>
+              
+              <div className="relative grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div className="group relative overflow-hidden rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10 hover:border-emerald-400/50 p-6 transition-all duration-500 hover:scale-105 hover:shadow-xl hover:shadow-emerald-400/20">
+                  {/* Gradient overlay on hover */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-emerald-400/0 via-cyan-400/0 to-emerald-400/0 group-hover:from-emerald-400/10 group-hover:via-cyan-400/5 group-hover:to-emerald-400/10 transition-all duration-500 rounded-2xl"></div>
+                  
+                  <div className="relative flex flex-col items-center text-center">
+                    <div className="p-3 rounded-2xl bg-gradient-to-r from-emerald-400 to-cyan-400 shadow-lg group-hover:shadow-emerald-400/30 transition-all duration-500 mb-4">
                       <FiMail className="text-white w-6 h-6" />
                     </div>
-                    <h3 className="text-lg font-bold text-deep-secondary mb-2 group-hover:text-secondary-600 transition-colors">Email Us</h3>
+                    <h3 className="text-lg font-bold text-white mb-2 group-hover:text-emerald-400 transition-colors duration-300">Email Us</h3>
                     <Link
-                      href="mailto:info@marcelgrace.com"
-                      className="text-deep-primary hover:text-accent-600 transition-colors font-semibold"
+                      href="mailto:info.marcelgrce@gmail.com"
+                      className="text-gray-300 hover:text-emerald-400 transition-colors duration-300 font-medium"
                     >
-                      info@marcelgrace.com
+                      info.marcelgrce@gmail.com
                     </Link>
+                    {/* Decorative bottom border */}
+                    <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-emerald-400 to-cyan-400 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
                   </div>
                 </div>
                 
-                <div className="deep-glass-card p-6 rounded-2xl hover:scale-105 transition-all duration-300 group">
-                  <div className="flex flex-col items-center text-center">
-                    <div className="p-3 rounded-2xl bg-gradient-to-r from-accent-500 to-secondary-600 shadow-lg mb-4">
+                <div className="group relative overflow-hidden rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10 hover:border-emerald-400/50 p-6 transition-all duration-500 hover:scale-105 hover:shadow-xl hover:shadow-emerald-400/20">
+                  {/* Gradient overlay on hover */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-emerald-400/0 via-cyan-400/0 to-emerald-400/0 group-hover:from-emerald-400/10 group-hover:via-cyan-400/5 group-hover:to-emerald-400/10 transition-all duration-500 rounded-2xl"></div>
+                  
+                  <div className="relative flex flex-col items-center text-center">
+                    <div className="p-3 rounded-2xl bg-gradient-to-r from-emerald-400 to-cyan-400 shadow-lg group-hover:shadow-emerald-400/30 transition-all duration-500 mb-4">
                       <FiPhone className="text-white w-6 h-6" />
                     </div>
-                    <h3 className="text-lg font-bold text-deep-secondary mb-2 group-hover:text-secondary-600 transition-colors">Call Us</h3>
+                    <h3 className="text-lg font-bold text-white mb-2 group-hover:text-emerald-400 transition-colors duration-300">Call Us</h3>
                     <Link
                       href="tel:+8801706776711"
-                      className="text-deep-primary hover:text-accent-600 transition-colors font-semibold"
+                      className="text-gray-300 hover:text-emerald-400 transition-colors duration-300 font-medium"
                     >
                       +880 170 677 6711
                     </Link>
+                    {/* Decorative bottom border */}
+                    <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-emerald-400 to-cyan-400 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
                   </div>
                 </div>
 
-                <div className="deep-glass-card p-6 rounded-2xl hover:scale-105 transition-all duration-300 group md:col-span-2 lg:col-span-1">
-                  <div className="flex flex-col items-center text-center">
-                    <div className="p-3 rounded-2xl bg-gradient-to-r from-emerald-400 to-cyan-400 shadow-lg mb-4">
+                <div className="group relative overflow-hidden rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10 hover:border-emerald-400/50 p-6 transition-all duration-500 hover:scale-105 hover:shadow-xl hover:shadow-emerald-400/20 md:col-span-2 lg:col-span-1">
+                  {/* Gradient overlay on hover */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-emerald-400/0 via-cyan-400/0 to-emerald-400/0 group-hover:from-emerald-400/10 group-hover:via-cyan-400/5 group-hover:to-emerald-400/10 transition-all duration-500 rounded-2xl"></div>
+                  
+                  <div className="relative flex flex-col items-center text-center">
+                    <div className="p-3 rounded-2xl bg-gradient-to-r from-emerald-400 to-cyan-400 shadow-lg group-hover:shadow-emerald-400/30 transition-all duration-500 mb-4">
                       <FiMessageCircle className="text-white w-6 h-6" />
                     </div>
-                    <h3 className="text-lg font-bold text-deep-secondary mb-2 group-hover:text-secondary-600 transition-colors">Live Chat</h3>
-                    <span className="text-deep-primary font-semibold">Available 24/7</span>
+                    <h3 className="text-lg font-bold text-white mb-2 group-hover:text-emerald-400 transition-colors duration-300">Live Chat</h3>
+                    <span className="text-gray-300 font-medium">Available 24/7</span>
+                    {/* Decorative bottom border */}
+                    <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-emerald-400 to-cyan-400 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
                   </div>
                 </div>
               </div>
@@ -87,37 +111,47 @@ export default function Contact() {
             viewport={{ once: true }}
             className="mb-12"
           >
-            <div className="liquid-glass p-8 max-w-2xl mx-auto">
-              <h3 className="text-xl lg:text-2xl font-bold text-deep-secondary mb-6">Connect With Us</h3>
-              <div className="flex justify-center gap-6">
-                <Link
-                  href="https://github.com/marcelgrace"
-                  target="_blank"
-                  className="deep-glass-card p-4 rounded-2xl hover:scale-110 transition-all duration-300 group"
-                >
-                  <FiGithub className="w-6 h-6 text-deep-secondary group-hover:text-secondary-600 transition-colors" />
-                </Link>
-                <Link
-                  href="https://linkedin.com/company/marcelgrace"
-                  target="_blank"
-                  className="deep-glass-card p-4 rounded-2xl hover:scale-110 transition-all duration-300 group"
-                >
-                  <FiLinkedin className="w-6 h-6 text-deep-secondary group-hover:text-secondary-600 transition-colors" />
-                </Link>
-                <Link
-                  href="https://t.me/marcelgrace"
-                  target="_blank"
-                  className="deep-glass-card p-4 rounded-2xl hover:scale-110 transition-all duration-300 group"
-                >
-                  <SiTelegram className="w-6 h-6 text-deep-secondary group-hover:text-secondary-600 transition-colors" />
-                </Link>
-                <Link
-                  href="https://wa.me/8801706776711"
-                  target="_blank"
-                  className="deep-glass-card p-4 rounded-2xl hover:scale-110 transition-all duration-300 group"
-                >
-                  <SiWhatsapp className="w-6 h-6 text-deep-secondary group-hover:text-secondary-600 transition-colors" />
-                </Link>
+            <div className="relative overflow-hidden rounded-3xl bg-white/5 backdrop-blur-sm border border-white/10 p-8 max-w-2xl mx-auto">
+              {/* Background gradient */}
+              <div className="absolute inset-0 bg-gradient-to-br from-emerald-400/5 via-cyan-400/5 to-emerald-400/5"></div>
+              
+              <div className="relative">
+                <h3 className="text-xl lg:text-2xl font-bold text-white mb-6">Connect With Us</h3>
+                <div className="flex justify-center gap-6">
+                  <Link
+                    href="https://www.facebook.com/MarcelGraceInfotech"
+                    target="_blank"
+                    className="group p-4 rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10 hover:border-emerald-400/50 hover:scale-110 transition-all duration-300 hover:shadow-lg hover:shadow-emerald-400/20"
+                  >
+                    <SiFacebook className="w-6 h-6 text-gray-300 group-hover:text-emerald-400 transition-colors duration-300" />
+                  </Link>
+                  <Link
+                    href="https://linkedin.com/company/marcelgrace"
+                    target="_blank"
+                    className="group p-4 rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10 hover:border-emerald-400/50 hover:scale-110 transition-all duration-300 hover:shadow-lg hover:shadow-emerald-400/20"
+                  >
+                    <FiLinkedin className="w-6 h-6 text-gray-300 group-hover:text-emerald-400 transition-colors duration-300" />
+                  </Link>
+                  <Link
+                    href="https://www.instagram.com/marcel_grace_infotech"
+                    target="_blank"
+                    className="group p-4 rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10 hover:border-emerald-400/50 hover:scale-110 transition-all duration-300 hover:shadow-lg hover:shadow-emerald-400/20"
+                  >
+                    <SiInstagram className="w-6 h-6 text-gray-300 group-hover:text-emerald-400 transition-colors duration-300" />
+                  </Link>
+                  <Link
+                    href="mailto:info.marcelgrce@gmail.com"
+                    className="group p-4 rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10 hover:border-emerald-400/50 hover:scale-110 transition-all duration-300 hover:shadow-lg hover:shadow-emerald-400/20"
+                  >
+                    <FiMail className="w-6 h-6 text-gray-300 group-hover:text-emerald-400 transition-colors duration-300" />
+                  </Link>
+                  <Link
+                    href="tel:+8801706776711"
+                    className="group p-4 rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10 hover:border-emerald-400/50 hover:scale-110 transition-all duration-300 hover:shadow-lg hover:shadow-emerald-400/20"
+                  >
+                    <FiPhone className="w-6 h-6 text-gray-300 group-hover:text-emerald-400 transition-colors duration-300" />
+                  </Link>
+                </div>
               </div>
             </div>
           </motion.div>
@@ -131,9 +165,9 @@ export default function Contact() {
           >
             <Link
               href="/contact"
-              className="inline-flex items-center gap-3 bg-gradient-to-r from-emerald-400 to-cyan-400 text-white px-8 py-4 rounded-xl font-semibold hover:from-emerald-500 hover:to-cyan-500 hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-emerald-400/25 text-lg"
+              className="group inline-flex items-center gap-3 bg-gradient-to-r from-emerald-400 to-cyan-400 text-white px-6 py-2.5 rounded-xl font-semibold hover:from-emerald-500 hover:to-cyan-500 hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-emerald-400/40 border border-emerald-400/20 hover:border-emerald-400/40"
             >
-              <FiArrowRight size={20} />
+              <FiArrowRight size={18} className="group-hover:translate-x-1 transition-transform duration-300" />
               Start Your Project
             </Link>
           </motion.div>

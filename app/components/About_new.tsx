@@ -19,7 +19,7 @@ export default function About() {
   ];
 
   return (
-    <section id="about" className="py-20 bg-dark/50">
+    <section id="about" className="py-20 bg-black">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Left side - Image */}
@@ -28,15 +28,13 @@ export default function About() {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="relative"
+            className="relative group"
           >
-            <div className="relative h-96 lg:h-[500px]">
-              <div className="absolute inset-0 bg-gradient-to-br from-emerald-400/20 to-cyan-400/20 rounded-lg"></div>
-              <Image
-                src="/assets/about_company.jpg"
+            <div className="relative h-64 sm:h-80 md:h-96 lg:h-[500px] w-full border-2 border-gray-700 rounded-lg overflow-hidden transition-all duration-300 group-hover:border-emerald-400/50 group-hover:shadow-lg group-hover:shadow-emerald-400/20">
+              <img
+                src="/assets/banner.jpeg"
                 alt="Marcel Grace Team"
-                fill
-                className="rounded-lg object-cover"
+                className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
               />
             </div>
           </motion.div>

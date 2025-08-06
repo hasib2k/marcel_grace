@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 
 export default function Contact() {
   return (
-    <main className="min-h-screen bg-dark-950 pt-20 lg:pt-24">
+    <main className="min-h-screen bg-black pt-20 lg:pt-24">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20">
         <div className="text-center mb-12 sm:mb-16">
           <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4 sm:mb-6">
@@ -38,10 +38,10 @@ export default function Contact() {
                   <div>
                     <div className="text-gray-400 text-sm">Email</div>
                     <Link
-                      href="mailto:info@marcelgrace.com"
+                      href="mailto:info.marcelgrce@gmail.com"
                       className="text-white hover:text-emerald-400 transition-colors"
                     >
-                      info@marcelgrace.com
+                      info.marcelgrce@gmail.com
                     </Link>
                   </div>
                 </div>
@@ -119,7 +119,7 @@ export default function Contact() {
               
               <div className="space-y-4">
                 <Link
-                  href="mailto:info@marcelgrace.com"
+                  href="mailto:info.marcelgrce@gmail.com"
                   className="btn-primary w-full flex items-center justify-center gap-2"
                 >
                   <FiMail size={18} />

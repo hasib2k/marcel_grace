@@ -2,15 +2,13 @@
 
 import { motion } from 'framer-motion';
 import Link from 'next/link';
-import { FiExternalLink, FiGithub, FiArrowRight } from 'react-icons/fi';
+import { FiExternalLink, FiArrowRight } from 'react-icons/fi';
 
 const projects = [
   {
     id: 1,
     title: 'E-Commerce Platform',
     description: 'A comprehensive e-commerce solution built for a retail chain with 50+ stores. Features include inventory management, multi-vendor support, advanced analytics, payment gateway integration, and mobile-responsive design. The platform processes over 10,000 transactions daily.',
-    codeUrl: 'https://github.com/marcelgrace/ecommerce-platform',
-    liveUrl: 'https://demo-ecommerce.marcelgrace.com/',
     technologies: ['Next.js', 'TypeScript', 'PostgreSQL', 'Stripe', 'AWS'],
     gradient: 'from-emerald-400 to-cyan-400',
   },
@@ -18,8 +16,6 @@ const projects = [
     id: 2,
     title: 'Healthcare Management System',
     description: 'A complete healthcare management solution for hospitals and clinics. Includes patient records, appointment scheduling, billing, prescription management, and telemedicine capabilities. Serves over 25 healthcare facilities with 99.9% uptime.',
-    codeUrl: 'https://github.com/marcelgrace/healthcare-system',
-    liveUrl: 'https://healthcare-demo.marcelgrace.com/',
     technologies: ['React', 'Node.js', 'MongoDB', 'Socket.io', 'Docker'],
     gradient: 'from-emerald-400 to-cyan-400',
   },
@@ -27,8 +23,6 @@ const projects = [
     id: 3,
     title: 'Financial Analytics Dashboard',
     description: 'Real-time financial analytics and reporting platform for investment firms. Features advanced charting, portfolio management, risk assessment, and automated reporting. Handles millions of data points with sub-second response times.',
-    codeUrl: 'https://github.com/marcelgrace/financial-dashboard',
-    liveUrl: 'https://finance-demo.marcelgrace.com/',
     technologies: ['Vue.js', 'Python', 'Redis', 'Chart.js', 'Azure'],
     gradient: 'from-emerald-400 to-cyan-400',
   },
@@ -36,12 +30,13 @@ const projects = [
 
 export default function FeaturedProjects() {
   return (
-    <section className="relative py-16 sm:py-20 overflow-hidden">
+    <section className="relative py-16 sm:py-20 overflow-hidden bg-black">
       {/* Background Effects */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute inset-0 bg-[linear-gradient(rgba(106,137,167,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(106,137,167,0.03)_1px,transparent_1px)] bg-[size:40px_40px] opacity-60" />
-        <div className="absolute top-1/4 right-1/4 w-64 sm:w-96 h-64 sm:h-96 bg-gradient-to-r from-secondary-300/10 via-accent-400/8 to-secondary-300/10 rounded-full blur-3xl animate-pulse" />
-        <div className="absolute bottom-1/3 left-1/6 w-64 sm:w-80 h-64 sm:h-80 bg-gradient-to-r from-accent-200/8 via-secondary-300/6 to-accent-200/8 rounded-full blur-3xl animate-pulse animation-delay-2000" />
+        <div className="absolute inset-0 bg-[linear-gradient(rgba(16,185,129,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(16,185,129,0.03)_1px,transparent_1px)] bg-[size:40px_40px] opacity-60" />
+        <div className="absolute top-1/4 right-1/4 w-64 sm:w-96 h-64 sm:h-96 bg-gradient-to-r from-emerald-400/10 via-cyan-400/8 to-emerald-400/10 rounded-full blur-3xl animate-pulse" />
+        <div className="absolute bottom-1/3 left-1/6 w-64 sm:w-80 h-64 sm:h-80 bg-gradient-to-r from-cyan-400/8 via-emerald-400/6 to-cyan-400/8 rounded-full blur-3xl animate-pulse animation-delay-2000" />
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-32 h-32 bg-emerald-400/5 rounded-full blur-2xl animate-pulse animation-delay-4000" />
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
@@ -53,19 +48,24 @@ export default function FeaturedProjects() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <div className="liquid-glass p-8 lg:p-12 rounded-3xl max-w-4xl mx-auto">
-            <h2 className="text-3xl lg:text-4xl xl:text-5xl font-bold mb-6 bg-gradient-to-r from-secondary-600 to-accent-600 bg-clip-text text-transparent">
-              Featured Projects
-            </h2>
-            <p className="text-base lg:text-lg xl:text-xl text-deep-primary leading-relaxed font-semibold max-w-3xl mx-auto">
-              Showcasing our latest software solutions that have transformed businesses 
-              and delivered exceptional results for our clients across various industries.
-            </p>
+          <div className="relative overflow-hidden rounded-3xl bg-white/5 backdrop-blur-sm border border-white/10 p-8 lg:p-12 max-w-4xl mx-auto">
+            {/* Background gradient */}
+            <div className="absolute inset-0 bg-gradient-to-br from-emerald-400/5 via-cyan-400/5 to-emerald-400/5"></div>
+            
+            <div className="relative">
+              <h2 className="text-3xl lg:text-4xl xl:text-5xl font-bold mb-6 bg-gradient-to-r from-emerald-400 via-cyan-400 to-emerald-400 bg-clip-text text-transparent">
+                Featured Projects
+              </h2>
+              <p className="text-base lg:text-lg xl:text-xl text-gray-300 leading-relaxed max-w-3xl mx-auto">
+                Showcasing our latest software solutions that have transformed businesses 
+                and delivered exceptional results for our clients across various industries.
+              </p>
+            </div>
           </div>
         </motion.div>
 
         {/* Projects Grid */}
-        <div className="space-y-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-8">
           {projects.map((project, index) => (
             <motion.div
               key={project.id}
@@ -73,64 +73,43 @@ export default function FeaturedProjects() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: index * 0.2 }}
               viewport={{ once: true }}
-              className="liquid-glass p-8 hover:scale-[1.02] transition-all duration-500 rounded-3xl group"
+              className="group relative overflow-hidden rounded-3xl bg-white/5 backdrop-blur-sm border border-white/10 hover:border-emerald-400/50 transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl hover:shadow-emerald-400/20"
             >
-              <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-                <div className="lg:col-span-2">
-                  <div className="flex items-start gap-4 mb-6">
-                    <div className={`p-3 rounded-2xl bg-gradient-to-r ${project.gradient} shadow-lg`}>
-                      <FiExternalLink className="w-6 h-6 text-white" />
-                    </div>
-                    <h3 className="text-2xl lg:text-3xl font-bold text-deep-secondary group-hover:text-secondary-600 transition-colors">
-                      {project.title}
-                    </h3>
-                  </div>
-                  <p className="text-deep-primary mb-6 leading-relaxed font-semibold text-base lg:text-lg">
-                    {project.description}
-                  </p>
-                  
-                  <div className="flex flex-wrap gap-3 mb-6">
-                    {project.technologies.map((tech) => (
-                      <span
-                        key={tech}
-                        className="deep-glass-card px-3 py-2 rounded-xl text-sm font-semibold text-deep-secondary hover:text-secondary-600 transition-colors"
-                      >
-                        {tech}
-                      </span>
-                    ))}
-                  </div>
-                  
-                  <div className="flex gap-4">
-                    <Link
-                      href={project.codeUrl}
-                      target="_blank"
-                      className="deep-glass-card px-6 py-3 rounded-xl font-semibold text-deep-secondary hover:text-secondary-600 transition-all duration-300 hover:scale-105 flex items-center gap-2 border border-transparent hover:border-secondary/30"
-                    >
-                      <FiGithub size={16} />
-                      Code
-                    </Link>
-                    <Link
-                      href={project.liveUrl}
-                      target="_blank"
-                      className="bg-gradient-to-r from-emerald-400 to-cyan-400 text-white px-6 py-3 rounded-xl font-semibold hover:from-emerald-500 hover:to-cyan-500 hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-emerald-400/25 flex items-center gap-2"
-                    >
-                      <FiExternalLink size={16} />
-                      Live Demo
-                    </Link>
+              {/* Gradient overlay on hover */}
+              <div className="absolute inset-0 bg-gradient-to-br from-emerald-400/0 via-cyan-400/0 to-emerald-400/0 group-hover:from-emerald-400/10 group-hover:via-cyan-400/5 group-hover:to-emerald-400/10 transition-all duration-500 rounded-3xl"></div>
+              
+              <div className="relative p-8 h-full flex flex-col">
+                {/* Project Icon */}
+                <div className="mb-6">
+                  <div className={`p-4 rounded-2xl bg-gradient-to-r ${project.gradient} shadow-lg group-hover:shadow-emerald-400/30 transition-all duration-500 w-fit`}>
+                    <FiExternalLink className="w-8 h-8 text-white" />
                   </div>
                 </div>
+
+                {/* Project Title */}
+                <h3 className="text-xl lg:text-2xl font-bold text-white mb-4 group-hover:text-emerald-400 transition-all duration-300">
+                  {project.title}
+                </h3>
+
+                {/* Project Description */}
+                <p className="text-gray-300 group-hover:text-gray-200 leading-relaxed mb-6 flex-grow transition-colors duration-300">
+                  {project.description}
+                </p>
                 
-                <div className="lg:col-span-1 flex items-center justify-center">
-                  <div className="w-full h-48 deep-glass-card rounded-2xl flex items-center justify-center relative overflow-hidden group/preview">
-                    <div className="absolute inset-0 bg-gradient-to-br from-secondary/10 to-accent/10 opacity-50"></div>
-                    <div className="relative z-10 text-center">
-                      <div className={`w-16 h-16 rounded-2xl bg-gradient-to-r ${project.gradient} flex items-center justify-center mx-auto mb-3 shadow-lg`}>
-                        <FiExternalLink className="w-8 h-8 text-white" />
-                      </div>
-                      <span className="text-deep-secondary font-semibold text-sm">Project Preview</span>
-                    </div>
-                  </div>
+                {/* Technologies */}
+                <div className="flex flex-wrap gap-2">
+                  {project.technologies.map((tech) => (
+                    <span
+                      key={tech}
+                      className="px-3 py-1 rounded-lg text-xs font-medium bg-white/10 text-gray-300 group-hover:bg-emerald-400/20 group-hover:text-emerald-300 border border-white/10 group-hover:border-emerald-400/30 transition-all duration-300"
+                    >
+                      {tech}
+                    </span>
+                  ))}
                 </div>
+
+                {/* Decorative bottom border */}
+                <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-emerald-400 to-cyan-400 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
               </div>
             </motion.div>
           ))}
@@ -146,9 +125,9 @@ export default function FeaturedProjects() {
         >
           <Link
             href="/portfolio"
-            className="inline-flex items-center gap-3 bg-gradient-to-r from-emerald-400 to-cyan-400 text-white px-8 py-4 rounded-xl font-semibold hover:from-emerald-500 hover:to-cyan-500 hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-emerald-400/25 text-lg"
+            className="group inline-flex items-center gap-3 bg-gradient-to-r from-emerald-400 to-cyan-400 text-white px-8 py-2.5 rounded-xl font-semibold hover:from-emerald-500 hover:to-cyan-500 hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-emerald-400/40 text-lg border border-emerald-400/20 hover:border-emerald-400/40"
           >
-            <FiArrowRight size={20} />
+            <FiArrowRight size={20} className="group-hover:translate-x-1 transition-transform duration-300" />
             View All Projects
           </Link>
         </motion.div>

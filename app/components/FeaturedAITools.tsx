@@ -36,12 +36,13 @@ const services = [
 
 export default function FeaturedServices() {
   return (
-    <section className="relative py-20 overflow-hidden">
+    <section className="relative py-20 overflow-hidden bg-black">
       {/* Background Effects */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute inset-0 bg-[linear-gradient(rgba(106,137,167,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(106,137,167,0.03)_1px,transparent_1px)] bg-[size:40px_40px] opacity-60" />
-        <div className="absolute top-1/4 left-1/3 w-96 h-96 bg-gradient-to-r from-secondary-300/10 via-accent-400/8 to-secondary-300/10 rounded-full blur-3xl animate-pulse" />
-        <div className="absolute bottom-1/3 right-1/4 w-80 h-80 bg-gradient-to-r from-accent-200/8 via-secondary-300/6 to-accent-200/8 rounded-full blur-3xl animate-pulse animation-delay-2000" />
+        <div className="absolute inset-0 bg-[linear-gradient(rgba(16,185,129,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(16,185,129,0.03)_1px,transparent_1px)] bg-[size:40px_40px] opacity-60" />
+        <div className="absolute top-1/4 left-1/3 w-96 h-96 bg-gradient-to-r from-emerald-400/10 via-cyan-400/8 to-emerald-400/10 rounded-full blur-3xl animate-pulse" />
+        <div className="absolute bottom-1/3 right-1/4 w-80 h-80 bg-gradient-to-r from-cyan-400/8 via-emerald-400/6 to-cyan-400/8 rounded-full blur-3xl animate-pulse animation-delay-2000" />
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-32 h-32 bg-emerald-400/5 rounded-full blur-2xl animate-pulse animation-delay-4000" />
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
@@ -53,14 +54,19 @@ export default function FeaturedServices() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <div className="liquid-glass p-8 lg:p-12 rounded-3xl max-w-4xl mx-auto">
-            <h2 className="text-3xl lg:text-4xl xl:text-5xl font-bold mb-6 bg-gradient-to-r from-secondary-600 to-accent-600 bg-clip-text text-transparent">
-              Our Services
-            </h2>
-            <p className="text-base lg:text-lg xl:text-xl text-deep-primary leading-relaxed font-semibold max-w-3xl mx-auto">
-              We offer comprehensive software development services to help your business 
-              leverage technology for growth and competitive advantage.
-            </p>
+          <div className="relative overflow-hidden rounded-3xl bg-white/5 backdrop-blur-sm border border-white/10 p-8 lg:p-12 max-w-4xl mx-auto">
+            {/* Background gradient */}
+            <div className="absolute inset-0 bg-gradient-to-br from-emerald-400/5 via-cyan-400/5 to-emerald-400/5"></div>
+            
+            <div className="relative">
+              <h2 className="text-3xl lg:text-4xl xl:text-5xl font-bold mb-6 bg-gradient-to-r from-emerald-400 via-cyan-400 to-emerald-400 bg-clip-text text-transparent">
+                Our Services
+              </h2>
+              <p className="text-base lg:text-lg xl:text-xl text-gray-300 leading-relaxed max-w-3xl mx-auto">
+                We offer comprehensive software development services to help your business 
+                leverage technology for growth and competitive advantage.
+              </p>
+            </div>
           </div>
         </motion.div>
 
@@ -75,30 +81,41 @@ export default function FeaturedServices() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: index * 0.2 }}
               viewport={{ once: true }}
-              className="liquid-glass p-8 hover:scale-[1.02] transition-all duration-500 rounded-3xl group"
+              className="group relative overflow-hidden rounded-3xl bg-white/5 backdrop-blur-sm border border-white/10 hover:border-emerald-400/50 transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl hover:shadow-emerald-400/20"
             >
-              {/* Service Icon */}
-              <div className="mb-6">
-                <div className={`p-4 rounded-2xl bg-gradient-to-r ${service.gradient} shadow-lg w-fit`}>
-                  <Icon className="w-8 h-8 text-white" />
+              {/* Gradient overlay on hover */}
+              <div className="absolute inset-0 bg-gradient-to-br from-emerald-400/0 via-cyan-400/0 to-emerald-400/0 group-hover:from-emerald-400/10 group-hover:via-cyan-400/5 group-hover:to-emerald-400/10 transition-all duration-500 rounded-3xl"></div>
+              
+              <div className="relative p-8 h-full flex flex-col">
+                {/* Service Icon */}
+                <div className="mb-6">
+                  <div className={`p-4 rounded-2xl bg-gradient-to-r ${service.gradient} shadow-lg group-hover:shadow-emerald-400/30 transition-all duration-500 w-fit`}>
+                    <Icon className="w-8 h-8 text-white" />
+                  </div>
                 </div>
+                
+                {/* Service Title */}
+                <h3 className="text-xl lg:text-2xl font-bold text-white mb-4 group-hover:text-emerald-400 transition-all duration-300">
+                  {service.title}
+                </h3>
+                
+                {/* Service Description */}
+                <p className="text-gray-300 group-hover:text-gray-200 leading-relaxed mb-6 flex-grow transition-colors duration-300">
+                  {service.description}
+                </p>
+                
+                {/* Service Link */}
+                <Link
+                  href={service.url}
+                  className="group/link inline-flex items-center gap-2 bg-gradient-to-r from-emerald-400 to-cyan-400 text-white px-6 py-3 rounded-xl font-semibold hover:from-emerald-500 hover:to-cyan-500 hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-emerald-400/40 border border-emerald-400/20 hover:border-emerald-400/40 w-fit"
+                >
+                  <FiExternalLink size={16} className="group-hover/link:translate-x-1 transition-transform duration-300" />
+                  {service.linkText}
+                </Link>
+
+                {/* Decorative bottom border */}
+                <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-emerald-400 to-cyan-400 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
               </div>
-              
-              <h3 className="text-xl lg:text-2xl font-bold text-deep-secondary mb-4 group-hover:text-secondary-600 transition-colors">
-                {service.title}
-              </h3>
-              
-              <p className="text-deep-primary mb-6 leading-relaxed font-semibold">
-                {service.description}
-              </p>
-              
-              <Link
-                href={service.url}
-                className="inline-flex items-center gap-2 bg-gradient-to-r from-emerald-400 to-cyan-400 text-white px-6 py-3 rounded-xl font-semibold hover:from-emerald-500 hover:to-cyan-500 hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-emerald-400/25"
-              >
-                <FiExternalLink size={16} />
-                {service.linkText}
-              </Link>
             </motion.div>
           )})}
         </div>

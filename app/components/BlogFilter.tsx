@@ -20,10 +20,28 @@ interface BlogFilterProps {
 
 export default function BlogFilter({ blogPosts, categories }: BlogFilterProps) {
   const [selectedCategory, setSelectedCategory] = useState('All');
+  const [currentPage, setCurrentPage] = useState(1);
+  const postsPerPage = 6;
 
   const filteredPosts = selectedCategory === 'All' 
     ? blogPosts 
     : blogPosts.filter(post => post.category === selectedCategory);
+
+  // Calculate pagination
+  const totalPages = Math.ceil(filteredPosts.length / postsPerPage);
+  const indexOfLastPost = currentPage * postsPerPage;
+  const indexOfFirstPost = indexOfLastPost - postsPerPage;
+  const currentPosts = filteredPosts.slice(indexOfFirstPost, indexOfLastPost);
+
+  // Reset to page 1 when category changes
+  const handleCategoryChange = (category: string) => {
+    setSelectedCategory(category);
+    setCurrentPage(1);
+  };
+
+  const handlePageChange = (page: number) => {
+    setCurrentPage(page);
+  };
 
   return (
     <>
@@ -32,7 +50,7 @@ export default function BlogFilter({ blogPosts, categories }: BlogFilterProps) {
         {categories.map((category) => (
           <button
             key={category}
-            onClick={() => setSelectedCategory(category)}
+            onClick={() => handleCategoryChange(category)}
             className={`px-4 py-2 rounded-full transition-all duration-200 ${
               category === selectedCategory
                 ? 'bg-gradient-to-r from-emerald-400 to-cyan-400 text-white'
@@ -46,12 +64,8 @@ export default function BlogFilter({ blogPosts, categories }: BlogFilterProps) {
       
       {/* Blog Posts Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {filteredPosts.map((post) => (
+        {currentPosts.map((post) => (
           <article key={post.id} className="glass-card p-6 hover:scale-105 transition-all duration-300 group">
-            <div className="w-full h-48 bg-gradient-to-br from-emerald-400/20 to-cyan-400/20 rounded-lg mb-6 flex items-center justify-center">
-              <span className="text-gray-500 text-sm">Blog Image</span>
-            </div>
-            
             <div className="flex items-center gap-4 mb-4">
               <span className="skill-tag text-xs">{post.category}</span>
               <span className="text-gray-500 text-sm">{post.readTime}</span>
@@ -83,6 +97,49 @@ export default function BlogFilter({ blogPosts, categories }: BlogFilterProps) {
           </article>
         ))}
       </div>
+      
+      {/* Pagination */}
+      {totalPages > 1 && (
+        <div className="flex justify-center items-center gap-2 mt-12">
+          <button
+            onClick={() => handlePageChange(currentPage - 1)}
+            disabled={currentPage === 1}
+            className={`px-4 py-2 rounded-lg transition-all duration-200 ${
+              currentPage === 1
+                ? 'bg-gray-800 text-gray-500 cursor-not-allowed'
+                : 'bg-gray-800 text-gray-300 hover:bg-gray-700'
+            }`}
+          >
+            Previous
+          </button>
+          
+          {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
+            <button
+              key={page}
+              onClick={() => handlePageChange(page)}
+              className={`px-4 py-2 rounded-lg transition-all duration-200 ${
+                page === currentPage
+                  ? 'bg-gradient-to-r from-emerald-400 to-cyan-400 text-white'
+                  : 'bg-gray-800 text-gray-300 hover:bg-gray-700'
+              }`}
+            >
+              {page}
+            </button>
+          ))}
+          
+          <button
+            onClick={() => handlePageChange(currentPage + 1)}
+            disabled={currentPage === totalPages}
+            className={`px-4 py-2 rounded-lg transition-all duration-200 ${
+              currentPage === totalPages
+                ? 'bg-gray-800 text-gray-500 cursor-not-allowed'
+                : 'bg-gray-800 text-gray-300 hover:bg-gray-700'
+            }`}
+          >
+            Next
+          </button>
+        </div>
+      )}
       
       {filteredPosts.length === 0 && (
         <div className="text-center py-16">

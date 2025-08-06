@@ -66,7 +66,7 @@ const projects = [
 
 export default function Projects() {
   return (
-    <main className="min-h-screen bg-dark-950 pt-20 lg:pt-24">
+    <main className="min-h-screen bg-black pt-20 lg:pt-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20">
         <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-6 sm:mb-8 text-center">
           Our Projects

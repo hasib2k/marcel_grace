@@ -85,7 +85,7 @@ const categories = ['All', 'Architecture', 'Frontend', 'Cloud', 'DevOps', 'Secur
 
 export default function Blog() {
   return (
-    <main className="min-h-screen bg-dark-950 pt-20 lg:pt-24">
+    <main className="min-h-screen bg-black pt-20 lg:pt-24">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20">
         <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-6 sm:mb-8 text-center">
           Tech Insights
@@ -98,13 +98,6 @@ export default function Blog() {
         
         {/* Blog Filter Component */}
         <BlogFilter blogPosts={blogPosts} categories={categories} />
-        
-        {/* Load More Button */}
-        <div className="text-center mt-12">
-          <button className="btn-primary">
-            Load More Articles
-          </button>
-        </div>
       </div>
     </main>
   );

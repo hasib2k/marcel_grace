@@ -2,9 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Import Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
-
 /* CSS Variables for the design system */
 :root {
   /* Background Colors */
@@ -42,10 +39,11 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 body {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Segoe UI', 'Microsoft Sans Serif', 'Segoe UI Variable', 'Segoe UI Emoji', 'Segoe UI Symbol', Tahoma, Arial, sans-serif;
   background: var(--bg-primary);
   color: var(--text-primary);
   line-height: 1.6;
@@ -197,7 +195,7 @@ body::before {
   background: linear-gradient(135deg, #34d399 0%, #22d3ee 100%);
   border: none;
   border-radius: 50px;
-  padding: 12px 30px;
+  padding: 10px 24px;
   color: white;
   font-weight: 600;
   text-decoration: none;
@@ -240,7 +238,7 @@ body::before {
   background: rgba(52, 211, 153, 0.1);
   border: 1px solid rgba(52, 211, 153, 0.3);
   border-radius: 50px;
-  padding: 12px 30px;
+  padding: 10px 24px;
   color: #34d399;
   font-weight: 600;
   text-decoration: none;
@@ -327,22 +325,124 @@ body::before {
   z-index: -1;
 }
 
+/* Hero Section Mobile Text Positioning */
+@media (max-width: 768px) {
+  .hero-container {
+    margin-top: 1rem !important;
+    padding-top: 2rem !important;
+  }
+  
+  /* Adjust Hero section alignment for mobile */
+  section[class*="min-h-screen"] {
+    align-items: flex-start !important;
+    padding-top: 6rem !important;
+  }
+  
+  /* Better mobile spacing for Hero content */
+  .hero-content {
+    margin-top: 0 !important;
+    padding-top: 1rem !important;
+  }
+}
+
+@media (max-width: 640px) {
+  section[class*="min-h-screen"] {
+    padding-top: 5rem !important;
+    min-height: calc(100vh - 4rem) !important;
+  }
+  
+  /* Compact hero spacing on small screens */
+  .hero-content {
+    padding-top: 0.5rem !important;
+  }
+}
+
+/* Additional Mobile Text Positioning */
+@media (max-width: 480px) {
+  section[class*="min-h-screen"] {
+    min-height: 90vh !important;
+    padding-top: 4rem !important;
+  }
+  
+  .hero-container {
+    margin-top: 0.5rem !important;
+    padding-top: 1rem !important;
+  }
+  
+  /* Reduce text spacing on very small screens */
+  .hero-content {
+    gap: 0.75rem !important;
+  }
+  
+  /* Make Hello World badge more compact */
+  .hero-content > div:first-child {
+    margin-bottom: 0.5rem !important;
+  }
+}
+
+/* Scroll Down Button Mobile Positioning */
+@media (max-width: 768px) {
+  .hero-container .absolute.bottom-0 {
+    bottom: -2rem !important;
+    margin-bottom: 1rem !important;
+  }
+}
+
+@media (max-width: 640px) {
+  .hero-container .absolute.bottom-0 {
+    bottom: -3rem !important;
+    margin-bottom: 1.5rem !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-container .absolute.bottom-0 {
+    bottom: -4rem !important;
+    margin-bottom: 2rem !important;
+  }
+}
+
 /* Custom Scrollbar */
 ::-webkit-scrollbar {
   width: 8px;
+  height: 8px;
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--bg-secondary);
+  background: #0a0a0a;
+  border-radius: 10px;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  border-radius: 4px;
+  background: linear-gradient(135deg, #10b981 0%, #06b6d4 50%, #10b981 100%);
+  border-radius: 10px;
+  border: 1px solid rgba(16, 185, 129, 0.2);
+  box-shadow: 0 2px 4px rgba(16, 185, 129, 0.1);
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+  background: linear-gradient(135deg, #059669 0%, #0891b2 50%, #059669 100%);
+  box-shadow: 0 2px 8px rgba(16, 185, 129, 0.3);
+}
+
+::-webkit-scrollbar-thumb:active {
+  background: linear-gradient(135deg, #047857 0%, #0e7490 50%, #047857 100%);
+}
+
+::-webkit-scrollbar-corner {
+  background: #0a0a0a;
+}
+
+/* Firefox Scrollbar */
+html {
+  scrollbar-width: thin;
+  scrollbar-color: #10b981 #0a0a0a;
+}
+
+/* Scrollbar for specific containers */
+.glass-card::-webkit-scrollbar-thumb,
+.overflow-auto::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, rgba(16, 185, 129, 0.8) 0%, rgba(6, 182, 212, 0.8) 100%);
 }
 
 /* Form Styles */
@@ -456,7 +556,7 @@ body::before {
   }
   
   .btn-primary {
-    padding: 12px 24px;
+    padding: 10px 20px;
     font-size: 0.875rem;
   }
 }
@@ -487,7 +587,7 @@ body::before {
   /* Button improvements for mobile */
   .btn-primary,
   .btn-secondary {
-    padding: 0.75rem 1.5rem !important;
+    padding: 0.625rem 1.25rem !important;
     font-size: 0.875rem !important;
     border-radius: 1.5rem !important;
   }
@@ -526,6 +626,125 @@ body::before {
   }
 }
 
+/* About Section Mobile Fixes */
+@media (max-width: 768px) {
+  #about {
+    overflow-x: hidden !important;
+  }
+  
+  #about .max-w-7xl {
+    max-width: 100% !important;
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+  
+  #about .grid {
+    width: 100% !important;
+    overflow: hidden !important;
+  }
+  
+  #about .relative.group {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+  
+  #about .relative.group > div {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+  
+  /* Ensure images don't cause overflow */
+  #about img {
+    max-width: 100% !important;
+    height: auto !important;
+  }
+}
+
+@media (max-width: 640px) {
+  #about {
+    padding-left: 0.5rem !important;
+    padding-right: 0.5rem !important;
+  }
+  
+  #about .grid {
+    gap: 1rem !important;
+  }
+  
+  #about .relative.group > div {
+    height: 280px !important;
+  }
+}
+
+/* About Section Image Fitting */
+#about .relative.group img {
+  object-fit: cover !important;
+  object-position: center !important;
+  width: 100% !important;
+  height: 100% !important;
+}
+
+#about .relative.group > div > div {
+  background: rgba(255, 255, 255, 0.02);
+  backdrop-filter: blur(10px);
+}
+
+@media (max-width: 768px) {
+  #about .relative.group > div {
+    padding: 0.75rem !important;
+  }
+  
+  #about .relative.group img {
+    border-radius: 1rem !important;
+  }
+}
+
+@media (max-width: 640px) {
+  #about .relative.group > div {
+    padding: 0.5rem !important;
+    height: 250px !important;
+  }
+}
+
+/* Global container and overflow fixes */
+.container,
+.max-w-7xl,
+.max-w-6xl,
+.max-w-5xl,
+.max-w-4xl {
+  width: 100%;
+  max-width: 100%;
+}
+
+@media (max-width: 768px) {
+  /* Ensure no horizontal scroll on mobile */
+  body {
+    overflow-x: hidden !important;
+  }
+  
+  .grid {
+    width: 100% !important;
+    overflow: hidden !important;
+  }
+  
+  /* Fix any potential width issues */
+  section {
+    width: 100% !important;
+    overflow-x: hidden !important;
+  }
+  
+  /* Specific container fixes */
+  .container,
+  .max-w-7xl,
+  .max-w-6xl,
+  .max-w-5xl,
+  .max-w-4xl {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+}
+
 /* Tablet specific adjustments */
 @media (min-width: 641px) and (max-width: 1023px) {
   .glass-card {
@@ -534,7 +753,7 @@ body::before {
   
   .btn-primary,
   .btn-secondary {
-    padding: 0.875rem 2rem;
+    padding: 0.75rem 1.75rem;
     font-size: 0.875rem;
   }
   
@@ -618,219 +837,6 @@ body::before {
     -webkit-user-select: none;
     -moz-user-select: none;
     user-select: none;
-  }
-}
-
-/* Container max-width adjustments */
-@media (max-width: 640px) {
-  .max-w-7xl,
-  .max-w-6xl,
-  .max-w-5xl,
-  .max-w-4xl {
-    max-width: 100% !important;
-    padding-left: 1rem !important;
-    padding-right: 1rem !important;
-  }
-}
-
-/* Text overflow handling */
-@media (max-width: 640px) {
-  .text-ellipsis {
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-  }
-  
-  .break-words {
-    word-wrap: break-word;
-    word-break: break-word;
-  }
-}
-
-/* Enhanced Mobile Responsiveness */
-@media (max-width: 640px) {
-  /* Typography adjustments for mobile */
-  h1 {
-    font-size: 2rem !important;
-    line-height: 1.2 !important;
-  }
-  
-  h2 {
-    font-size: 1.5rem !important;
-    line-height: 1.3 !important;
-  }
-  
-  h3 {
-    font-size: 1.25rem !important;
-    line-height: 1.4 !important;
-  }
-  
-  /* Mobile padding adjustments */
-  .glass-card {
-    padding: 1rem !important;
-    margin: 0.5rem !important;
-  }
-  
-  /* Button improvements for mobile */
-  .btn-primary,
-  .btn-secondary {
-    padding: 0.75rem 1.5rem !important;
-    font-size: 0.875rem !important;
-    border-radius: 1.5rem !important;
-  }
-  
-  /* Form inputs mobile optimization */
-  .form-input {
-    padding: 0.875rem !important;
-    font-size: 1rem !important;
-  }
-  
-  /* Section spacing for mobile */
-  section {
-    padding-top: 3rem !important;
-    padding-bottom: 3rem !important;
-  }
-  
-  /* Grid improvements */
-  .grid {
-    gap: 1rem !important;
-  }
-  
-  /* Text size adjustments */
-  .text-lg {
-    font-size: 1rem !important;
-  }
-  
-  .text-xl {
-    font-size: 1.125rem !important;
-  }
-  
-  /* Image container responsiveness */
-  .relative img {
-    object-fit: cover;
-    width: 100%;
-    height: auto;
-  }
-}
-
-/* Tablet specific adjustments */
-@media (min-width: 641px) and (max-width: 1023px) {
-  .glass-card {
-    padding: 1.5rem;
-  }
-  
-  .btn-primary,
-  .btn-secondary {
-    padding: 0.875rem 2rem;
-    font-size: 0.875rem;
-  }
-  
-  section {
-    padding-top: 4rem;
-    padding-bottom: 4rem;
-  }
-}
-
-/* Touch-friendly improvements */
-@media (hover: none) and (pointer: coarse) {
-  .hover\:scale-105:hover {
-    transform: scale(1.02) !important;
-  }
-  
-  .hover\:scale-110:hover {
-    transform: scale(1.05) !important;
-  }
-  
-  /* Larger touch targets */
-  button,
-  a,
-  input,
-  select,
-  textarea {
-    min-height: 44px;
-    min-width: 44px;
-  }
-  
-  /* Remove hover effects on touch devices */
-  .hover\:bg-white\/5:hover {
-    background-color: transparent !important;
-  }
-  
-  .hover\:translate-x-2:hover {
-    transform: translateX(0) !important;
-  }
-}
-
-/* Landscape mobile orientation */
-@media (max-width: 896px) and (orientation: landscape) {
-  .min-h-screen {
-    min-height: 100vh;
-  }
-  
-  section {
-    padding-top: 2rem !important;
-    padding-bottom: 2rem !important;
-  }
-  
-  .hero-container {
-    padding-top: 1rem !important;
-    padding-bottom: 1rem !important;
-  }
-}
-
-/* Safe area adjustments for mobile devices */
-@supports (padding: max(0px)) {
-  .safe-area-inset {
-    padding-left: max(1rem, env(safe-area-inset-left));
-    padding-right: max(1rem, env(safe-area-inset-right));
-  }
-}
-
-/* Improved focus states for mobile */
-@media (max-width: 768px) {
-  *:focus {
-    outline: 2px solid #34d399;
-    outline-offset: 2px;
-  }
-  
-  /* Better tap highlights */
-  * {
-    -webkit-tap-highlight-color: rgba(52, 211, 153, 0.2);
-  }
-  
-  /* Prevent text selection on buttons */
-  button,
-  .btn-primary,
-  .btn-secondary {
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    user-select: none;
-  }
-}
-
-/* Container max-width adjustments */
-@media (max-width: 640px) {
-  .max-w-7xl,
-  .max-w-6xl,
-  .max-w-5xl,
-  .max-w-4xl {
-    max-width: 100% !important;
-    padding-left: 1rem !important;
-    padding-right: 1rem !important;
-  }
-}
-
-/* Text overflow handling */
-@media (max-width: 640px) {
-  .text-ellipsis {
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-  }
-  
-  .break-words {
-    word-wrap: break-word;
-    word-break: break-word;
   }
 }
 
@@ -857,5 +863,96 @@ textarea:focus-visible {
   .glass-card {
     background: rgba(255, 255, 255, 0.1);
     border-color: rgba(255, 255, 255, 0.3);
+  }
+}
+
+/* Remove tap highlight from navbar brand */
+.tap-highlight-transparent {
+  -webkit-tap-highlight-color: transparent !important;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  outline: none !important;
+}
+
+.tap-highlight-transparent:focus {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+/* Mobile overflow fixes */
+@media (max-width: 768px) {
+  /* Prevent horizontal scroll on reload */
+  html, body {
+    overflow-x: hidden !important;
+    position: relative;
+  }
+  
+  /* Fix specific container overflows */
+  .container {
+    max-width: 100% !important;
+  }
+  
+  /* Fix image overflows */
+  img {
+    max-width: 100% !important;
+    height: auto !important;
+  }
+  
+  /* Fix navbar width */
+  nav {
+    width: 100% !important;
+  }
+  
+  /* Fix mobile menu positioning */
+  .mobile-menu-container {
+    max-width: calc(100vw - 2rem) !important;
+    left: 1rem !important;
+    right: 1rem !important;
+  }
+}
+
+/* Mobile scrolling text animation */
+@keyframes scroll-mobile {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.animate-scroll-mobile {
+  animation: scroll-mobile 15s linear infinite;
+}
+
+/* Pause animation on hover for mobile */
+@media (max-width: 768px) {
+  .animate-scroll-mobile:hover {
+    animation-play-state: paused;
+  }
+}
+
+/* Mobile scrolling text animation */
+@keyframes scroll-mobile {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.animate-scroll-mobile {
+  animation: scroll-mobile 15s linear infinite;
+}
+
+/* Pause animation on hover for mobile */
+@media (max-width: 768px) {
+  .animate-scroll-mobile:hover {
+    animation-play-state: paused;
   }
 }
