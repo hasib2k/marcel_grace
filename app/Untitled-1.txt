@@ -1,4 +1,0 @@
-cd C:\Users\hasib\OneDrive\Desktop\marcel_grace
-rmdir /s /q .next
-rmdir /s /q node_modules
-del package-lock.json

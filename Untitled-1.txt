@@ -1,6 +1,0 @@
-rd /s /q .next
-rd /s /q node_modules
-del package-lock.json
-npm install
-npm run build
-npm run dev
