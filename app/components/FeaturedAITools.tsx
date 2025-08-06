@@ -54,7 +54,7 @@ export default function FeaturedServices() {
           viewport={{ once: true }}
           className="text-center mb-12 sm:mb-14 lg:mb-16"
         >
-          <div className="relative overflow-hidden rounded-2xl sm:rounded-3xl bg-white/5 backdrop-blur-sm border border-white/10 p-6 sm:p-8 lg:p-12 max-w-4xl mx-auto">
+          <div className="relative overflow-hidden rounded-2xl sm:rounded-3xl bg-black/40 backdrop-blur-sm border border-emerald-400/20 p-6 sm:p-8 lg:p-12 max-w-4xl mx-auto">
             {/* Background gradient */}
             <div className="absolute inset-0 bg-gradient-to-br from-emerald-400/5 via-cyan-400/5 to-emerald-400/5"></div>
             
@@ -81,7 +81,7 @@ export default function FeaturedServices() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: index * 0.2 }}
               viewport={{ once: true }}
-              className="group relative overflow-hidden rounded-2xl sm:rounded-3xl bg-white/5 backdrop-blur-sm border border-white/10 hover:border-emerald-400/50 transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl hover:shadow-emerald-400/20"
+              className="group relative overflow-hidden rounded-2xl sm:rounded-3xl bg-black/40 backdrop-blur-sm border border-emerald-400/20 hover:border-emerald-400/50 transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl hover:shadow-emerald-400/20"
             >
               {/* Gradient overlay on hover */}
               <div className="absolute inset-0 bg-gradient-to-br from-emerald-400/0 via-cyan-400/0 to-emerald-400/0 group-hover:from-emerald-400/10 group-hover:via-cyan-400/5 group-hover:to-emerald-400/10 transition-all duration-500 rounded-2xl sm:rounded-3xl"></div>

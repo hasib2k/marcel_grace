@@ -25,7 +25,7 @@ export default function Contact() {
             viewport={{ once: true }}
             className="mb-8 sm:mb-10 lg:mb-12 xl:mb-16"
           >
-            <div className="relative overflow-hidden rounded-2xl sm:rounded-3xl bg-white/5 backdrop-blur-sm border border-white/10 p-6 sm:p-8 lg:p-12 max-w-4xl mx-auto mb-8 sm:mb-10 lg:mb-12">
+            <div className="relative overflow-hidden rounded-2xl sm:rounded-3xl bg-black/40 backdrop-blur-sm border border-emerald-400/20 p-6 sm:p-8 lg:p-12 max-w-4xl mx-auto mb-8 sm:mb-10 lg:mb-12">
               {/* Background gradient */}
               <div className="absolute inset-0 bg-gradient-to-br from-emerald-400/5 via-cyan-400/5 to-emerald-400/5"></div>
               
@@ -40,63 +40,57 @@ export default function Contact() {
             </div>
             
             {/* Contact Info */}
-            <div className="relative overflow-hidden rounded-2xl sm:rounded-3xl bg-white/5 backdrop-blur-sm border border-white/10 p-4 sm:p-6 lg:p-8 max-w-4xl mx-auto">
+            <div className="relative overflow-hidden rounded-2xl sm:rounded-3xl bg-black/40 backdrop-blur-sm border border-emerald-400/20 p-4 sm:p-6 lg:p-8 max-w-4xl mx-auto">
               {/* Background gradient */}
               <div className="absolute inset-0 bg-gradient-to-br from-emerald-400/5 via-cyan-400/5 to-emerald-400/5"></div>
               
               <div className="relative grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 lg:gap-6">
-                <div className="group relative overflow-hidden rounded-xl sm:rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10 hover:border-emerald-400/50 p-4 sm:p-5 lg:p-6 transition-all duration-500 hover:scale-105 hover:shadow-xl hover:shadow-emerald-400/20 min-h-[120px] sm:min-h-[140px]">
+                <div className="group relative overflow-hidden rounded-xl sm:rounded-2xl bg-black/40 backdrop-blur-sm border border-emerald-400/20 hover:border-emerald-400/50 p-3 sm:p-4 lg:p-5 transition-all duration-500 hover:scale-105 hover:shadow-xl hover:shadow-emerald-400/20 min-h-[100px] sm:min-h-[110px]">
                   {/* Gradient overlay on hover */}
                   <div className="absolute inset-0 bg-gradient-to-br from-emerald-400/0 via-cyan-400/0 to-emerald-400/0 group-hover:from-emerald-400/10 group-hover:via-cyan-400/5 group-hover:to-emerald-400/10 transition-all duration-500 rounded-xl sm:rounded-2xl"></div>
                   
                   <div className="relative flex flex-col items-center text-center">
-                    <div className="p-2.5 sm:p-3 rounded-xl sm:rounded-2xl bg-gradient-to-r from-emerald-400 to-cyan-400 shadow-lg group-hover:shadow-emerald-400/30 transition-all duration-500 mb-3 sm:mb-4">
-                      <FiMail className="text-white w-5 h-5 sm:w-6 sm:h-6" />
+                    <div className="p-2 sm:p-2.5 rounded-xl sm:rounded-2xl bg-gradient-to-r from-emerald-400 to-cyan-400 shadow-lg group-hover:shadow-emerald-400/30 transition-all duration-500 mb-2 sm:mb-3">
+                      <FiMail className="text-white w-4 h-4 sm:w-5 sm:h-5" />
                     </div>
-                    <h3 className="text-base sm:text-lg font-bold text-white mb-2 group-hover:text-emerald-400 transition-colors duration-300">Email Us</h3>
+                    <h3 className="text-sm sm:text-base font-bold text-white mb-1.5 group-hover:text-emerald-400 transition-colors duration-300">Email Us</h3>
                     <Link
                       href="mailto:info.marcelgrce@gmail.com"
-                      className="text-gray-300 hover:text-emerald-400 transition-colors duration-300 font-medium text-sm sm:text-base"
+                      className="text-gray-300 hover:text-emerald-400 transition-colors duration-300 font-medium text-xs sm:text-sm"
                     >
                       info.marcelgrce@gmail.com
                     </Link>
-                    {/* Decorative bottom border */}
-                    <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-emerald-400 to-cyan-400 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
                   </div>
                 </div>
                 
-                <div className="group relative overflow-hidden rounded-xl sm:rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10 hover:border-emerald-400/50 p-4 sm:p-5 lg:p-6 transition-all duration-500 hover:scale-105 hover:shadow-xl hover:shadow-emerald-400/20 min-h-[120px] sm:min-h-[140px]">
+                <div className="group relative overflow-hidden rounded-xl sm:rounded-2xl bg-black/40 backdrop-blur-sm border border-emerald-400/20 hover:border-emerald-400/50 p-3 sm:p-4 lg:p-5 transition-all duration-500 hover:scale-105 hover:shadow-xl hover:shadow-emerald-400/20 min-h-[100px] sm:min-h-[110px]">
                   {/* Gradient overlay on hover */}
                   <div className="absolute inset-0 bg-gradient-to-br from-emerald-400/0 via-cyan-400/0 to-emerald-400/0 group-hover:from-emerald-400/10 group-hover:via-cyan-400/5 group-hover:to-emerald-400/10 transition-all duration-500 rounded-xl sm:rounded-2xl"></div>
                   
                   <div className="relative flex flex-col items-center text-center">
-                    <div className="p-2.5 sm:p-3 rounded-xl sm:rounded-2xl bg-gradient-to-r from-emerald-400 to-cyan-400 shadow-lg group-hover:shadow-emerald-400/30 transition-all duration-500 mb-3 sm:mb-4">
-                      <FiPhone className="text-white w-5 h-5 sm:w-6 sm:h-6" />
+                    <div className="p-2 sm:p-2.5 rounded-xl sm:rounded-2xl bg-gradient-to-r from-emerald-400 to-cyan-400 shadow-lg group-hover:shadow-emerald-400/30 transition-all duration-500 mb-2 sm:mb-3">
+                      <FiPhone className="text-white w-4 h-4 sm:w-5 sm:h-5" />
                     </div>
-                    <h3 className="text-base sm:text-lg font-bold text-white mb-2 group-hover:text-emerald-400 transition-colors duration-300">Call Us</h3>
+                    <h3 className="text-sm sm:text-base font-bold text-white mb-1.5 group-hover:text-emerald-400 transition-colors duration-300">Call Us</h3>
                     <Link
                       href="tel:+8801706776711"
-                      className="text-gray-300 hover:text-emerald-400 transition-colors duration-300 font-medium text-sm sm:text-base"
+                      className="text-gray-300 hover:text-emerald-400 transition-colors duration-300 font-medium text-xs sm:text-sm"
                     >
                       +880 170 677 6711
                     </Link>
-                    {/* Decorative bottom border */}
-                    <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-emerald-400 to-cyan-400 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
                   </div>
                 </div>
 
-                <div className="group relative overflow-hidden rounded-xl sm:rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10 hover:border-emerald-400/50 p-4 sm:p-5 lg:p-6 transition-all duration-500 hover:scale-105 hover:shadow-xl hover:shadow-emerald-400/20 min-h-[120px] sm:min-h-[140px]">
+                <div className="group relative overflow-hidden rounded-xl sm:rounded-2xl bg-black/40 backdrop-blur-sm border border-emerald-400/20 hover:border-emerald-400/50 p-3 sm:p-4 lg:p-5 transition-all duration-500 hover:scale-105 hover:shadow-xl hover:shadow-emerald-400/20 min-h-[100px] sm:min-h-[110px]">
                   {/* Gradient overlay on hover */}
                   <div className="absolute inset-0 bg-gradient-to-br from-emerald-400/0 via-cyan-400/0 to-emerald-400/0 group-hover:from-emerald-400/10 group-hover:via-cyan-400/5 group-hover:to-emerald-400/10 transition-all duration-500 rounded-xl sm:rounded-2xl"></div>
                   
                   <div className="relative flex flex-col items-center text-center">
-                    <div className="p-2.5 sm:p-3 rounded-xl sm:rounded-2xl bg-gradient-to-r from-emerald-400 to-cyan-400 shadow-lg group-hover:shadow-emerald-400/30 transition-all duration-500 mb-3 sm:mb-4">
-                      <FiMessageCircle className="text-white w-5 h-5 sm:w-6 sm:h-6" />
+                    <div className="p-2 sm:p-2.5 rounded-xl sm:rounded-2xl bg-gradient-to-r from-emerald-400 to-cyan-400 shadow-lg group-hover:shadow-emerald-400/30 transition-all duration-500 mb-2 sm:mb-3">
+                      <FiMessageCircle className="text-white w-4 h-4 sm:w-5 sm:h-5" />
                     </div>
-                    <h3 className="text-base sm:text-lg font-bold text-white mb-2 group-hover:text-emerald-400 transition-colors duration-300">Live Chat</h3>
-                    <span className="text-gray-300 font-medium text-sm sm:text-base">Available 24/7</span>
-                    {/* Decorative bottom border */}
-                    <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-emerald-400 to-cyan-400 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
+                    <h3 className="text-sm sm:text-base font-bold text-white mb-1.5 group-hover:text-emerald-400 transition-colors duration-300">Live Chat</h3>
+                    <span className="text-gray-300 font-medium text-xs sm:text-sm">Available 24/7</span>
                   </div>
                 </div>
               </div>
@@ -111,7 +105,7 @@ export default function Contact() {
             viewport={{ once: true }}
             className="mb-6 sm:mb-8 lg:mb-10 xl:mb-12"
           >
-            <div className="relative overflow-hidden rounded-2xl sm:rounded-3xl bg-white/5 backdrop-blur-sm border border-white/10 p-6 sm:p-7 lg:p-8 max-w-2xl mx-auto">
+            <div className="relative overflow-hidden rounded-2xl sm:rounded-3xl bg-black/40 backdrop-blur-sm border border-emerald-400/20 p-6 sm:p-7 lg:p-8 max-w-2xl mx-auto">
               {/* Background gradient */}
               <div className="absolute inset-0 bg-gradient-to-br from-emerald-400/5 via-cyan-400/5 to-emerald-400/5"></div>
               
@@ -121,27 +115,27 @@ export default function Contact() {
                   <Link
                     href="https://www.facebook.com/MarcelGraceInfotech"
                     target="_blank"
-                    className="group p-4 sm:p-4 lg:p-5 rounded-xl sm:rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10 hover:border-emerald-400/50 hover:scale-110 transition-all duration-300 hover:shadow-lg hover:shadow-emerald-400/20 min-h-[48px] min-w-[48px] flex items-center justify-center"
+                    className="group p-4 sm:p-4 lg:p-5 rounded-xl sm:rounded-2xl bg-black/40 backdrop-blur-sm border border-emerald-400/20 hover:border-emerald-400/50 hover:scale-110 transition-all duration-300 hover:shadow-lg hover:shadow-emerald-400/20 min-h-[48px] min-w-[48px] flex items-center justify-center"
                   >
                     <SiFacebook className="w-6 h-6 sm:w-6 sm:h-6 lg:w-7 lg:h-7 text-gray-300 group-hover:text-emerald-400 transition-colors duration-300" />
                   </Link>
                   <Link
                     href="https://linkedin.com/company/marcelgrace"
                     target="_blank"
-                    className="group p-4 sm:p-4 lg:p-5 rounded-xl sm:rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10 hover:border-emerald-400/50 hover:scale-110 transition-all duration-300 hover:shadow-lg hover:shadow-emerald-400/20 min-h-[48px] min-w-[48px] flex items-center justify-center"
+                    className="group p-4 sm:p-4 lg:p-5 rounded-xl sm:rounded-2xl bg-black/40 backdrop-blur-sm border border-emerald-400/20 hover:border-emerald-400/50 hover:scale-110 transition-all duration-300 hover:shadow-lg hover:shadow-emerald-400/20 min-h-[48px] min-w-[48px] flex items-center justify-center"
                   >
                     <FiLinkedin className="w-6 h-6 sm:w-6 sm:h-6 lg:w-7 lg:h-7 text-gray-300 group-hover:text-emerald-400 transition-colors duration-300" />
                   </Link>
                   <Link
                     href="https://www.instagram.com/marcel_grace_infotech"
                     target="_blank"
-                    className="group p-4 sm:p-4 lg:p-5 rounded-xl sm:rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10 hover:border-emerald-400/50 hover:scale-110 transition-all duration-300 hover:shadow-lg hover:shadow-emerald-400/20 min-h-[48px] min-w-[48px] flex items-center justify-center"
+                    className="group p-4 sm:p-4 lg:p-5 rounded-xl sm:rounded-2xl bg-black/40 backdrop-blur-sm border border-emerald-400/20 hover:border-emerald-400/50 hover:scale-110 transition-all duration-300 hover:shadow-lg hover:shadow-emerald-400/20 min-h-[48px] min-w-[48px] flex items-center justify-center"
                   >
                     <SiInstagram className="w-6 h-6 sm:w-6 sm:h-6 lg:w-7 lg:h-7 text-gray-300 group-hover:text-emerald-400 transition-colors duration-300" />
                   </Link>
                   <Link
                     href="mailto:info.marcelgrce@gmail.com"
-                    className="group p-4 sm:p-4 lg:p-5 rounded-xl sm:rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10 hover:border-emerald-400/50 hover:scale-110 transition-all duration-300 hover:shadow-lg hover:shadow-emerald-400/20 min-h-[48px] min-w-[48px] flex items-center justify-center"
+                    className="group p-4 sm:p-4 lg:p-5 rounded-xl sm:rounded-2xl bg-black/40 backdrop-blur-sm border border-emerald-400/20 hover:border-emerald-400/50 hover:scale-110 transition-all duration-300 hover:shadow-lg hover:shadow-emerald-400/20 min-h-[48px] min-w-[48px] flex items-center justify-center"
                   >
                     <FiMail className="w-6 h-6 sm:w-6 sm:h-6 lg:w-7 lg:h-7 text-gray-300 group-hover:text-emerald-400 transition-colors duration-300" />
                   </Link>
@@ -159,7 +153,7 @@ export default function Contact() {
           >
             <Link
               href="/contact"
-              className="group inline-flex items-center gap-3 bg-gradient-to-r from-emerald-400 to-cyan-400 text-white px-8 py-4 sm:px-6 sm:py-3 lg:px-8 lg:py-4 rounded-xl font-semibold hover:from-emerald-500 hover:to-cyan-500 hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-emerald-400/40 border border-emerald-400/20 hover:border-emerald-400/40 text-base sm:text-base lg:text-lg min-h-[48px]"
+              className="group inline-flex items-center gap-3 bg-gradient-to-r from-emerald-400 to-cyan-400 text-white px-5 py-2 sm:px-4 sm:py-2 lg:px-5 lg:py-2 rounded-xl font-semibold hover:from-emerald-500 hover:to-cyan-500 hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-emerald-400/40 border border-emerald-400/20 hover:border-emerald-400/40 text-sm sm:text-base lg:text-base min-h-[36px]"
             >
               <FiArrowRight size={20} className="group-hover:translate-x-1 transition-transform duration-300" />
               Start Your Project

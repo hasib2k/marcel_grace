@@ -7,7 +7,7 @@ import { SiTelegram, SiWhatsapp, SiFacebook, SiInstagram } from 'react-icons/si'
 export default function Footer() {
   return (
     <footer className="relative bg-black">
-      <div className="relative overflow-hidden bg-black backdrop-blur-sm border-t border-emerald-400/30 w-full px-4 sm:px-6 lg:px-8 py-4 sm:py-6 lg:py-8 xl:py-12">
+      <div className="relative overflow-hidden bg-black backdrop-blur-sm border-t border-emerald-400/30 w-full px-4 sm:px-6 lg:px-8 py-4 sm:py-6 lg:py-8 xl:py-8 pb-2 sm:pb-3 lg:pb-4 xl:pb-4">
         {/* Background Effects */}
         <div className="absolute inset-0 pointer-events-none">
           <div className="absolute inset-0 bg-[linear-gradient(rgba(16,185,129,0.08)_1px,transparent_1px),linear-gradient(90deg,rgba(16,185,129,0.08)_1px,transparent_1px)] bg-[size:40px_40px] opacity-60" />
@@ -100,8 +100,7 @@ export default function Footer() {
                   { href: "https://www.facebook.com/MarcelGraceInfotech", icon: SiFacebook },
                   { href: "https://linkedin.com/company/marcelgrace", icon: FiLinkedin },
                   { href: "https://www.instagram.com/marcel_grace_infotech", icon: SiInstagram },
-                  { href: "mailto:info.marcelgrce@gmail.com", icon: FiMail },
-                  { href: "tel:+8801706776711", icon: FiPhone }
+                  { href: "mailto:info.marcelgrce@gmail.com", icon: FiMail }
                 ].map(({ href, icon: Icon }, index) => (
                   <Link
                     key={index}
@@ -118,7 +117,7 @@ export default function Footer() {
         </div>
 
         {/* Bottom Section */}
-        <div className="mt-4 sm:mt-6 lg:mt-8 xl:mt-12 pt-3 sm:pt-4 lg:pt-6 xl:pt-8 border-t border-white/10 flex flex-col sm:flex-row justify-between items-center gap-2 sm:gap-3 lg:gap-4">
+        <div className="mt-2 sm:mt-3 lg:mt-4 xl:mt-4 pt-2 sm:pt-2 lg:pt-3 xl:pt-3 border-t border-white/10 flex flex-col sm:flex-row justify-between items-center gap-2 sm:gap-3 lg:gap-4">
           <p className="text-gray-300 font-medium text-xs sm:text-sm lg:text-base">
             © 2025 Marcel Grace Infotech. All rights reserved.
           </p>

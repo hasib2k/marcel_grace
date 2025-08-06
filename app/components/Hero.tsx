@@ -21,7 +21,7 @@ export default function Hero() {
   };
 
   return (
-    <section className="min-h-screen flex items-center justify-center relative bg-black pt-20 sm:pt-24 lg:pt-0">
+    <section className="min-h-screen flex items-center justify-center relative bg-black pt-20 sm:pt-24 lg:pt-16 xl:pt-20">
       {/* Animated Background */}
       <div className="absolute inset-0">
         {/* Background grid pattern */}
@@ -31,7 +31,7 @@ export default function Hero() {
         <div className="absolute inset-0 bg-gradient-to-br from-emerald-900/5 via-transparent to-cyan-900/5"></div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8 lg:py-12 relative z-10 w-full">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8 lg:py-16 xl:py-20 relative z-10 w-full">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 items-center min-h-[calc(100vh-10rem)] sm:min-h-[calc(100vh-12rem)] lg:min-h-auto">
           {/* Left Content */}
           <motion.div
@@ -209,11 +209,11 @@ export default function Hero() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1 }}
-          className="absolute bottom-4 sm:bottom-6 lg:bottom-8 left-1/2 transform -translate-x-1/2"
+          className="absolute bottom-0 sm:bottom-3 lg:bottom-4 left-1/2 transform -translate-x-1/2"
         >
           <button
             onClick={scrollToNext}
-            className="flex flex-col items-center gap-1 sm:gap-2 text-gray-400 hover:text-emerald-400 transition-colors animate-bounce"
+            className="flex flex-col items-center gap-1 sm:gap-2 text-gray-400 hover:text-emerald-400 transition-colors animate-bounce focus:outline-none"
           >
             <span className="text-xs sm:text-sm">Scroll Down</span>
             <FiArrowDown size={16} className="sm:w-5 sm:h-5" />
