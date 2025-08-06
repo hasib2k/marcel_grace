@@ -107,8 +107,7 @@ export default function Navbar() {
             </div>
             <div className="relative">
               <span className="text-sm sm:text-lg lg:text-xl xl:text-2xl font-bold bg-gradient-to-r from-emerald-400 via-cyan-400 to-emerald-400 bg-clip-text text-transparent transition-all duration-200 select-none">
-                <span className="hidden sm:inline">Marcel Grace Infotech</span>
-                <span className="sm:hidden">Marcel Grace</span>
+                Marcel Grace Infotech
               </span>
             </div>
           </Link>

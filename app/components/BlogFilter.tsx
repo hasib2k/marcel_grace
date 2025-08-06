@@ -46,15 +46,15 @@ export default function BlogFilter({ blogPosts, categories }: BlogFilterProps) {
   return (
     <>
       {/* Category Filter */}
-      <div className="flex flex-wrap justify-center gap-4 mb-12">
+      <div className="flex flex-wrap justify-center gap-2 sm:gap-3 lg:gap-4 mb-12">
         {categories.map((category) => (
           <button
             key={category}
             onClick={() => handleCategoryChange(category)}
-            className={`px-4 py-2 rounded-full transition-all duration-200 ${
+            className={`px-3 sm:px-4 py-2 rounded-full text-sm sm:text-base font-medium transition-all duration-300 ${
               category === selectedCategory
-                ? 'bg-gradient-to-r from-emerald-400 to-cyan-400 text-white'
-                : 'bg-gray-800 text-gray-300 hover:bg-gray-700'
+                ? 'bg-gradient-to-r from-emerald-500 to-cyan-500 text-white shadow-lg shadow-emerald-500/25'
+                : 'bg-gray-800/80 text-gray-300 hover:bg-gray-700/80 hover:text-white border border-gray-700 hover:border-emerald-400/30'
             }`}
           >
             {category}
@@ -63,33 +63,35 @@ export default function BlogFilter({ blogPosts, categories }: BlogFilterProps) {
       </div>
       
       {/* Blog Posts Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
         {currentPosts.map((post) => (
-          <article key={post.id} className="glass-card p-6 hover:scale-105 transition-all duration-300 group">
-            <div className="flex items-center gap-4 mb-4">
-              <span className="skill-tag text-xs">{post.category}</span>
-              <span className="text-gray-500 text-sm">{post.readTime}</span>
+          <article key={post.id} className="group bg-black/60 backdrop-blur-sm border border-gray-800 rounded-xl p-4 sm:p-6 hover:border-emerald-400/30 hover:shadow-lg hover:shadow-emerald-400/10 transition-all duration-300 hover:scale-[1.02]">
+            <div className="flex flex-wrap items-center gap-2 sm:gap-3 mb-3 sm:mb-4">
+              <span className="inline-block px-2 py-1 text-xs font-medium bg-emerald-500/20 text-emerald-400 rounded-full border border-emerald-400/30">
+                {post.category}
+              </span>
+              <span className="text-gray-500 text-xs sm:text-sm">{post.readTime}</span>
             </div>
             
-            <h2 className="text-xl font-bold text-white mb-3 group-hover:text-emerald-400 transition-colors">
+            <h2 className="text-lg sm:text-xl font-bold text-white mb-3 group-hover:text-emerald-400 transition-colors leading-tight">
               {post.title}
             </h2>
             
-            <p className="text-gray-300 mb-4 leading-relaxed">
+            <p className="text-gray-300 mb-4 text-sm sm:text-base leading-relaxed">
               {post.excerpt}
             </p>
             
             <div className="flex justify-between items-center">
-              <span className="text-gray-500 text-sm">
+              <span className="text-gray-500 text-xs sm:text-sm">
                 {new Date(post.date).toLocaleDateString('en-US', {
                   year: 'numeric',
-                  month: 'long',
+                  month: 'short',
                   day: 'numeric',
                 })}
               </span>
               <Link
                 href={`/blog/${post.slug}`}
-                className="text-emerald-400 hover:text-cyan-400 transition-colors font-medium"
+                className="text-emerald-400 hover:text-cyan-400 font-medium text-sm sm:text-base group-hover:translate-x-1 transition-all duration-300"
               >
                 Read More →
               </Link>
@@ -100,14 +102,14 @@ export default function BlogFilter({ blogPosts, categories }: BlogFilterProps) {
       
       {/* Pagination */}
       {totalPages > 1 && (
-        <div className="flex justify-center items-center gap-2 mt-12">
+        <div className="flex flex-wrap justify-center items-center gap-2 mt-8 sm:mt-12">
           <button
             onClick={() => handlePageChange(currentPage - 1)}
             disabled={currentPage === 1}
-            className={`px-4 py-2 rounded-lg transition-all duration-200 ${
+            className={`px-3 sm:px-4 py-2 rounded-lg text-sm sm:text-base font-medium transition-all duration-300 ${
               currentPage === 1
-                ? 'bg-gray-800 text-gray-500 cursor-not-allowed'
-                : 'bg-gray-800 text-gray-300 hover:bg-gray-700'
+                ? 'bg-gray-800/60 text-gray-500 cursor-not-allowed border border-gray-700'
+                : 'bg-gray-800/80 text-gray-300 hover:bg-gray-700/80 hover:text-white border border-gray-700 hover:border-emerald-400/30'
             }`}
           >
             Previous
@@ -117,10 +119,10 @@ export default function BlogFilter({ blogPosts, categories }: BlogFilterProps) {
             <button
               key={page}
               onClick={() => handlePageChange(page)}
-              className={`px-4 py-2 rounded-lg transition-all duration-200 ${
+              className={`px-3 sm:px-4 py-2 rounded-lg text-sm sm:text-base font-medium transition-all duration-300 ${
                 page === currentPage
-                  ? 'bg-gradient-to-r from-emerald-400 to-cyan-400 text-white'
-                  : 'bg-gray-800 text-gray-300 hover:bg-gray-700'
+                  ? 'bg-gradient-to-r from-emerald-500 to-cyan-500 text-white shadow-lg shadow-emerald-500/25'
+                  : 'bg-gray-800/80 text-gray-300 hover:bg-gray-700/80 hover:text-white border border-gray-700 hover:border-emerald-400/30'
               }`}
             >
               {page}
@@ -130,10 +132,10 @@ export default function BlogFilter({ blogPosts, categories }: BlogFilterProps) {
           <button
             onClick={() => handlePageChange(currentPage + 1)}
             disabled={currentPage === totalPages}
-            className={`px-4 py-2 rounded-lg transition-all duration-200 ${
+            className={`px-3 sm:px-4 py-2 rounded-lg text-sm sm:text-base font-medium transition-all duration-300 ${
               currentPage === totalPages
-                ? 'bg-gray-800 text-gray-500 cursor-not-allowed'
-                : 'bg-gray-800 text-gray-300 hover:bg-gray-700'
+                ? 'bg-gray-800/60 text-gray-500 cursor-not-allowed border border-gray-700'
+                : 'bg-gray-800/80 text-gray-300 hover:bg-gray-700/80 hover:text-white border border-gray-700 hover:border-emerald-400/30'
             }`}
           >
             Next

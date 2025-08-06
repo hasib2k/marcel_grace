@@ -7,7 +7,7 @@ import { SiTelegram, SiWhatsapp, SiFacebook, SiInstagram } from 'react-icons/si'
 export default function Footer() {
   return (
     <footer className="relative bg-black">
-      <div className="relative overflow-hidden bg-black backdrop-blur-sm border-t border-emerald-400/30 w-full px-4 sm:px-6 lg:px-8 py-6 sm:py-8 lg:py-12">
+      <div className="relative overflow-hidden bg-black backdrop-blur-sm border-t border-emerald-400/30 w-full px-4 sm:px-6 lg:px-8 py-4 sm:py-6 lg:py-8 xl:py-12">
         {/* Background Effects */}
         <div className="absolute inset-0 pointer-events-none">
           <div className="absolute inset-0 bg-[linear-gradient(rgba(16,185,129,0.08)_1px,transparent_1px),linear-gradient(90deg,rgba(16,185,129,0.08)_1px,transparent_1px)] bg-[size:40px_40px] opacity-60" />
@@ -16,29 +16,29 @@ export default function Footer() {
           <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-emerald-400/50 to-transparent"></div>
         </div>
 
-        <div className="relative grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 lg:gap-10 items-start">
+        <div className="relative grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8 xl:gap-10 items-start">
           {/* Brand Section */}
           <div className="lg:col-span-1 flex flex-col gap-2 sm:gap-3 lg:gap-4 group">
             <Link
               href="/"
-              className="text-lg sm:text-2xl lg:text-3xl font-bold bg-gradient-to-r from-emerald-400 via-cyan-400 to-emerald-400 bg-clip-text text-transparent tracking-tight transition-transform duration-300"
+              className="text-base sm:text-lg lg:text-2xl xl:text-3xl font-bold bg-gradient-to-r from-emerald-400 via-cyan-400 to-emerald-400 bg-clip-text text-transparent tracking-tight transition-transform duration-300"
             >
               Marcel Grace Infotech
             </Link>
-            <p className="text-gray-300 group-hover:text-gray-200 text-sm sm:text-base leading-relaxed max-w-sm font-medium transition-colors duration-300">
+            <p className="text-gray-300 group-hover:text-gray-200 text-xs sm:text-sm lg:text-base leading-relaxed max-w-sm font-medium transition-colors duration-300">
               Empowering businesses through innovative digital solutions and cutting-edge technology services.
             </p>
           </div>
           
           {/* Quick Links */}
           <div className="flex flex-col gap-2 sm:gap-3 lg:gap-4">
-            <h3 className="text-white font-bold text-sm sm:text-base lg:text-lg uppercase tracking-wide">Quick Links</h3>
-            <ul className="flex flex-col gap-1.5 sm:gap-2 lg:gap-3">
+            <h3 className="text-white font-bold text-xs sm:text-sm lg:text-base xl:text-lg uppercase tracking-wide">Quick Links</h3>
+            <ul className="flex flex-col gap-1 sm:gap-1.5 lg:gap-2 xl:gap-3">
               {['About', 'Services', 'Portfolio', 'Contact'].map((item) => (
                 <li key={item}>
                   <Link
                     href={`/${item.toLowerCase()}`}
-                    className="text-gray-300 hover:text-emerald-400 font-medium text-sm sm:text-base transition-all duration-300 hover:translate-x-2 group flex items-center gap-2"
+                    className="text-gray-300 hover:text-emerald-400 font-medium text-xs sm:text-sm lg:text-base transition-all duration-300 hover:translate-x-2 group flex items-center gap-2"
                   >
                     <span className="w-0 h-0.5 bg-gradient-to-r from-emerald-400 to-cyan-400 group-hover:w-4 transition-all duration-300"></span>
                     {item}
@@ -50,14 +50,14 @@ export default function Footer() {
           
           {/* Services */}
           <div className="flex flex-col gap-2 sm:gap-3 lg:gap-4">
-            <h3 className="text-white font-bold text-sm sm:text-base lg:text-lg uppercase tracking-wide">Services</h3>
-            <ul className="flex flex-col gap-1.5 sm:gap-2 lg:gap-3">
+            <h3 className="text-white font-bold text-xs sm:text-sm lg:text-base xl:text-lg uppercase tracking-wide">Services</h3>
+            <ul className="flex flex-col gap-1 sm:gap-1.5 lg:gap-2 xl:gap-3">
               {['Web Development', 'App Development', 'UI/UX Design', 'Consulting'].map(
                 (service) => (
                   <li key={service}>
                     <Link
                       href="/services"
-                      className="text-gray-300 hover:text-emerald-400 font-medium text-sm sm:text-base transition-all duration-300 hover:translate-x-2 group flex items-center gap-2"
+                      className="text-gray-300 hover:text-emerald-400 font-medium text-xs sm:text-sm lg:text-base transition-all duration-300 hover:translate-x-2 group flex items-center gap-2"
                     >
                       <span className="w-0 h-0.5 bg-gradient-to-r from-emerald-400 to-cyan-400 group-hover:w-4 transition-all duration-300"></span>
                       {service}
@@ -69,23 +69,23 @@ export default function Footer() {
           </div>
 
           {/* Contact & Social */}
-          <div className="flex flex-col gap-3 sm:gap-4 lg:gap-6">
+          <div className="flex flex-col gap-2 sm:gap-3 lg:gap-4 xl:gap-6">
             <div>
-              <h3 className="text-white font-bold text-sm sm:text-base lg:text-lg uppercase tracking-wide mb-2 sm:mb-3 lg:mb-4">Contact</h3>
-              <div className="space-y-1.5 sm:space-y-2 lg:space-y-3">
+              <h3 className="text-white font-bold text-xs sm:text-sm lg:text-base xl:text-lg uppercase tracking-wide mb-1.5 sm:mb-2 lg:mb-3 xl:mb-4">Contact</h3>
+              <div className="space-y-1 sm:space-y-1.5 lg:space-y-2 xl:space-y-3">
                 <Link
                   href="mailto:info.marcelgrce@gmail.com"
-                  className="flex items-center gap-2 sm:gap-3 text-gray-300 hover:text-emerald-400 transition-colors font-medium text-sm sm:text-base group"
+                  className="flex items-center gap-2 sm:gap-3 text-gray-300 hover:text-emerald-400 transition-colors font-medium text-xs sm:text-sm lg:text-base group"
                 >
-                  <FiMail className="w-4 h-4 sm:w-5 sm:h-5 group-hover:scale-110 transition-transform" />
+                  <FiMail className="w-3 h-3 sm:w-4 sm:h-4 lg:w-5 lg:h-5 group-hover:scale-110 transition-transform" />
                   <span className="hidden sm:inline">info.marcelgrce@gmail.com</span>
                   <span className="sm:hidden">Email</span>
                 </Link>
                 <Link
                   href="tel:+8801706776711"
-                  className="flex items-center gap-2 sm:gap-3 text-gray-300 hover:text-emerald-400 transition-colors font-medium text-sm sm:text-base group"
+                  className="flex items-center gap-2 sm:gap-3 text-gray-300 hover:text-emerald-400 transition-colors font-medium text-xs sm:text-sm lg:text-base group"
                 >
-                  <FiPhone className="w-4 h-4 sm:w-5 sm:h-5 group-hover:scale-110 transition-transform" />
+                  <FiPhone className="w-3 h-3 sm:w-4 sm:h-4 lg:w-5 lg:h-5 group-hover:scale-110 transition-transform" />
                   <span className="hidden sm:inline">+880 170 677 6711</span>
                   <span className="sm:hidden">Call</span>
                 </Link>
@@ -94,8 +94,8 @@ export default function Footer() {
 
             {/* Social Links */}
             <div>
-              <h3 className="text-white font-bold text-sm sm:text-base lg:text-lg uppercase tracking-wide mb-2 sm:mb-3 lg:mb-4">Follow Us</h3>
-              <div className="flex gap-2 sm:gap-3 lg:gap-4">
+              <h3 className="text-white font-bold text-xs sm:text-sm lg:text-base xl:text-lg uppercase tracking-wide mb-1.5 sm:mb-2 lg:mb-3 xl:mb-4">Follow Us</h3>
+              <div className="flex gap-1.5 sm:gap-2 lg:gap-3 xl:gap-4 flex-wrap">
                 {[
                   { href: "https://www.facebook.com/MarcelGraceInfotech", icon: SiFacebook },
                   { href: "https://linkedin.com/company/marcelgrace", icon: FiLinkedin },
@@ -107,9 +107,9 @@ export default function Footer() {
                     key={index}
                     href={href}
                     target="_blank"
-                    className="group p-2 sm:p-3 lg:p-4 rounded-lg sm:rounded-xl bg-white/5 backdrop-blur-sm border border-white/10 hover:border-emerald-400/50 hover:scale-110 transition-all duration-300 hover:shadow-lg hover:shadow-emerald-400/20"
+                    className="group p-2 sm:p-2.5 lg:p-3 xl:p-4 rounded-lg sm:rounded-xl bg-white/5 backdrop-blur-sm border border-white/10 hover:border-emerald-400/50 hover:scale-110 transition-all duration-300 hover:shadow-lg hover:shadow-emerald-400/20 min-h-[36px] min-w-[36px] sm:min-h-[40px] sm:min-w-[40px] lg:min-h-[44px] lg:min-w-[44px] flex items-center justify-center"
                   >
-                    <Icon className="w-4 h-4 sm:w-5 sm:h-5 lg:w-6 lg:h-6 text-gray-300 group-hover:text-emerald-400 transition-colors" />
+                    <Icon className="w-3 h-3 sm:w-4 sm:h-4 lg:w-5 lg:h-5 xl:w-6 xl:h-6 text-gray-300 group-hover:text-emerald-400 transition-colors" />
                   </Link>
                 ))}
               </div>
@@ -118,15 +118,15 @@ export default function Footer() {
         </div>
 
         {/* Bottom Section */}
-        <div className="mt-6 sm:mt-8 lg:mt-12 pt-4 sm:pt-6 lg:pt-8 border-t border-white/10 flex flex-col sm:flex-row justify-between items-center gap-2 sm:gap-4">
-          <p className="text-gray-300 font-medium text-sm sm:text-base">
+        <div className="mt-4 sm:mt-6 lg:mt-8 xl:mt-12 pt-3 sm:pt-4 lg:pt-6 xl:pt-8 border-t border-white/10 flex flex-col sm:flex-row justify-between items-center gap-2 sm:gap-3 lg:gap-4">
+          <p className="text-gray-300 font-medium text-xs sm:text-sm lg:text-base">
             © 2025 Marcel Grace Infotech. All rights reserved.
           </p>
-          <div className="flex gap-3 sm:gap-4 lg:gap-6">
-            <Link href="/privacy" className="text-gray-300 hover:text-emerald-400 transition-colors text-sm sm:text-base font-medium">
+          <div className="flex gap-2 sm:gap-3 lg:gap-4 xl:gap-6">
+            <Link href="/privacy" className="text-gray-300 hover:text-emerald-400 transition-colors text-xs sm:text-sm lg:text-base font-medium">
               Privacy Policy
             </Link>
-            <Link href="/terms" className="text-gray-300 hover:text-emerald-400 transition-colors text-sm sm:text-base font-medium">
+            <Link href="/terms" className="text-gray-300 hover:text-emerald-400 transition-colors text-xs sm:text-sm lg:text-base font-medium">
               Terms of Service
             </Link>
           </div>
