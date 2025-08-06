@@ -1,0 +1,23 @@
+User-agent: *
+Allow: /
+
+# Allow crawling of all content
+Crawl-delay: 1
+
+# Block sensitive areas (if any)
+Disallow: /api/
+Disallow: /_next/
+Disallow: /admin/
+
+# Sitemap location
+Sitemap: https://marcelgrace.com/sitemap.xml
+
+# Major search engines
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Slurp
+Allow: /

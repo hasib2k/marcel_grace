@@ -1,8 +1,38 @@
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'About - Marcel Grace Infotech',
-  description: 'Learn about Marcel Grace Infotech - Leading software development company providing innovative solutions.',
+  title: 'About Marcel Grace Infotech - Software Development Experts',
+  description: 'Learn about Marcel Grace Infotech - Leading software development company with 5+ years experience, 150+ successful projects. Expert team delivering innovative digital solutions.',
+  keywords: [
+    'about marcel grace infotech',
+    'software development company',
+    'web development experts',
+    'mobile app developers',
+    'digital transformation',
+    'technology solutions'
+  ],
+  openGraph: {
+    title: 'About Marcel Grace Infotech - Software Development Experts',
+    description: 'Learn about Marcel Grace Infotech - Leading software development company with 5+ years experience, 150+ successful projects.',
+    url: 'https://marcelgrace.com/about',
+    type: 'website',
+    images: [
+      {
+        url: '/assets/mg_logo2.png',
+        width: 1200,
+        height: 630,
+        alt: 'About Marcel Grace Infotech',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'About Marcel Grace Infotech - Software Development Experts',
+    description: 'Learn about Marcel Grace Infotech - Leading software development company with 5+ years experience, 150+ successful projects.',
+  },
+  alternates: {
+    canonical: '/about',
+  },
 };
 
 export default function About() {
