@@ -181,23 +181,26 @@ export default function Hero() {
               {/* Main Image Container */}
               <div className="relative w-48 h-48 sm:w-56 sm:h-56 md:w-64 md:h-64 lg:w-80 lg:h-80 xl:w-96 xl:h-96 mx-auto">
                 {/* Animated border */}
-                <div className="absolute inset-0 rounded-full bg-gradient-to-r from-emerald-400 via-cyan-400 to-emerald-400 p-0.5 sm:p-1 animate-spin-slow">
+                <div className="absolute inset-0 rounded-full bg-gradient-to-r from-emerald-400 via-cyan-400 to-emerald-400 p-1 animate-spin-slow">
                   <div className="w-full h-full rounded-full bg-black"></div>
                 </div>
-                
-                {/* Company Logo/Visual */}
-                <div className="absolute inset-2 sm:inset-3 lg:inset-4 rounded-full overflow-hidden">
-                  <div className="w-full h-full bg-gradient-to-br from-emerald-500/20 to-cyan-500/20 flex items-center justify-center relative backdrop-blur-sm border border-white/10">
-                    {/* Your custom image */}
-                    <Image
-                      src="/assets/banner_3.jpg"
-                      alt="Marcel Grace Infotech"
-                      fill
-                      className="object-cover rounded-full hover:scale-105 transition-transform duration-300"
-                      sizes="(max-width: 640px) 192px, (max-width: 768px) 224px, (max-width: 1024px) 256px, 384px"
-                      priority
-                    />
-                  </div>
+                {/* Company Logo/Visual - improved for mobile */}
+                <div
+                  className="absolute inset-0 rounded-full overflow-hidden flex items-center justify-center border-4 border-transparent bg-clip-padding transition-all duration-300 group hover:border-emerald-400/80 hover:scale-105 hover:shadow-emerald-400/30 shadow-lg"
+                  style={{ boxShadow: '0 4px 24px rgba(16,185,129,0.15)' }}
+                  tabIndex={0}
+                  onTouchStart={e => e.currentTarget.classList.add('scale-105')}
+                  onTouchEnd={e => e.currentTarget.classList.remove('scale-105')}
+                >
+                  <Image
+                    src="/assets/IMG_2416.jpeg"
+                    alt="Marcel Grace Infotech"
+                    fill
+                    className="object-cover rounded-full mx-auto"
+                    sizes="100vw"
+                    priority
+                    style={{ objectFit: 'cover', objectPosition: 'center', width: '100%', height: '100%', display: 'block' }}
+                  />
                 </div>
               </div>
             </div>
