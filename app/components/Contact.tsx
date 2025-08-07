@@ -73,10 +73,10 @@ export default function Contact() {
                     </div>
                     <h3 className="text-sm sm:text-base font-bold text-white mb-1.5 group-hover:text-emerald-400 transition-colors duration-300">Call Us</h3>
                     <Link
-                      href="tel:+8801706776711"
+                      href="tel:09638-876711"
                       className="text-gray-300 hover:text-emerald-400 transition-colors duration-300 font-medium text-xs sm:text-sm"
                     >
-                      +880 170 677 6711
+                      09638-876711
                     </Link>
                   </div>
                 </div>

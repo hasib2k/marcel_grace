@@ -98,7 +98,7 @@ npm start
 
 For technical support during deployment:
 - Email: info.marcelgrce@gmail.com
-- Phone: +880 170 6776 711
+- Phone: 09638-876711
 
 ## 🎯 Performance Targets
 

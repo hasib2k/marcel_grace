@@ -82,11 +82,11 @@ export default function Footer() {
                   <span className="sm:hidden">Email</span>
                 </Link>
                 <Link
-                  href="tel:+8801706776711"
+                  href="tel:09638-876711"
                   className="flex items-center gap-2 sm:gap-3 text-gray-300 hover:text-emerald-400 transition-colors font-medium text-xs sm:text-sm lg:text-base group"
                 >
                   <FiPhone className="w-3 h-3 sm:w-4 sm:h-4 lg:w-5 lg:h-5 group-hover:scale-110 transition-transform" />
-                  <span className="hidden sm:inline">+880 170 677 6711</span>
+                  <span className="hidden sm:inline">09638-876711</span>
                   <span className="sm:hidden">Call</span>
                 </Link>
               </div>
