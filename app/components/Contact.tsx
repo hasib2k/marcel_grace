@@ -96,53 +96,7 @@ export default function Contact() {
               </div>
             </div>
           </motion.div>
-
-          {/* Social Links */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            viewport={{ once: true }}
-            className="mb-6 sm:mb-8 lg:mb-10 xl:mb-12"
-          >
-            <div className="relative overflow-hidden rounded-2xl sm:rounded-3xl bg-black/40 backdrop-blur-sm border border-emerald-400/20 p-6 sm:p-7 lg:p-8 max-w-2xl mx-auto">
-              {/* Background gradient */}
-              <div className="absolute inset-0 bg-gradient-to-br from-emerald-400/5 via-cyan-400/5 to-emerald-400/5"></div>
-              
-              <div className="relative">
-                <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-white mb-4 sm:mb-5 lg:mb-6">Connect With Us</h3>
-                <div className="flex justify-center gap-3 sm:gap-4 lg:gap-6 flex-wrap">
-                  <Link
-                    href="https://www.facebook.com/MarcelGraceInfotech"
-                    target="_blank"
-                    className="group p-4 sm:p-4 lg:p-5 rounded-xl sm:rounded-2xl bg-black/40 backdrop-blur-sm border border-emerald-400/20 hover:border-emerald-400/50 hover:scale-110 transition-all duration-300 hover:shadow-lg hover:shadow-emerald-400/20 min-h-[48px] min-w-[48px] flex items-center justify-center"
-                  >
-                    <SiFacebook className="w-6 h-6 sm:w-6 sm:h-6 lg:w-7 lg:h-7 text-gray-300 group-hover:text-emerald-400 transition-colors duration-300" />
-                  </Link>
-                  <Link
-                    href="https://linkedin.com/company/marcelgrace"
-                    target="_blank"
-                    className="group p-4 sm:p-4 lg:p-5 rounded-xl sm:rounded-2xl bg-black/40 backdrop-blur-sm border border-emerald-400/20 hover:border-emerald-400/50 hover:scale-110 transition-all duration-300 hover:shadow-lg hover:shadow-emerald-400/20 min-h-[48px] min-w-[48px] flex items-center justify-center"
-                  >
-                    <FiLinkedin className="w-6 h-6 sm:w-6 sm:h-6 lg:w-7 lg:h-7 text-gray-300 group-hover:text-emerald-400 transition-colors duration-300" />
-                  </Link>
-                  <Link
-                    href="https://www.instagram.com/marcel_grace_infotech"
-                    target="_blank"
-                    className="group p-4 sm:p-4 lg:p-5 rounded-xl sm:rounded-2xl bg-black/40 backdrop-blur-sm border border-emerald-400/20 hover:border-emerald-400/50 hover:scale-110 transition-all duration-300 hover:shadow-lg hover:shadow-emerald-400/20 min-h-[48px] min-w-[48px] flex items-center justify-center"
-                  >
-                    <SiInstagram className="w-6 h-6 sm:w-6 sm:h-6 lg:w-7 lg:h-7 text-gray-300 group-hover:text-emerald-400 transition-colors duration-300" />
-                  </Link>
-                  <Link
-                    href="mailto:info.marcelgrce@gmail.com"
-                    className="group p-4 sm:p-4 lg:p-5 rounded-xl sm:rounded-2xl bg-black/40 backdrop-blur-sm border border-emerald-400/20 hover:border-emerald-400/50 hover:scale-110 transition-all duration-300 hover:shadow-lg hover:shadow-emerald-400/20 min-h-[48px] min-w-[48px] flex items-center justify-center"
-                  >
-                    <FiMail className="w-6 h-6 sm:w-6 sm:h-6 lg:w-7 lg:h-7 text-gray-300 group-hover:text-emerald-400 transition-colors duration-300" />
-                  </Link>
-                </div>
-              </div>
-            </div>
-          </motion.div>
+          {/* Social Links section removed as requested */}
 
           {/* CTA Button */}
           <motion.div
