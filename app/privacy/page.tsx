@@ -113,7 +113,7 @@ export default function PrivacyPolicy() {
                 <p className="text-gray-300">
                   <strong>Marcel Grace Infotech</strong><br />
                   Email: info.marcelgrace@gmail.com<br />
-                  Phone: 09638-876711<br />
+                  Phone: +8809638-604252<br />
                   Address: Dhaka, Bangladesh
                 </p>
               </div>

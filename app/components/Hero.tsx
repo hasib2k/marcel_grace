@@ -117,7 +117,7 @@ export default function Hero() {
                   <FiMail size={14} className="sm:w-4 sm:h-4 lg:w-5 lg:h-5 text-gray-300 group-hover:text-emerald-400 transition-colors" />
                 </Link>
                 <Link
-                  href="tel:09638-876711"
+                  href="tel:+8809638-604252"
                   className="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 bg-white/5 backdrop-blur-sm border border-white/10 rounded-lg sm:rounded-xl hover:bg-white/10 hover:border-emerald-400/50 hover:scale-110 transition-all duration-300 group hover:shadow-lg hover:shadow-emerald-400/20 flex items-center justify-center"
                   aria-label="Call us"
                 >
