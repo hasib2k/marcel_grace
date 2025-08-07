@@ -32,7 +32,7 @@ export default function About() {
           >
             <div className="relative h-48 sm:h-64 md:h-80 lg:h-96 xl:h-[500px] w-full border-2 border-gray-700 rounded-lg overflow-hidden transition-all duration-300 group-hover:border-emerald-400/50 group-hover:shadow-lg group-hover:shadow-emerald-400/20">
               <Image
-                src="/assets/banner.JPEG"
+                src="/assets/banner_2.jpg"
                 alt="Marcel Grace Team"
                 fill
                 className="object-cover transition-transform duration-300 group-hover:scale-105"

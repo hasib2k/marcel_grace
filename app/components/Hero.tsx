@@ -76,11 +76,11 @@ export default function Hero() {
             >
               <Link
                 href="/contact"
-                className="group relative overflow-hidden bg-gradient-to-r from-emerald-500 to-cyan-500 hover:from-emerald-600 hover:to-cyan-600 text-white font-bold text-sm sm:text-base lg:text-lg px-4 sm:px-6 lg:px-8 py-2.5 sm:py-3 rounded-xl transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-emerald-500/25 flex items-center justify-center gap-2 w-full sm:w-auto"
+                className="px-4 sm:px-6 lg:px-8 py-2.5 sm:py-3 rounded-xl font-bold text-sm sm:text-base lg:text-lg w-full sm:w-auto flex items-center justify-center gap-2 backdrop-blur-xl bg-white/10 border border-emerald-400/30 shadow-lg text-white transition-all duration-300 hover:scale-105"
               >
                 <FiDownload size={16} className="sm:w-5 sm:h-5" />
                 GET QUOTE
-                <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300"></div>
+                {/* Removed hidden effect overlay */}
               </Link>
               
               {/* Social Links */}
@@ -190,7 +190,7 @@ export default function Hero() {
                   <div className="w-full h-full bg-gradient-to-br from-emerald-500/20 to-cyan-500/20 flex items-center justify-center relative backdrop-blur-sm border border-white/10">
                     {/* Your custom image */}
                     <Image
-                      src="/assets/IMG_2416.jpeg"
+                      src="/assets/banner_3.jpg"
                       alt="Marcel Grace Infotech"
                       fill
                       className="object-cover rounded-full hover:scale-105 transition-transform duration-300"

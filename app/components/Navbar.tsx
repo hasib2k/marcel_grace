@@ -96,7 +96,7 @@ export default function Navbar() {
             <div className="relative w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 transition-transform duration-300 group-hover:rotate-12 bg-gradient-to-br from-emerald-400 to-cyan-400 rounded-full p-0.5">
               <div className="w-full h-full bg-black rounded-full p-1">
                 <Image
-                  src="/assets/mg_logo2.png"
+                  src="/assets/profile_3.png"
                   alt="Marcel Grace Infotech Logo"
                   width={48}
                   height={48}
