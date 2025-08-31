@@ -94,34 +94,34 @@ const categories = ['All', 'E-Commerce', 'Healthcare', 'Finance', 'Education', '
 
 export default function Portfolio() {
   return (
-    <main className="min-h-screen bg-black pt-20 lg:pt-24">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20">
+    <main className="min-h-screen bg-white pt-16 pb-6">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
         {/* Header */}
-        <div className="text-center mb-12 sm:mb-16">
-          <h1 className="text-4xl lg:text-5xl font-bold text-white mb-6">
-            Our Portfolio
-          </h1>
-          <p className="text-gray-400 text-lg max-w-2xl mx-auto">
-            Showcasing our expertise through successful software development projects 
-            that have transformed businesses across various industries.
+        <div className="text-center mb-8">
+          <h1 className="text-2xl md:text-3xl font-black text-[#181C14] mb-2 px-2 inline-block rounded-none" style={{letterSpacing: '1.5px'}}>Our Portfolio</h1>
+          <p className="text-[11px] md:text-xs text-black max-w-2xl mx-auto">
+            Showcasing our expertise through successful software development projects that have transformed businesses across various industries.
           </p>
         </div>
-        
         {/* Portfolio Filter Component */}
-        <PortfolioFilter projects={projects} categories={categories} />
-        
+        <PortfolioFilter
+          projects={projects}
+          categories={categories}
+          cardClassName="flex flex-col h-full bg-white p-4 gap-2 border-l-4 border-[#697565] shadow-none rounded-none"
+          techClassName="px-2 py-0.5 text-[10px] font-medium bg-[#697565] text-white border border-[#697565] rounded-none"
+            buttonClassName="inline-flex items-center gap-2 border border-[#697565] px-2.5 py-0.5 font-medium text-[10px] rounded-none w-fit"
+        />
         {/* CTA Section */}
-        <div className="glass-card p-8 text-center mt-16">
-          <h2 className="text-2xl font-bold text-white mb-4">
+        <div className="p-6 text-center mt-12 bg-white border-l-4 border-[#697565] rounded-none">
+          <h2 className="text-xs md:text-base font-bold text-[#181C14] mb-2">
             Have a Project in Mind?
           </h2>
-          <p className="text-gray-300 mb-6">
+          <p className="text-xs md:text-sm text-[#3C3D37] mb-4">
             Let's discuss your requirements and create a custom solution for your business.
           </p>
-          
           <Link
             href="/contact"
-            className="btn-primary inline-flex items-center gap-2"
+            className="px-4 py-1 rounded-none font-semibold inline-block bg-[#697565] text-white text-xs md:text-sm border border-[#697565]"
           >
             Start Your Project
           </Link>

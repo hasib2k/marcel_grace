@@ -1,6 +1,5 @@
 'use client';
 
-import { motion } from 'framer-motion';
 import Link from 'next/link';
 import Image from 'next/image';
 import { FiDownload, FiLinkedin, FiMail, FiArrowDown, FiPhone } from 'react-icons/fi';
@@ -21,207 +20,56 @@ export default function Hero() {
   };
 
   return (
-    <section className="min-h-screen flex items-center justify-center relative bg-black pt-20 sm:pt-24 lg:pt-16 xl:pt-20">
-      {/* Animated Background */}
-      <div className="absolute inset-0">
-        {/* Background grid pattern */}
-        <div className="absolute inset-0 bg-[linear-gradient(rgba(16,185,129,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(16,185,129,0.03)_1px,transparent_1px)] bg-[size:40px_40px] opacity-50" />
-        
-        {/* Additional background overlay */}
-        <div className="absolute inset-0 bg-gradient-to-br from-emerald-900/5 via-transparent to-cyan-900/5"></div>
-      </div>
-
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8 lg:py-16 xl:py-20 relative z-10 w-full">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 items-center min-h-[calc(100vh-10rem)] sm:min-h-[calc(100vh-12rem)] lg:min-h-auto">
-          {/* Left Content */}
-          <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
-            className="space-y-3 sm:space-y-4 lg:space-y-6 text-center lg:text-left order-2 lg:order-1"
-          >
-            {/* Greeting Badge */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.1 }}
-              className="inline-flex items-center gap-2 bg-white/5 backdrop-blur-sm border border-white/10 rounded-full px-3 py-1.5 sm:px-4 sm:py-2 text-xs sm:text-sm hover:bg-white/10 transition-all duration-300"
-            >
-              <span className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-emerald-400 rounded-full animate-ping"></span>
-              <span className="text-gray-300 font-medium">HELLO WORLD</span>
-            </motion.div>
-
-            {/* Main Heading */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.2 }}
-              className="space-y-2 sm:space-y-3"
-            >
-              <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-white leading-tight">
-                We're <span className="text-transparent bg-gradient-to-r from-emerald-400 to-cyan-400 bg-clip-text">Marcel Grace</span>
-                <span className="block text-transparent bg-gradient-to-r from-emerald-400 to-cyan-400 bg-clip-text lg:inline"> Infotech</span>
-                <span className="block text-gray-300 text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl font-normal mt-1 sm:mt-2">
-                  SOFTWARE DEVELOPMENT COMPANY
-                </span>
-              </h1>
-            </motion.div>
-
-            {/* CTA Buttons */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.3 }}
-              className="flex flex-col gap-3 sm:gap-4"
-            >
-              <Link
-                href="/contact"
-                className="px-4 sm:px-6 lg:px-8 py-2.5 sm:py-3 rounded-xl font-bold text-sm sm:text-base lg:text-lg w-full sm:w-auto flex items-center justify-center gap-2 backdrop-blur-xl bg-white/10 border border-emerald-400/30 shadow-lg text-white transition-all duration-300 hover:scale-105"
-              >
-                <FiDownload size={16} className="sm:w-5 sm:h-5" />
-                GET QUOTE
-                {/* Removed hidden effect overlay */}
-              </Link>
-              
-              {/* Social Links */}
-              <div className="flex justify-center lg:justify-start gap-2 sm:gap-3">
-                <Link
-                  href="https://www.facebook.com/MarcelGraceInfotech"
-                  target="_blank"
-                  className="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 bg-white/5 backdrop-blur-sm border border-white/10 rounded-lg sm:rounded-xl hover:bg-white/10 hover:border-emerald-400/50 hover:scale-110 transition-all duration-300 group hover:shadow-lg hover:shadow-emerald-400/20 flex items-center justify-center"
-                  aria-label="Follow us on Facebook"
-                >
-                  <SiFacebook size={14} className="sm:w-4 sm:h-4 lg:w-5 lg:h-5 text-gray-300 group-hover:text-emerald-400 transition-colors" />
-                </Link>
-                <Link
-                  href="https://www.linkedin.com/company/marcelgrace"
-                  target="_blank"
-                  className="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 bg-white/5 backdrop-blur-sm border border-white/10 rounded-lg sm:rounded-xl hover:bg-white/10 hover:border-emerald-400/50 hover:scale-110 transition-all duration-300 group hover:shadow-lg hover:shadow-emerald-400/20 flex items-center justify-center"
-                  aria-label="Connect with us on LinkedIn"
-                >
-                  <FiLinkedin size={14} className="sm:w-4 sm:h-4 lg:w-5 lg:h-5 text-gray-300 group-hover:text-emerald-400 transition-colors" />
-                </Link>
-                <Link
-                  href="https://www.instagram.com/marcel_grace_infotech"
-                  target="_blank"
-                  className="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 bg-white/5 backdrop-blur-sm border border-white/10 rounded-lg sm:rounded-xl hover:bg-white/10 hover:border-emerald-400/50 hover:scale-110 transition-all duration-300 group hover:shadow-lg hover:shadow-emerald-400/20 flex items-center justify-center"
-                  aria-label="Follow us on Instagram"
-                >
-                  <SiInstagram size={14} className="sm:w-4 sm:h-4 lg:w-5 lg:h-5 text-gray-300 group-hover:text-emerald-400 transition-colors" />
-                </Link>
-                <Link
-                  href="mailto:info.marcelgrce@gmail.com"
-                  className="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 bg-white/5 backdrop-blur-sm border border-white/10 rounded-lg sm:rounded-xl hover:bg-white/10 hover:border-emerald-400/50 hover:scale-110 transition-all duration-300 group hover:shadow-lg hover:shadow-emerald-400/20 flex items-center justify-center"
-                  aria-label="Send us an Email"
-                >
-                  <FiMail size={14} className="sm:w-4 sm:h-4 lg:w-5 lg:h-5 text-gray-300 group-hover:text-emerald-400 transition-colors" />
-                </Link>
-                <Link
-                  href="tel:+8809638-604252"
-                  className="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 bg-white/5 backdrop-blur-sm border border-white/10 rounded-lg sm:rounded-xl hover:bg-white/10 hover:border-emerald-400/50 hover:scale-110 transition-all duration-300 group hover:shadow-lg hover:shadow-emerald-400/20 flex items-center justify-center"
-                  aria-label="Call us"
-                >
-                  <FiPhone size={14} className="sm:w-4 sm:h-4 lg:w-5 lg:h-5 text-gray-300 group-hover:text-emerald-400 transition-colors" />
-                </Link>
-              </div>
-            </motion.div>
-
-            {/* Quote */}
-            <motion.blockquote
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.4 }}
-              className="text-sm sm:text-base lg:text-lg text-gray-300 italic border-l-2 border-emerald-400 pl-3 sm:pl-4 bg-white/5 backdrop-blur-sm rounded-r-lg py-2 sm:py-3 hover:bg-white/10 transition-all duration-300"
-            >
-              "Building Tomorrow's Technology Today"
-            </motion.blockquote>
-
-            {/* Stats */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.5 }}
-              className="grid grid-cols-2 gap-2 sm:gap-3 lg:gap-4 pt-2 sm:pt-4"
-            >
-              <div className="text-center group">
-                <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-lg sm:rounded-xl p-2 sm:p-3 lg:p-4 hover:bg-white/10 hover:border-emerald-400/50 transition-all duration-300 hover:scale-105 h-16 sm:h-20 lg:h-24 flex flex-col justify-center">
-                  <div className="text-lg sm:text-xl lg:text-2xl font-bold bg-gradient-to-r from-emerald-400 to-cyan-400 bg-clip-text text-transparent">150+</div>
-                  <div className="text-xs sm:text-sm text-gray-400 group-hover:text-gray-300 transition-colors">Projects</div>
-                </div>
-              </div>
-              <div className="text-center group">
-                <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-lg sm:rounded-xl p-2 sm:p-3 lg:p-4 hover:bg-white/10 hover:border-emerald-400/50 transition-all duration-300 hover:scale-105 h-16 sm:h-20 lg:h-24 flex flex-col justify-center">
-                  <div className="text-lg sm:text-xl lg:text-2xl font-bold bg-gradient-to-r from-emerald-400 to-cyan-400 bg-clip-text text-transparent">50+</div>
-                  <div className="text-xs sm:text-sm text-gray-400 group-hover:text-gray-300 transition-colors">Clients</div>
-                </div>
-              </div>
-              <div className="text-center group">
-                <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-lg sm:rounded-xl p-2 sm:p-3 lg:p-4 hover:bg-white/10 hover:border-emerald-400/50 transition-all duration-300 hover:scale-105 h-16 sm:h-20 lg:h-24 flex flex-col justify-center">
-                  <div className="text-lg sm:text-xl lg:text-2xl font-bold bg-gradient-to-r from-emerald-400 to-cyan-400 bg-clip-text text-transparent">5+</div>
-                  <div className="text-xs sm:text-sm text-gray-400 group-hover:text-gray-300 transition-colors">Years</div>
-                </div>
-              </div>
-              <div className="text-center group">
-                <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-lg sm:rounded-xl p-2 sm:p-3 lg:p-4 hover:bg-white/10 hover:border-emerald-400/50 transition-all duration-300 hover:scale-105 h-16 sm:h-20 lg:h-24 flex flex-col justify-center">
-                  <div className="text-lg sm:text-xl lg:text-2xl font-bold bg-gradient-to-r from-emerald-400 to-cyan-400 bg-clip-text text-transparent">24/7</div>
-                  <div className="text-xs sm:text-sm text-gray-400 group-hover:text-gray-300 transition-colors">Support</div>
-                </div>
-              </div>
-            </motion.div>
-          </motion.div>
-
-          {/* Right Content - Company Visual */}
-          <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="flex justify-center order-1 lg:order-2 mb-4 lg:mb-0"
-          >
-            <div className="relative">
-              {/* Main Image Container */}
-              <div className="relative w-48 h-48 sm:w-56 sm:h-56 md:w-64 md:h-64 lg:w-80 lg:h-80 xl:w-96 xl:h-96 mx-auto">
-                {/* Animated border */}
-                <div className="absolute inset-0 rounded-full bg-gradient-to-r from-emerald-400 via-cyan-400 to-emerald-400 p-1 animate-spin-slow">
-                  <div className="w-full h-full rounded-full bg-black"></div>
-                </div>
-                {/* Company Logo/Visual - improved for mobile */}
-                <div
-                  className="absolute inset-0 rounded-full overflow-hidden flex items-center justify-center border-4 border-transparent bg-clip-padding transition-all duration-300 group hover:border-emerald-400/80 hover:scale-105 hover:shadow-emerald-400/30 shadow-lg"
-                  style={{ boxShadow: '0 4px 24px rgba(16,185,129,0.15)' }}
-                  tabIndex={0}
-                  onTouchStart={e => e.currentTarget.classList.add('scale-105')}
-                  onTouchEnd={e => e.currentTarget.classList.remove('scale-105')}
-                >
-                  <Image
-                    src="/assets/IMG_2416.jpeg"
-                    alt="Marcel Grace Infotech"
-                    fill
-                    className="object-cover rounded-full mx-auto"
-                    sizes="100vw"
-                    priority
-                    style={{ objectFit: 'cover', objectPosition: 'center', width: '100%', height: '100%', display: 'block' }}
-                  />
-                </div>
-              </div>
+  <section className="pt-24 pb-0 bg-white">
+      <div className="max-w-7xl mx-auto px-4 sm:px-8 flex flex-col md:flex-row items-center md:items-start gap-10 min-h-[60vh]">
+        {/* Left: Textual Content */}
+        <div className="flex-1 flex flex-col justify-center gap-4 order-2 md:order-1 md:items-start items-center text-left">
+          <h1 className="text-base md:text-2xl font-extrabold text-[#181C14] leading-tight mb-1">
+            Marcel Grace Infotech: <span className="font-bold text-[13px] md:text-lg text-[#3C3D37]">Leading software development company dedicated to transforming businesses through innovative technology solutions.</span>
+          </h1>
+          <p className="text-[11px] md:text-xs text-[#3C3D37] mb-2 max-w-xl">
+            We build custom software that drives business growth and efficiency. <span className="text-[#181C14]">Partner with us to transform your ideas into reality</span> with innovative technology and expert guidance. Our team combines deep technical expertise with a passion for solving real-world business challenges, ensuring every solution is tailored to your unique needs. From initial strategy and design to development, deployment, and ongoing support, we are committed to delivering measurable results and long-term value. Experience a collaborative process, transparent communication, and a relentless focus on quality—empowering your business to thrive in the digital age.
+          </p>
+          <div className="flex flex-row flex-wrap gap-6 mb-4">
+            <div className="flex flex-col items-center md:items-start">
+              <span className="text-sm md:text-base font-bold text-[#181C14]">100+</span>
+              <span className="text-[10px] text-[#3C3D37]">Projects</span>
             </div>
-          </motion.div>
+            <div className="flex flex-col items-center md:items-start">
+              <span className="text-sm md:text-base font-bold text-[#181C14]">50+</span>
+              <span className="text-[10px] text-[#3C3D37]">Clients</span>
+            </div>
+            <div className="flex flex-col items-center md:items-start">
+              <span className="text-sm md:text-base font-bold text-[#181C14]">5+</span>
+              <span className="text-[10px] text-[#3C3D37]">Years</span>
+            </div>
+            <div className="flex flex-col items-center md:items-start">
+              <span className="text-sm md:text-base font-bold text-[#181C14]">24/7</span>
+              <span className="text-[10px] text-[#3C3D37]">Support</span>
+            </div>
+          </div>
+          <div className="flex gap-2 mt-1">
+            <Link href="/services" className="px-2.5 py-0.5 rounded-none border border-[#697565] text-[#697565] font-semibold text-[10px]">Explore Our Services</Link>
+            <Link href="/contact" className="px-2.5 py-0.5 rounded-none border border-[#697565] bg-[#697565] text-white font-semibold text-[10px]">Contact Us</Link>
+          </div>
+          <blockquote className="text-[10px] md:text-xs text-[#697565] italic border-l-2 border-[#ECDFCC] pl-3 mt-6 max-w-xl">
+            “Building Tomorrow’s Technology Today”
+          </blockquote>
         </div>
-
-        {/* Scroll Indicator */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1 }}
-          className="absolute bottom-0 sm:bottom-3 lg:bottom-4 left-1/2 transform -translate-x-1/2"
-        >
-          <button
-            onClick={scrollToNext}
-            className="flex flex-col items-center gap-1 sm:gap-2 text-gray-400 hover:text-emerald-400 transition-colors animate-bounce focus:outline-none"
-          >
-            <span className="text-xs sm:text-sm">Scroll Down</span>
-            <FiArrowDown size={16} className="sm:w-5 sm:h-5" />
-          </button>
-        </motion.div>
+        {/* Right: Company Visual */}
+        <div className="flex-1 flex justify-center items-center order-1 md:order-2">
+          <div className="relative w-48 h-48 md:w-80 md:h-80 border-2 border-[#ECDFCC] bg-white flex items-center justify-center rounded-none">
+            <Image
+              src="/assets/hero_image.jpg"
+              alt="Marcel Grace Infotech"
+              fill
+              className="object-cover mx-auto rounded-none"
+              sizes="100vw"
+              priority
+              style={{ objectFit: 'cover', objectPosition: 'center', width: '100%', height: '100%', display: 'block' }}
+            />
+          </div>
+        </div>
       </div>
     </section>
   );

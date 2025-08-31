@@ -83,7 +83,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="scroll-smooth">
-      <body className={`${inter.className} bg-dark-950 text-white`}>
+      <body className={`${inter.className} bg-white text-black`}>
         {/* Favicon is now set in app/head.tsx for proper SSR hydration */}
         <StructuredData />
         <Navbar />

@@ -66,20 +66,19 @@ const projects = [
 
 export default function Projects() {
   return (
-    <main className="min-h-screen bg-black pt-20 lg:pt-24">
+  <main className="min-h-screen bg-white pt-20 lg:pt-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20">
-        <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-6 sm:mb-8 text-center">
+        <h1 className="text-xs md:text-lg font-bold text-black mb-6 sm:mb-8 text-center">
           Our Projects
         </h1>
-        
-        <p className="text-gray-400 text-base sm:text-lg text-center mb-12 sm:mb-16 max-w-2xl mx-auto leading-relaxed">
+        <p className="text-xs md:text-sm text-black text-center mb-12 sm:mb-16 max-w-2xl mx-auto leading-relaxed">
           Explore our comprehensive portfolio of software development projects. Each solution 
           demonstrates our expertise in modern technologies and commitment to delivering exceptional results.
         </p>
         
         {/* Featured Projects */}
         <div className="mb-16">
-          <h2 className="text-2xl font-semibold text-white mb-8">Featured Projects</h2>
+          <h2 className="text-xs md:text-base font-semibold text-black mb-8">Featured Projects</h2>
           <div className="space-y-8">
             {projects
               .filter(project => project.featured)
@@ -87,16 +86,16 @@ export default function Projects() {
                 <div key={project.id} className="glass-card p-8 hover:scale-105 transition-all duration-300">
                   <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
                     <div className="lg:col-span-2">
-                      <h3 className="text-2xl font-bold text-white mb-4">
+                      <h3 className="text-xs md:text-base font-bold text-black mb-4">
                         {project.title}
                       </h3>
-                      <p className="text-gray-300 mb-6 leading-relaxed">
+                      <p className="text-xs md:text-sm text-gray-700 mb-6 leading-relaxed">
                         {project.description}
                       </p>
                       
-                      <div className="flex flex-wrap gap-2 mb-6">
+                      <div className="flex flex-wrap gap-1 mb-6">
                         {project.technologies.map((tech) => (
-                          <span key={tech} className="skill-tag text-sm">
+                          <span key={tech} className="skill-tag text-xs">
                             {tech}
                           </span>
                         ))}
@@ -124,7 +123,7 @@ export default function Projects() {
                     
                     <div className="lg:col-span-1 flex items-center justify-center">
                       <div className="w-full h-48 bg-gradient-to-br from-emerald-400/20 to-cyan-400/20 rounded-lg flex items-center justify-center">
-                        <span className="text-gray-500 text-sm">Project Preview</span>
+                        <span className="text-gray-400 text-xs">Project Preview</span>
                       </div>
                     </div>
                   </div>
@@ -135,7 +134,7 @@ export default function Projects() {
         
         {/* Other Projects */}
         <div>
-          <h2 className="text-2xl font-semibold text-white mb-8">Other Projects</h2>
+          <h2 className="text-xs md:text-base font-semibold text-black mb-8">Other Projects</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {projects
               .filter(project => !project.featured)
@@ -145,15 +144,15 @@ export default function Projects() {
                     <span className="text-gray-500 text-sm">Project Preview</span>
                   </div>
                   
-                  <h3 className="text-xl font-bold text-white mb-3">
+                  <h3 className="text-xs md:text-base font-bold text-black mb-3">
                     {project.title}
                   </h3>
                   
-                  <p className="text-gray-300 mb-4 text-sm leading-relaxed">
+                  <p className="text-xs md:text-sm text-gray-700 mb-4 leading-relaxed">
                     {project.description}
                   </p>
                   
-                  <div className="flex flex-wrap gap-1 mb-4">
+                  <div className="flex flex-wrap gap-0.5 mb-4">
                     {project.technologies.slice(0, 3).map((tech) => (
                       <span key={tech} className="skill-tag text-xs">
                         {tech}
@@ -170,7 +169,7 @@ export default function Projects() {
                     <Link
                       href={project.codeUrl}
                       target="_blank"
-                      className="btn-secondary flex items-center gap-1 text-sm flex-1 justify-center"
+                      className="btn-secondary flex items-center gap-1 text-xs flex-1 justify-center"
                     >
                       <FiGithub size={14} />
                       Code
@@ -178,7 +177,7 @@ export default function Projects() {
                     <Link
                       href={project.liveUrl}
                       target="_blank"
-                      className="btn-primary flex items-center gap-1 text-sm flex-1 justify-center"
+                      className="btn-primary flex items-center gap-1 text-xs flex-1 justify-center"
                     >
                       <FiExternalLink size={14} />
                       Live
@@ -194,7 +193,7 @@ export default function Projects() {
           <Link
             href="https://github.com/marcelgrace"
             target="_blank"
-            className="btn-primary inline-flex items-center gap-2"
+            className="btn-primary inline-flex items-center gap-2 text-xs md:text-sm"
           >
             <FiGithub size={20} />
             View All Projects on GitHub

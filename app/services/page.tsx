@@ -1,3 +1,4 @@
+import React from 'react';
 import { Metadata } from 'next';
 import Link from 'next/link';
 import { FiCode, FiSmartphone, FiGlobe, FiCloud, FiSettings, FiShield } from 'react-icons/fi';
@@ -9,7 +10,7 @@ export const metadata: Metadata = {
 
 const services = [
   {
-    icon: <FiCode size={40} />,
+    icon: <FiCode size={40} className="text-[#697565]" />,
     title: 'Custom Software Development',
     description: 'Tailored software solutions designed to meet your specific business requirements and objectives.',
     features: [
@@ -22,7 +23,7 @@ const services = [
     pricing: 'Starting from $50/hour',
   },
   {
-    icon: <FiGlobe size={40} />,
+    icon: <FiGlobe size={40} className="text-[#697565]" />,
     title: 'Web Application Development',
     description: 'Modern, responsive web applications built with cutting-edge technologies and best practices.',
     features: [
@@ -35,7 +36,7 @@ const services = [
     pricing: 'Starting from $3,000',
   },
   {
-    icon: <FiSmartphone size={40} />,
+    icon: <FiSmartphone size={40} className="text-[#697565]" />,
     title: 'Mobile App Development',
     description: 'Native and cross-platform mobile applications for iOS and Android platforms.',
     features: [
@@ -48,7 +49,7 @@ const services = [
     pricing: 'Starting from $5,000',
   },
   {
-    icon: <FiCloud size={40} />,
+    icon: <FiCloud size={40} className="text-[#697565]" />,
     title: 'Cloud Solutions',
     description: 'Scalable cloud infrastructure and migration services for modern businesses.',
     features: [
@@ -61,7 +62,7 @@ const services = [
     pricing: 'Custom Pricing',
   },
   {
-    icon: <FiSettings size={40} />,
+    icon: <FiSettings size={40} className="text-[#697565]" />,
     title: 'DevOps & Automation',
     description: 'Streamline your development workflow with automated deployment and monitoring.',
     features: [
@@ -74,7 +75,7 @@ const services = [
     pricing: 'Starting from $2,000',
   },
   {
-    icon: <FiShield size={40} />,
+    icon: <FiShield size={40} className="text-[#697565]" />,
     title: 'Quality Assurance',
     description: 'Comprehensive testing services to ensure your software meets the highest quality standards.',
     features: [
@@ -113,101 +114,52 @@ const process = [
 
 export default function Services() {
   return (
-    <main className="min-h-screen bg-black pt-20 lg:pt-24">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20">
+  <main className="min-h-screen bg-white pt-6 lg:pt-8">
+      <div className="max-w-5xl mx-auto px-1 sm:px-2 lg:px-3 py-3">
         {/* Header */}
-        <div className="text-center mb-12 sm:mb-16">
-          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4 sm:mb-6">
-            Our Services
-          </h1>
-          <p className="text-gray-400 text-base sm:text-lg max-w-2xl mx-auto leading-relaxed">
-            We offer comprehensive software development services to help your business 
-            leverage technology for growth and competitive advantage.
-          </p>
+        <div className="text-center mb-3">
+          <h1 className="text-4xl md:text-5xl font-extrabold" style={{color:'#181C14',background:'#fff',marginBottom:'2rem',padding:'1.5rem 0',display:'inline-block',width:'100%'}}>Our Services</h1>
+          <p className="text-[11px] text-[#3C3D37] max-w-2xl mx-auto">We offer comprehensive software development services to help your business leverage technology for growth and competitive advantage.</p>
         </div>
-        
         {/* Services Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 mb-16 sm:mb-20">
+  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
           {services.map((service, index) => (
-            <div key={index} className="glass-card p-6 sm:p-8 hover:scale-105 transition-all duration-300">
-              <div className="text-emerald-400 mb-4 sm:mb-6">{service.icon}</div>
-              
-              <h3 className="text-lg sm:text-xl font-bold text-white mb-3 sm:mb-4">
-                {service.title}
-              </h3>
-              
-              <p className="text-gray-300 mb-4 sm:mb-6 text-sm sm:text-base">
-                {service.description}
-              </p>
-              
-              <ul className="space-y-2 mb-6">
+            <div key={index} className="p-1.5 bg-white border border-[#ECDFCC] flex flex-col h-full rounded-none">
+              <div className="mb-1 flex items-center justify-center">{service.icon && React.cloneElement(service.icon, { size: 20 })}</div>
+              <h3 className="text-[11px] font-bold text-[#181C14] mb-0.5 text-center">{service.title}</h3>
+              <p className="text-[11px] text-[#3C3D37] mb-1 text-center">{service.description}</p>
+              <ul className="space-y-0 mb-1">
                 {service.features.map((feature, featureIndex) => (
-                  <li key={featureIndex} className="text-gray-300 text-sm flex items-start">
-                    <span className="text-emerald-400 mr-2">✓</span>
-                    {feature}
+                  <li key={featureIndex} className="text-[11px] text-[#181C14] flex items-start">
+                    <span className="text-[#697565] mr-0.5">✓</span>{feature}
                   </li>
                 ))}
               </ul>
-              
-              <div className="text-emerald-400 font-semibold mb-4">
-                {service.pricing}
-              </div>
-              
-              <Link
-                href="/contact"
-                className="btn-primary w-full text-center"
-              >
-                Get Quote
-              </Link>
+              <div className="text-[11px] text-[#697565] font-semibold mb-1 text-center">{service.pricing}</div>
+              <Link href="/contact" className="px-1.5 py-0.5 rounded-none font-semibold inline-block bg-[#697565] text-white w-full text-center text-[11px]">Get Quote</Link>
             </div>
           ))}
         </div>
-        
         {/* Development Process */}
-        <div className="mb-20">
-          <h2 className="text-3xl font-bold text-white text-center mb-12">
-            Our Development Process
-          </h2>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="mb-4">
+          <h2 className="text-[11px] font-bold text-[#181C14] text-center mb-2">Our Development Process</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-1.5">
             {process.map((step, index) => (
               <div key={index} className="text-center">
-                <div className="w-16 h-16 bg-gradient-to-r from-emerald-400 to-cyan-400 rounded-full flex items-center justify-center text-white font-bold text-xl mx-auto mb-4">
-                  {step.step}
-                </div>
-                <h3 className="text-lg font-semibold text-white mb-3">
-                  {step.title}
-                </h3>
-                <p className="text-gray-400 text-sm">
-                  {step.description}
-                </p>
+                <div className="w-5 h-5 bg-[#697565] rounded-none flex items-center justify-center text-white font-bold text-[11px] mx-auto mb-0.5">{step.step}</div>
+                <h3 className="text-[11px] font-semibold text-[#181C14] mb-0">{step.title}</h3>
+                <p className="text-[11px] text-[#3C3D37]">{step.description}</p>
               </div>
             ))}
           </div>
         </div>
-        
         {/* CTA Section */}
-        <div className="glass-card p-8 text-center">
-          <h2 className="text-2xl font-bold text-white mb-4">
-            Ready to Start Your Project?
-          </h2>
-          <p className="text-gray-300 mb-6">
-            Let's discuss your requirements and create a custom solution for your business.
-          </p>
-          
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link
-              href="/contact"
-              className="btn-primary"
-            >
-              Start Your Project
-            </Link>
-            <Link
-              href="/portfolio"
-              className="btn-secondary"
-            >
-              View Our Work
-            </Link>
+  <div className="p-1.5 text-center bg-white border border-[#ECDFCC] rounded-none">
+          <h2 className="text-[11px] font-bold text-[#181C14] mb-0.5">Ready to Start Your Project?</h2>
+          <p className="text-[11px] text-[#3C3D37] mb-1">Let's discuss your requirements and create a custom solution for your business.</p>
+          <div className="flex flex-col sm:flex-row gap-0.5 justify-center">
+            <Link href="/contact" className="px-1.5 py-0.5 rounded-none font-semibold inline-block bg-[#ECDFCC] text-[#181C14] text-[11px] border border-[#ECDFCC]">Start Your Project</Link>
+            <Link href="/portfolio" className="px-1.5 py-0.5 rounded-none font-semibold inline-block border border-[#ECDFCC] text-[#181C14] bg-white text-[11px]">View Our Work</Link>
           </div>
         </div>
       </div>

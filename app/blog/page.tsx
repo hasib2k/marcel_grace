@@ -85,19 +85,17 @@ const categories = ['All', 'Architecture', 'Frontend', 'Cloud', 'DevOps', 'Secur
 
 export default function Blog() {
   return (
-    <main className="min-h-screen bg-black pt-20 lg:pt-24">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20">
-        <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-6 sm:mb-8 text-center">
-          Tech Insights
+    <main className="min-h-screen bg-white pt-14 sm:pt-16 md:pt-20 lg:pt-24">
+      <div className="max-w-5xl mx-auto px-2 sm:px-4 md:px-8 py-8 sm:py-12 md:py-16 lg:py-20">
+        <h1 className="text-xs sm:text-sm md:text-lg font-bold text-black mb-4 sm:mb-6 md:mb-8 text-center">
+          Blog
         </h1>
-        
-        <p className="text-gray-400 text-base sm:text-lg text-center mb-12 sm:mb-16 max-w-2xl mx-auto leading-relaxed">
-          Stay updated with the latest trends, best practices, and insights in software development, 
-          technology, and digital transformation from our expert team.
+        <p className="text-xs sm:text-sm md:text-base text-black text-center mb-6 sm:mb-10 md:mb-12 max-w-2xl mx-auto leading-relaxed">
+          Insights, tutorials, and industry updates from Marcel Grace Infotech on software development and technology trends.
         </p>
-        
-        {/* Blog Filter Component */}
-        <BlogFilter blogPosts={blogPosts} categories={categories} />
+        <div className="w-full">
+          <BlogFilter blogPosts={blogPosts} categories={categories} />
+        </div>
       </div>
     </main>
   );

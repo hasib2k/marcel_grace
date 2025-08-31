@@ -1,6 +1,5 @@
 'use client';
 
-import { motion } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -19,87 +18,57 @@ export default function About() {
   ];
 
   return (
-    <section id="about" className="py-12 sm:py-16 lg:py-20 bg-black">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 items-center">
+  <section id="about" className="pt-6 pb-6 bg-white">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
           {/* Left side - Image */}
-          <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="relative group"
-          >
-            <div className="relative h-48 sm:h-64 md:h-80 lg:h-96 xl:h-[500px] w-full border-2 border-gray-700 rounded-lg overflow-hidden transition-all duration-300 group-hover:border-emerald-400/50 group-hover:shadow-lg group-hover:shadow-emerald-400/20">
+          <div className="w-full h-full flex items-center justify-center">
+            <div className="relative h-80 md:h-96 w-full border border-[#ECDFCC] bg-white overflow-hidden">
               <Image
                 src="/assets/banner_2.jpg"
                 alt="Marcel Grace Team"
                 fill
-                className="object-cover transition-transform duration-300 group-hover:scale-105"
+                className="object-cover"
                 sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 50vw"
               />
             </div>
-          </motion.div>
-          
+          </div>
           {/* Right side - Content */}
-          <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="space-y-4 sm:space-y-5 lg:space-y-6"
-          >
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white mb-4 sm:mb-5 lg:mb-6">
-              About Marcel Grace
-            </h2>
-            
-            <div className="space-y-3 sm:space-y-4 text-gray-300 leading-relaxed">
-              <p className="text-base sm:text-lg">
-                Marcel Grace Infotech is a leading software development company dedicated to transforming 
-                businesses through innovative technology solutions. With over 5 years of experience, 
-                we specialize in creating custom software that drives growth and efficiency.
+          <div className="flex flex-col gap-4">
+            <h2 className="text-base md:text-xl font-extrabold text-[#181C14] mb-1 text-left">About Marcel Grace</h2>
+            <div className="space-y-2 text-[#3C3D37] leading-relaxed">
+              <p className="text-xs md:text-sm">
+                Marcel Grace Infotech is a leading software development company dedicated to transforming businesses through innovative technology solutions. With over 5 years of experience, we specialize in creating custom software that drives growth and efficiency.
               </p>
-              
-              <p className="text-sm sm:text-base">
-                Our team of expert developers, designers, and consultants work closely with clients 
-                to understand their unique challenges and deliver solutions that exceed expectations. 
-                We combine technical expertise with business insight to create impactful digital experiences.
+              <p className="text-xs md:text-sm">
+                Our team of expert developers, designers, and consultants work closely with clients to understand their unique challenges and deliver solutions that exceed expectations. We combine technical expertise with business insight to create impactful digital experiences.
               </p>
-              
-              <p className="text-sm sm:text-base">
-                From startups to enterprise-level organizations, we've helped companies across various 
-                industries leverage technology to achieve their goals and stay competitive in today's 
-                digital landscape.
+              <p className="text-xs md:text-sm">
+                From startups to enterprise-level organizations, we've helped companies across various industries leverage technology to achieve their goals and stay competitive in today's digital landscape.
               </p>
             </div>
-            
-            <div className="mt-6 sm:mt-7 lg:mt-8">
-              <h3 className="text-lg sm:text-xl font-semibold text-white mb-3 sm:mb-4">Our Expertise</h3>
-              <div className="flex flex-wrap gap-1.5 sm:gap-2">
-                {expertise.map((skill, index) => (
-                  <motion.span
+            <div className="mt-4">
+              <h3 className="text-xs md:text-base font-semibold text-[#181C14] mb-1">Our Expertise</h3>
+              <div className="flex flex-wrap gap-1">
+                {expertise.map((skill) => (
+                  <span
                     key={skill}
-                    initial={{ opacity: 0, scale: 0.8 }}
-                    whileInView={{ opacity: 1, scale: 1 }}
-                    transition={{ duration: 0.5, delay: index * 0.1 }}
-                    viewport={{ once: true }}
-                    className="skill-tag"
+                    className="px-2 py-0.5 bg-white text-[#3C3D37] text-xs font-medium border border-[#ECDFCC]"
                   >
                     {skill}
-                  </motion.span>
+                  </span>
                 ))}
               </div>
             </div>
-            
-            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mt-6 sm:mt-7 lg:mt-8">
-              <Link href="/about" className="btn-primary">
+            <div className="flex gap-2 mt-4">
+              <Link href="/about" className="px-2 py-1 border border-[#697565] text-[#697565] bg-white font-medium text-xs w-fit">
                 Learn More
               </Link>
-              <Link href="/contact" className="btn-secondary">
+              <Link href="/contact" className="px-2 py-1 border border-[#697565] bg-[#697565] text-white font-medium text-xs w-fit">
                 Start Your Project
               </Link>
             </div>
-          </motion.div>
+          </div>
         </div>
       </div>
     </section>

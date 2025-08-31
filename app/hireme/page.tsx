@@ -11,10 +11,10 @@ export default function HireMe() {
   }, [router]);
 
   return (
-    <div className="min-h-screen bg-dark-950 flex items-center justify-center">
+  <div className="min-h-screen bg-white flex items-center justify-center">
       <div className="text-center">
-        <h1 className="text-2xl font-bold text-white mb-4">Redirecting...</h1>
-        <p className="text-gray-400">Taking you to our careers page.</p>
+  <h1 className="text-xs md:text-sm font-bold text-black mb-4">Redirecting...</h1>
+  <p className="text-xs md:text-sm text-gray-700">Taking you to our careers page.</p>
       </div>
     </div>
   );

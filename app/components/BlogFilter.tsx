@@ -46,43 +46,36 @@ export default function BlogFilter({ blogPosts, categories }: BlogFilterProps) {
   return (
     <>
       {/* Category Filter */}
-      <div className="flex flex-wrap justify-center gap-2 sm:gap-3 lg:gap-4 mb-12">
+      <div className="flex flex-wrap justify-start gap-1 mb-8">
         {categories.map((category) => (
           <button
             key={category}
             onClick={() => handleCategoryChange(category)}
-            className={`px-3 sm:px-4 py-2 rounded-full text-sm sm:text-base font-medium transition-all duration-300 ${
+            className={`px-2 py-0.5 border text-xs font-medium transition-none ${
               category === selectedCategory
-                ? 'bg-gradient-to-r from-emerald-500 to-cyan-500 text-white shadow-lg shadow-emerald-500/25'
-                : 'bg-gray-800/80 text-gray-300 hover:bg-gray-700/80 hover:text-white border border-gray-700 hover:border-emerald-400/30'
+                ? 'border-[#697565] bg-[#697565] text-white'
+                : 'border-[#ECDFCC] bg-white text-black'
             }`}
           >
             {category}
           </button>
         ))}
       </div>
-      
+
       {/* Blog Posts Grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
+  <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
         {currentPosts.map((post) => (
-          <article key={post.id} className="group bg-black/60 backdrop-blur-sm border border-gray-800 rounded-xl p-4 sm:p-6 hover:border-emerald-400/30 hover:shadow-lg hover:shadow-emerald-400/10 transition-all duration-300 hover:scale-[1.02]">
-            <div className="flex flex-wrap items-center gap-2 sm:gap-3 mb-3 sm:mb-4">
-              <span className="inline-block px-2 py-1 text-xs font-medium bg-emerald-500/20 text-emerald-400 rounded-full border border-emerald-400/30">
+          <article key={post.id} className="bg-white border border-[#ECDFCC] p-3 flex flex-col gap-2">
+            <div className="flex items-center gap-1 mb-1">
+              <span className="inline-block px-2 py-0.5 text-xs font-medium border border-[#697565] bg-[#697565] text-white">
                 {post.category}
               </span>
-              <span className="text-gray-500 text-xs sm:text-sm">{post.readTime}</span>
+              <span className="text-[#3C3D37] text-xs">{post.readTime}</span>
             </div>
-            
-            <h2 className="text-lg sm:text-xl font-bold text-white mb-3 group-hover:text-emerald-400 transition-colors leading-tight">
-              {post.title}
-            </h2>
-            
-            <p className="text-gray-300 mb-4 text-sm sm:text-base leading-relaxed">
-              {post.excerpt}
-            </p>
-            
-            <div className="flex justify-between items-center">
-              <span className="text-gray-500 text-xs sm:text-sm">
+            <h2 className="text-xs md:text-base font-semibold text-[#181C14] mb-1 leading-tight">{post.title}</h2>
+            <p className="text-xs md:text-sm text-[#3C3D37] mb-1 leading-relaxed">{post.excerpt}</p>
+            <div className="flex justify-between items-center mt-auto">
+              <span className="text-[#3C3D37] text-xs">
                 {new Date(post.date).toLocaleDateString('en-US', {
                   year: 'numeric',
                   month: 'short',
@@ -91,7 +84,7 @@ export default function BlogFilter({ blogPosts, categories }: BlogFilterProps) {
               </span>
               <Link
                 href={`/blog/${post.slug}`}
-                className="text-emerald-400 hover:text-cyan-400 font-medium text-sm sm:text-base group-hover:translate-x-1 transition-all duration-300"
+                className="font-medium text-xs text-[#697565] border-b border-[#697565] hover:opacity-80"
               >
                 Read More →
               </Link>
@@ -99,53 +92,51 @@ export default function BlogFilter({ blogPosts, categories }: BlogFilterProps) {
           </article>
         ))}
       </div>
-      
+
       {/* Pagination */}
       {totalPages > 1 && (
-        <div className="flex flex-wrap justify-center items-center gap-2 mt-8 sm:mt-12">
+  <div className="flex flex-wrap justify-start items-center gap-1 mt-6">
           <button
             onClick={() => handlePageChange(currentPage - 1)}
             disabled={currentPage === 1}
-            className={`px-3 sm:px-4 py-2 rounded-lg text-sm sm:text-base font-medium transition-all duration-300 ${
+            className={`px-2 py-0.5 border text-xs font-medium transition-none ${
               currentPage === 1
-                ? 'bg-gray-800/60 text-gray-500 cursor-not-allowed border border-gray-700'
-                : 'bg-gray-800/80 text-gray-300 hover:bg-gray-700/80 hover:text-white border border-gray-700 hover:border-emerald-400/30'
+                ? 'border-[#ECDFCC] text-[#ECDFCC] bg-white cursor-not-allowed'
+                : 'border-[#697565] text-[#697565] bg-white'
             }`}
           >
             Previous
           </button>
-          
           {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
             <button
               key={page}
               onClick={() => handlePageChange(page)}
-              className={`px-3 sm:px-4 py-2 rounded-lg text-sm sm:text-base font-medium transition-all duration-300 ${
+              className={`px-2 py-0.5 border text-xs font-medium transition-none ${
                 page === currentPage
-                  ? 'bg-gradient-to-r from-emerald-500 to-cyan-500 text-white shadow-lg shadow-emerald-500/25'
-                  : 'bg-gray-800/80 text-gray-300 hover:bg-gray-700/80 hover:text-white border border-gray-700 hover:border-emerald-400/30'
+                  ? 'border-[#697565] bg-[#697565] text-white'
+                  : 'border-[#ECDFCC] bg-white text-black'
               }`}
             >
               {page}
             </button>
           ))}
-          
           <button
             onClick={() => handlePageChange(currentPage + 1)}
             disabled={currentPage === totalPages}
-            className={`px-3 sm:px-4 py-2 rounded-lg text-sm sm:text-base font-medium transition-all duration-300 ${
+            className={`px-2 py-0.5 border text-xs font-medium transition-none ${
               currentPage === totalPages
-                ? 'bg-gray-800/60 text-gray-500 cursor-not-allowed border border-gray-700'
-                : 'bg-gray-800/80 text-gray-300 hover:bg-gray-700/80 hover:text-white border border-gray-700 hover:border-emerald-400/30'
+                ? 'border-[#ECDFCC] text-[#ECDFCC] bg-white cursor-not-allowed'
+                : 'border-[#697565] text-[#697565] bg-white'
             }`}
           >
             Next
           </button>
         </div>
       )}
-      
+
       {filteredPosts.length === 0 && (
-        <div className="text-center py-16">
-          <p className="text-gray-400 text-lg">
+        <div className="text-center py-12">
+          <p className="text-[#181C14] text-xs md:text-sm">
             No blog posts found in the {selectedCategory} category.
           </p>
         </div>

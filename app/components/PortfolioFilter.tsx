@@ -13,12 +13,16 @@ interface Project {
   featured: boolean;
 }
 
+
 interface PortfolioFilterProps {
   projects: Project[];
   categories: string[];
+  cardClassName?: string;
+  techClassName?: string;
+  buttonClassName?: string;
 }
 
-export default function PortfolioFilter({ projects, categories }: PortfolioFilterProps) {
+export default function PortfolioFilter({ projects, categories, cardClassName = '', techClassName = '', buttonClassName = '' }: PortfolioFilterProps) {
   const [selectedCategory, setSelectedCategory] = useState('All');
 
   const filteredProjects = selectedCategory === 'All' 
@@ -36,10 +40,10 @@ export default function PortfolioFilter({ projects, categories }: PortfolioFilte
           <button
             key={category}
             onClick={() => setSelectedCategory(category)}
-            className={`px-3 sm:px-4 py-2 rounded-full text-sm sm:text-base font-medium transition-all duration-300 ${
+            className={`px-3 sm:px-4 py-1 text-xs sm:text-sm font-medium rounded-none border ${buttonClassName} ${
               category === selectedCategory
-                ? 'bg-gradient-to-r from-emerald-500 to-cyan-500 text-white shadow-lg shadow-emerald-500/25'
-                : 'bg-gray-800/80 text-gray-300 hover:bg-gray-700/80 hover:text-white border border-gray-700 hover:border-emerald-400/30'
+                  ? 'bg-[#697565] text-white border-[#697565]'
+                : 'bg-white text-black border-[#697565] hover:bg-[#ECDFCC] hover:text-black'
             }`}
           >
             {category}
@@ -50,31 +54,31 @@ export default function PortfolioFilter({ projects, categories }: PortfolioFilte
       {/* Featured Projects */}
       {featuredProjects.length > 0 && (
         <div className="mb-16">
-          <h2 className="text-2xl font-semibold text-white mb-8">Featured Projects</h2>
+          <h2 className="text-xs md:text-lg font-semibold text-black mb-8">Featured Projects</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
             {featuredProjects.map((project) => (
-              <div key={project.id} className="group bg-black/60 backdrop-blur-sm border border-gray-800 rounded-xl p-4 sm:p-6 hover:border-emerald-400/30 hover:shadow-lg hover:shadow-emerald-400/10 transition-all duration-300 hover:scale-[1.02]">
+              <div key={project.id} className={`bg-white border-l-4 border-[#697565] p-4 sm:p-6 shadow-none rounded-none ${cardClassName}`}>
                 <div className="flex flex-col sm:flex-row sm:items-center gap-2 mb-3">
-                  <h3 className="text-lg sm:text-xl font-bold text-white group-hover:text-emerald-400 transition-colors">
+                  <h3 className="text-xs sm:text-base font-bold text-black">
                     {project.title}
                   </h3>
-                  <span className="inline-block px-2 py-1 text-xs font-medium bg-emerald-500/20 text-emerald-400 rounded-full border border-emerald-400/30">
+                  <span className={`inline-block px-2 py-0.5 text-[10px] font-medium bg-[#697565] text-white border border-[#697565] rounded-none ${techClassName}`}>
                     {project.category}
                   </span>
                 </div>
                 
-                <p className="text-gray-300 mb-4 text-sm leading-relaxed">
+                <p className="text-black mb-4 text-xs md:text-sm leading-relaxed">
                   {project.description}
                 </p>
                 
                 <div className="flex flex-wrap gap-1.5">
                   {project.technologies.slice(0, 3).map((tech) => (
-                    <span key={tech} className="px-2 py-1 text-xs font-medium bg-gray-800/60 text-gray-300 rounded-md border border-gray-700">
+                    <span key={tech} className={`px-2 py-0.5 text-[10px] font-medium bg-[#697565] text-white border border-[#697565] rounded-none ${techClassName}`}>
                       {tech}
                     </span>
                   ))}
                   {project.technologies.length > 3 && (
-                    <span className="px-2 py-1 text-xs font-medium bg-cyan-500/20 text-cyan-400 rounded-md border border-cyan-400/30">
+                    <span className={`px-2 py-0.5 text-[10px] font-medium bg-[#697565] text-white border border-[#697565] rounded-none ${techClassName}`}>
                       +{project.technologies.length - 3} more
                     </span>
                   )}
@@ -88,33 +92,33 @@ export default function PortfolioFilter({ projects, categories }: PortfolioFilte
       {/* Other Projects */}
       {otherProjects.length > 0 && (
         <div>
-          <h2 className="text-2xl font-semibold text-white mb-8">
+          <h2 className="text-xs md:text-lg font-semibold text-black mb-8">
             {featuredProjects.length > 0 ? 'More Projects' : 'Projects'}
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
             {otherProjects.map((project) => (
-              <div key={project.id} className="group bg-black/60 backdrop-blur-sm border border-gray-800 rounded-xl p-4 sm:p-6 hover:border-emerald-400/30 hover:shadow-lg hover:shadow-emerald-400/10 transition-all duration-300 hover:scale-[1.02]">
+              <div key={project.id} className={`bg-white border-l-4 border-[#697565] p-4 sm:p-6 shadow-none rounded-none ${cardClassName}`}>
                 <div className="flex flex-col sm:flex-row sm:items-center gap-2 mb-3">
-                  <h3 className="text-lg sm:text-xl font-bold text-white group-hover:text-emerald-400 transition-colors">
+                  <h3 className="text-xs sm:text-base font-bold text-black">
                     {project.title}
                   </h3>
-                  <span className="inline-block px-2 py-1 text-xs font-medium bg-emerald-500/20 text-emerald-400 rounded-full border border-emerald-400/30">
+                  <span className={`inline-block px-2 py-0.5 text-[10px] font-medium bg-[#697565] text-white border border-[#697565] rounded-none ${techClassName}`}>
                     {project.category}
                   </span>
                 </div>
                 
-                <p className="text-gray-300 mb-4 text-sm leading-relaxed">
+                <p className="text-gray-700 mb-4 text-xs md:text-sm leading-relaxed">
                   {project.description}
                 </p>
                 
                 <div className="flex flex-wrap gap-1.5">
                   {project.technologies.slice(0, 3).map((tech) => (
-                    <span key={tech} className="px-2 py-1 text-xs font-medium bg-gray-800/60 text-gray-300 rounded-md border border-gray-700">
+                    <span key={tech} className={`px-2 py-0.5 text-[10px] font-medium bg-[#697565] text-white border border-[#697565] rounded-none ${techClassName}`}>
                       {tech}
                     </span>
                   ))}
                   {project.technologies.length > 3 && (
-                    <span className="px-2 py-1 text-xs font-medium bg-cyan-500/20 text-cyan-400 rounded-md border border-cyan-400/30">
+                    <span className={`px-2 py-0.5 text-[10px] font-medium bg-[#697565] text-white border border-[#697565] rounded-none ${techClassName}`}>
                       +{project.technologies.length - 3} more
                     </span>
                   )}
@@ -127,7 +131,7 @@ export default function PortfolioFilter({ projects, categories }: PortfolioFilte
       
       {filteredProjects.length === 0 && (
         <div className="text-center py-16">
-          <p className="text-gray-400 text-lg">
+          <p className="text-gray-400 text-xs md:text-sm">
             No projects found in the {selectedCategory} category.
           </p>
         </div>
