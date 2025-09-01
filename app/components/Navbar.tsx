@@ -78,12 +78,12 @@ export default function Navbar() {
   }, [isOpen, mounted]);
 
   return (
-  <nav className="fixed top-0 left-0 right-0 z-50 bg-white border-b border-[#ECDFCC]">
+  <nav className="fixed top-0 left-0 right-0 z-50 bg-white">
     <div className="w-full px-4 sm:px-6 lg:px-8">
   <div className="flex justify-between items-center h-12 lg:h-16">
           {/* Logo (untouched) */}
           <Link href="/" className="flex items-center space-x-2 sm:space-x-3 group z-50 tap-highlight-transparent focus:outline-none">
-            <div className="relative w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 bg-white rounded-full p-0.5 border border-gray-200">
+            <div className="relative w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 bg-white rounded-full p-0.5">
               <div className="w-full h-full bg-white rounded-full p-1">
                 <Image
                   src="/assets/profile_3.png"
@@ -108,7 +108,7 @@ export default function Navbar() {
               <Link
                 key={item.name}
                 href={item.href}
-                className="text-[#3C3D37] font-medium px-2.5 py-0.5 text-[10px] border-b-2 border-transparent hover:border-[#697565] rounded-none"
+                className="text-[#3C3D37] font-medium px-2.5 py-0.5 text-[10px] rounded-none"
               >
                 {item.name}
               </Link>
@@ -119,7 +119,7 @@ export default function Navbar() {
           <div className="hidden lg:block">
             <Link
               href="/contact"
-              className="inline-flex items-center gap-2 border border-[#697565] text-[#697565] bg-white px-2.5 py-0.5 font-medium text-[10px] rounded-none"
+              className="inline-flex items-center gap-2 text-[#697565] bg-white px-2.5 py-0.5 font-medium text-[10px] rounded-none"
             >
               Get Quote
             </Link>
@@ -129,22 +129,26 @@ export default function Navbar() {
           <div className="lg:hidden">
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="text-[#697565] p-2 border border-[#ECDFCC] bg-white rounded-none focus:outline-none"
+              className="p-0 m-0 bg-transparent border-none outline-none focus:outline-none"
               aria-label={isOpen ? 'Close navigation menu' : 'Open navigation menu'}
               aria-expanded={isOpen}
               aria-controls="mobile-navigation"
+              type="button"
             >
-              <div className="w-6 h-6 flex flex-col justify-center items-center">
-                <span
-                  className={`block h-0.5 w-6 bg-[#697565] ${isOpen ? 'rotate-45 translate-y-1' : '-translate-y-1'}`}
-                ></span>
-                <span
-                  className={`block h-0.5 w-6 bg-[#697565] ${isOpen ? 'opacity-0' : 'opacity-100'}`}
-                ></span>
-                <span
-                  className={`block h-0.5 w-6 bg-[#697565] ${isOpen ? '-rotate-45 -translate-y-1' : 'translate-y-1'}`}
-                ></span>
-              </div>
+              {isOpen ? (
+                <div className="w-5 h-5 flex items-center justify-center">
+                  {/* Modern minimal close icon */}
+                  <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M6 6L14 14M14 6L6 14" stroke="#697565" strokeWidth="2.2" strokeLinecap="round"/>
+                  </svg>
+                </div>
+              ) : (
+                <div className="w-5 h-5 flex flex-col justify-center items-center gap-[3px]">
+                  <span className="block h-0.5 w-5 bg-[#697565] rounded"></span>
+                  <span className="block h-0.5 w-5 bg-[#697565] rounded"></span>
+                  <span className="block h-0.5 w-5 bg-[#697565] rounded"></span>
+                </div>
+              )}
             </button>
           </div>
         </div>
@@ -159,29 +163,29 @@ export default function Navbar() {
             />
             {/* Mobile Menu */}
             <div
-              className="fixed top-14 lg:top-20 left-4 right-4 max-w-sm mx-auto bg-white lg:hidden z-50 border border-[#ECDFCC] rounded-none"
+              className="fixed top-14 left-2 right-2 max-w-xs mx-auto bg-white lg:hidden z-50 rounded-2xl shadow-2xl border border-[#ECDFCC] p-4 animate-fadeIn"
               id="mobile-navigation"
               data-mobile-menu
               role="navigation"
               aria-label="Mobile navigation menu"
             >
               {/* Mobile menu content */}
-              <div className="flex flex-col p-3 gap-1">
+              <div className="flex flex-col gap-2">
                 {navigation.map((item) => (
                   <Link
                     key={item.name}
                     href={item.href}
-                    className="text-[#3C3D37] font-medium px-2.5 py-2 text-[10px] border-b border-[#ECDFCC] bg-white rounded-none"
+                    className="text-[#3C3D37] font-semibold px-4 py-3 text-[13px] bg-[#F9F9F6] rounded-xl hover:bg-[#ECDFCC] transition-all duration-150 text-center"
                     onClick={() => setIsOpen(false)}
                   >
                     {item.name}
                   </Link>
                 ))}
                 {/* Mobile CTA Button */}
-                <div className="pt-2 border-t border-[#ECDFCC]">
+                <div className="pt-2">
                   <Link
                     href="/contact"
-                    className="inline-flex items-center gap-2 border border-[#697565] text-[#697565] bg-white w-full text-center py-1.5 text-[10px] font-medium rounded-none"
+                    className="inline-flex items-center justify-center gap-2 text-white bg-[#697565] w-full text-center py-2 text-[13px] font-semibold rounded-xl hover:bg-[#181C14] transition-all duration-150"
                     onClick={() => setIsOpen(false)}
                   >
                     Get Quote
