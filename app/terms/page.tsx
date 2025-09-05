@@ -7,8 +7,24 @@ export const metadata: Metadata = {
 
 export default function TermsOfService() {
   return (
-    <main className="min-h-screen bg-white pt-20 lg:pt-24">
-      <div className="max-w-3xl mx-auto px-4 py-12 border-l-4 border-[#697565] bg-white">
+    <main className="min-h-screen bg-white relative overflow-hidden pt-20 lg:pt-24">
+      {/* Tech Circuit Pattern Background - Same as Footer */}
+      <div className="absolute inset-0 opacity-5">
+        <div className="absolute top-0 left-0 w-full h-full">
+          <svg className="w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid slice">
+            <pattern id="tech-circuit" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
+              <rect width="20" height="20" fill="none" stroke="#697565" strokeWidth="0.2"/>
+              <circle cx="5" cy="5" r="1" fill="#697565"/>
+              <circle cx="15" cy="15" r="1" fill="#697565"/>
+              <line x1="5" y1="5" x2="15" y2="5" stroke="#697565" strokeWidth="0.2"/>
+              <line x1="15" y1="5" x2="15" y2="15" stroke="#697565" strokeWidth="0.2"/>
+            </pattern>
+            <rect width="100%" height="100%" fill="url(#tech-circuit)"/>
+          </svg>
+        </div>
+      </div>
+      
+      <div className="relative max-w-3xl mx-auto px-4 py-12 border-l-4 border-[#697565] bg-white">
         <h1 className="text-xs md:text-lg font-bold text-black mb-4">Terms of Service</h1>
         <p className="text-xs md:text-sm text-black mb-8">Last updated: January 1, 2025</p>
         <div className="space-y-8">

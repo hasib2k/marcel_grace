@@ -9,55 +9,55 @@ export const metadata: Metadata = {
 const blogPosts = [
   {
     id: 1,
-    title: 'Building Scalable Microservices Architecture',
-    excerpt: 'Learn how to design and implement microservices architecture that scales with your business growth. This comprehensive guide covers best practices, patterns, and real-world examples.',
+    title: 'BUILDING SCALABLE MICROSERVICES ARCHITECTURE',
+    excerpt: 'LEARN HOW TO DESIGN AND IMPLEMENT MICROSERVICES ARCHITECTURE THAT SCALES WITH YOUR BUSINESS GROWTH. THIS COMPREHENSIVE GUIDE COVERS BEST PRACTICES, PATTERNS, AND REAL-WORLD EXAMPLES.',
     date: '2024-12-15',
-    readTime: '12 min read',
-    category: 'Architecture',
+    readTime: '12 MIN READ',
+    category: 'ARCHITECTURE',
     slug: 'building-scalable-microservices-architecture',
   },
   {
     id: 2,
-    title: 'Modern Frontend Development with Next.js 15',
-    excerpt: 'Explore the latest features in Next.js 15 and how they can improve your web application performance, SEO, and developer experience.',
+    title: 'MODERN FRONTEND DEVELOPMENT WITH NEXT.JS 15',
+    excerpt: 'EXPLORE THE LATEST FEATURES IN NEXT.JS 15 AND HOW THEY CAN IMPROVE YOUR WEB APPLICATION PERFORMANCE, SEO, AND DEVELOPER EXPERIENCE.',
     date: '2024-12-10',
-    readTime: '8 min read',
-    category: 'Frontend',
+    readTime: '8 MIN READ',
+    category: 'FRONTEND',
     slug: 'modern-frontend-development-nextjs-15',
   },
   {
     id: 3,
-    title: 'Cloud Migration Strategies for Enterprise Applications',
-    excerpt: 'A comprehensive guide to migrating enterprise applications to the cloud, including planning, execution, and post-migration optimization.',
+    title: 'CLOUD MIGRATION STRATEGIES FOR ENTERPRISE APPLICATIONS',
+    excerpt: 'A COMPREHENSIVE GUIDE TO MIGRATING ENTERPRISE APPLICATIONS TO THE CLOUD, INCLUDING PLANNING, EXECUTION, AND POST-MIGRATION OPTIMIZATION.',
     date: '2024-12-05',
-    readTime: '15 min read',
-    category: 'Cloud',
+    readTime: '15 MIN READ',
+    category: 'CLOUD',
     slug: 'cloud-migration-strategies-enterprise',
   },
   {
     id: 4,
-    title: 'DevOps Best Practices for Small to Medium Businesses',
-    excerpt: 'Implementing DevOps practices that make sense for smaller teams and budgets. Learn how to automate deployment, monitoring, and scaling.',
+    title: 'DEVOPS BEST PRACTICES FOR SMALL TO MEDIUM BUSINESSES',
+    excerpt: 'IMPLEMENTING DEVOPS PRACTICES THAT MAKE SENSE FOR SMALLER TEAMS AND BUDGETS. LEARN HOW TO AUTOMATE DEPLOYMENT, MONITORING, AND SCALING.',
     date: '2024-11-28',
-    readTime: '10 min read',
-    category: 'DevOps',
+    readTime: '10 MIN READ',
+    category: 'DEVOPS',
     slug: 'devops-best-practices-smb',
   },
   {
     id: 5,
-    title: 'Security-First Development: Protecting Your Applications',
-    excerpt: 'Essential security practices every development team should implement to protect applications and user data from modern threats.',
+    title: 'SECURITY-FIRST DEVELOPMENT: PROTECTING YOUR APPLICATIONS',
+    excerpt: 'ESSENTIAL SECURITY PRACTICES EVERY DEVELOPMENT TEAM SHOULD IMPLEMENT TO PROTECT APPLICATIONS AND USER DATA FROM MODERN THREATS.',
     date: '2024-11-20',
-    readTime: '11 min read',
-    category: 'Security',
+    readTime: '11 MIN READ',
+    category: 'SECURITY',
     slug: 'security-first-development',
   },
   {
     id: 6,
-    title: 'Mobile App Development Trends in 2025',
-    excerpt: 'Explore the latest trends in mobile app development, from cross-platform frameworks to AI integration and progressive web apps.',
+    title: 'MOBILE APP DEVELOPMENT TRENDS IN 2025',
+    excerpt: 'EXPLORE THE LATEST TRENDS IN MOBILE APP DEVELOPMENT, FROM CROSS-PLATFORM FRAMEWORKS TO AI INTEGRATION AND PROGRESSIVE WEB APPS.',
     date: '2024-11-15',
-    readTime: '9 min read',
+    readTime: '9 MIN READ',
     category: 'Mobile',
     slug: 'mobile-app-development-trends-2025',
   },
@@ -85,15 +85,36 @@ const categories = ['All', 'Architecture', 'Frontend', 'Cloud', 'DevOps', 'Secur
 
 export default function Blog() {
   return (
-    <main className="min-h-screen bg-white pt-14 sm:pt-16 md:pt-20 lg:pt-24">
-      <div className="max-w-5xl mx-auto px-2 sm:px-4 md:px-8 py-8 sm:py-12 md:py-16 lg:py-20">
-        <h1 className="text-xs sm:text-sm md:text-lg font-bold text-black mb-4 sm:mb-6 md:mb-8 text-center">
-          Blog
-        </h1>
-        <p className="text-xs sm:text-sm md:text-base text-black text-center mb-6 sm:mb-10 md:mb-12 max-w-2xl mx-auto leading-relaxed">
-          Insights, tutorials, and industry updates from Marcel Grace Infotech on software development and technology trends.
-        </p>
-        <div className="w-full">
+    <main className="min-h-screen bg-white relative overflow-hidden pt-14 sm:pt-16 md:pt-20 lg:pt-24">
+      {/* SVG Line Grid Background */}
+      <div className="absolute inset-0 opacity-5">
+        <svg className="w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
+          <defs>
+            <pattern id="line-grid" x="0" y="0" width="10" height="10" patternUnits="userSpaceOnUse">
+              <path d="M 10 0 L 0 0 0 10" fill="none" stroke="#697565" strokeWidth="0.5"/>
+            </pattern>
+          </defs>
+          <rect width="100%" height="100%" fill="url(#line-grid)"/>
+        </svg>
+      </div>
+
+      {/* Hero Section */}
+      <div className="relative bg-gradient-to-br from-gray-50 via-white to-gray-50 py-4 sm:py-6 md:py-8">
+        <div className="max-w-5xl mx-auto px-2 sm:px-4 md:px-8">
+          <div className="text-center">
+            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-black mb-2 sm:mb-3 md:mb-4 tracking-wider uppercase">
+              TECH INSIGHTS
+            </h1>
+            <p className="text-sm sm:text-base md:text-lg text-gray-700 text-center mb-4 sm:mb-6 max-w-3xl mx-auto tracking-wide uppercase">
+              INSIGHTS, TUTORIALS, AND INDUSTRY UPDATES FROM MARCEL GRACE INFOTECH ON SOFTWARE DEVELOPMENT AND TECHNOLOGY TRENDS
+            </p>
+          </div>
+        </div>
+      </div>
+
+      {/* Content Section */}
+      <div className="relative max-w-5xl mx-auto px-2 sm:px-4 md:px-8 pb-4 sm:pb-6 md:pb-8">
+        <div className="bg-gradient-to-br from-gray-50 to-gray-100 rounded-2xl shadow-lg border border-gray-200 p-4 sm:p-6 md:p-8">
           <BlogFilter blogPosts={blogPosts} categories={categories} />
         </div>
       </div>

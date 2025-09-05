@@ -1,11 +1,16 @@
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
+import { Lato } from 'next/font/google'
 import './globals.css'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 import StructuredData from './components/StructuredData'
 
-const inter = Inter({ subsets: ['latin'] })
+const lato = Lato({ 
+  subsets: ['latin'],
+  variable: '--font-lato',
+  display: 'swap',
+  weight: ['300', '400', '700', '900'],
+})
 
 export const metadata: Metadata = {
   title: {
@@ -83,7 +88,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="scroll-smooth">
-      <body className={`${inter.className} bg-white text-black`}>
+      <body className={`${lato.variable} font-sans bg-white text-black`}>
         {/* Favicon is now set in app/head.tsx for proper SSR hydration */}
   {/* <StructuredData /> */}
         <Navbar />

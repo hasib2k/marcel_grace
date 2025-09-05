@@ -35,15 +35,15 @@ export default function PortfolioFilter({ projects, categories, cardClassName = 
   return (
     <>
       {/* Category Filter */}
-      <div className="flex flex-wrap justify-center gap-2 sm:gap-3 lg:gap-4 mb-12">
+      <div className="flex flex-wrap justify-center gap-2 mb-6">
         {categories.map((category) => (
           <button
             key={category}
             onClick={() => setSelectedCategory(category)}
-            className={`px-3 sm:px-4 py-1 text-xs sm:text-sm font-medium rounded-none border ${buttonClassName} ${
+            className={`font-body px-3 py-1.5 text-xs font-semibold tracking-wide rounded-lg border ${
               category === selectedCategory
-                  ? 'bg-[#697565] text-white border-[#697565]'
-                : 'bg-white text-black border-[#697565] hover:bg-[#ECDFCC] hover:text-black'
+                ? 'bg-gradient-to-r from-gray-900 to-gray-700 text-white border-gray-900 shadow-lg'
+                : 'bg-gradient-to-br from-gray-50 to-gray-100 text-[#3C3D37] border-gray-200 shadow-md'
             }`}
           >
             {category}
@@ -53,33 +53,35 @@ export default function PortfolioFilter({ projects, categories, cardClassName = 
       
       {/* Featured Projects */}
       {featuredProjects.length > 0 && (
-        <div className="mb-16">
-          <h2 className="text-xs md:text-lg font-semibold text-black mb-8">Featured Projects</h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
+        <div className="mb-8">
+          <h2 className="font-heading text-sm md:text-base font-black text-[#181C14] mb-4 tracking-wider">Featured Projects</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
             {featuredProjects.map((project) => (
-              <div key={project.id} className={`bg-white border-l-4 border-[#697565] p-4 sm:p-6 shadow-none rounded-none ${cardClassName}`}>
-                <div className="flex flex-col sm:flex-row sm:items-center gap-2 mb-3">
-                  <h3 className="text-xs sm:text-base font-bold text-black">
-                    {project.title}
-                  </h3>
-                  <span className={`inline-block px-2 py-0.5 text-[10px] font-medium bg-[#697565] text-white border border-[#697565] rounded-none ${techClassName}`}>
-                    {project.category}
-                  </span>
+              <div key={project.id} className={`bg-gradient-to-br from-gray-50 to-gray-100 border border-gray-200 p-3 sm:p-4 shadow-lg rounded-xl ${cardClassName}`}>
+                <div className="flex flex-col gap-2 mb-2">
+                  <div className="flex items-center justify-between">
+                    <h3 className="font-heading text-xs sm:text-sm font-black text-[#181C14] tracking-wide">
+                      {project.title}
+                    </h3>
+                    <span className={`px-2 py-0.5 text-xs font-semibold bg-gradient-to-r from-gray-900 to-gray-700 text-white rounded-lg ${techClassName}`}>
+                      {project.category}
+                    </span>
+                  </div>
                 </div>
                 
-                <p className="text-black mb-4 text-xs md:text-sm leading-relaxed">
+                <p className="font-body text-[#3C3D37] mb-3 text-xs leading-relaxed font-medium">
                   {project.description}
                 </p>
                 
                 <div className="flex flex-wrap gap-1.5">
                   {project.technologies.slice(0, 3).map((tech) => (
-                    <span key={tech} className={`px-2 py-0.5 text-[10px] font-medium bg-[#697565] text-white border border-[#697565] rounded-none ${techClassName}`}>
+                    <span key={tech} className={`px-2 py-1 text-xs font-semibold bg-gradient-to-r from-gray-900 to-gray-700 text-white rounded-lg ${techClassName}`}>
                       {tech}
                     </span>
                   ))}
                   {project.technologies.length > 3 && (
-                    <span className={`px-2 py-0.5 text-[10px] font-medium bg-[#697565] text-white border border-[#697565] rounded-none ${techClassName}`}>
-                      +{project.technologies.length - 3} more
+                    <span className={`px-2 py-1 text-xs font-semibold bg-gradient-to-r from-gray-900 to-gray-700 text-white rounded-lg ${techClassName}`}>
+                      +{project.technologies.length - 3}
                     </span>
                   )}
                 </div>
@@ -92,34 +94,36 @@ export default function PortfolioFilter({ projects, categories, cardClassName = 
       {/* Other Projects */}
       {otherProjects.length > 0 && (
         <div>
-          <h2 className="text-xs md:text-lg font-semibold text-black mb-8">
+          <h2 className="font-heading text-sm md:text-base font-semibold text-[#181C14] mb-4">
             {featuredProjects.length > 0 ? 'More Projects' : 'Projects'}
           </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
             {otherProjects.map((project) => (
-              <div key={project.id} className={`bg-white border-l-4 border-[#697565] p-4 sm:p-6 shadow-none rounded-none ${cardClassName}`}>
-                <div className="flex flex-col sm:flex-row sm:items-center gap-2 mb-3">
-                  <h3 className="text-xs sm:text-base font-bold text-black">
-                    {project.title}
-                  </h3>
-                  <span className={`inline-block px-2 py-0.5 text-[10px] font-medium bg-[#697565] text-white border border-[#697565] rounded-none ${techClassName}`}>
-                    {project.category}
-                  </span>
+              <div key={project.id} className={`bg-gradient-to-br from-gray-50 to-gray-100 border border-gray-200 p-3 sm:p-4 shadow-lg rounded-xl ${cardClassName}`}>
+                <div className="flex flex-col gap-2 mb-2">
+                  <div className="flex items-center justify-between">
+                    <h3 className="font-heading text-xs sm:text-sm font-semibold text-[#181C14]">
+                      {project.title}
+                    </h3>
+                    <span className={`px-2 py-0.5 text-xs font-semibold bg-gradient-to-r from-gray-900 to-gray-700 text-white rounded-lg ${techClassName}`}>
+                      {project.category}
+                    </span>
+                  </div>
                 </div>
                 
-                <p className="text-gray-700 mb-4 text-xs md:text-sm leading-relaxed">
+                <p className="font-body text-[#3C3D37] mb-3 text-xs leading-relaxed">
                   {project.description}
                 </p>
                 
                 <div className="flex flex-wrap gap-1.5">
                   {project.technologies.slice(0, 3).map((tech) => (
-                    <span key={tech} className={`px-2 py-0.5 text-[10px] font-medium bg-[#697565] text-white border border-[#697565] rounded-none ${techClassName}`}>
+                    <span key={tech} className={`px-2 py-1 text-xs font-semibold bg-gradient-to-r from-gray-900 to-gray-700 text-white rounded-lg ${techClassName}`}>
                       {tech}
                     </span>
                   ))}
                   {project.technologies.length > 3 && (
-                    <span className={`px-2 py-0.5 text-[10px] font-medium bg-[#697565] text-white border border-[#697565] rounded-none ${techClassName}`}>
-                      +{project.technologies.length - 3} more
+                    <span className={`px-2 py-1 text-xs font-semibold bg-gradient-to-r from-gray-900 to-gray-700 text-white rounded-lg ${techClassName}`}>
+                      +{project.technologies.length - 3}
                     </span>
                   )}
                 </div>
@@ -131,7 +135,7 @@ export default function PortfolioFilter({ projects, categories, cardClassName = 
       
       {filteredProjects.length === 0 && (
         <div className="text-center py-16">
-          <p className="text-gray-400 text-xs md:text-sm">
+          <p className="font-body text-gray-400 text-xs md:text-sm">
             No projects found in the {selectedCategory} category.
           </p>
         </div>

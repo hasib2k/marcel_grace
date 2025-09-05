@@ -7,6 +7,12 @@ module.exports = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        'sans': ['var(--font-lato)', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+        'serif': ['var(--font-lato)', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+        'heading': ['var(--font-lato)', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+        'body': ['var(--font-lato)', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+      },
       colors: {
         primary: '#181C14',
         secondary: '#3C3D37',

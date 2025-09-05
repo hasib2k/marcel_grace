@@ -46,15 +46,15 @@ export default function BlogFilter({ blogPosts, categories }: BlogFilterProps) {
   return (
     <>
       {/* Category Filter */}
-      <div className="flex flex-wrap justify-start gap-1 mb-8">
+      <div className="flex flex-wrap justify-start gap-2 mb-6">
         {categories.map((category) => (
           <button
             key={category}
             onClick={() => handleCategoryChange(category)}
-            className={`px-2 py-0.5 border text-xs font-medium transition-none ${
+            className={`font-body px-3 py-1.5 border text-xs font-semibold tracking-wide rounded-lg shadow-md ${
               category === selectedCategory
-                ? 'border-[#697565] bg-[#697565] text-white'
-                : 'border-[#ECDFCC] bg-white text-black'
+                ? 'border-gray-900 bg-gradient-to-r from-gray-900 to-gray-700 text-white'
+                : 'border-gray-200 bg-gradient-to-br from-gray-50 to-gray-100 text-[#3C3D37]'
             }`}
           >
             {category}
@@ -63,17 +63,17 @@ export default function BlogFilter({ blogPosts, categories }: BlogFilterProps) {
       </div>
 
       {/* Blog Posts Grid */}
-  <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         {currentPosts.map((post) => (
-          <article key={post.id} className="bg-white border border-[#ECDFCC] p-3 flex flex-col gap-2">
-            <div className="flex items-center gap-1 mb-1">
-              <span className="inline-block px-2 py-0.5 text-xs font-medium border border-[#697565] bg-[#697565] text-white">
+          <article key={post.id} className="bg-gradient-to-br from-gray-50 to-gray-100 border border-gray-200 p-4 flex flex-col gap-2 rounded-xl shadow-lg">
+            <div className="flex items-center gap-2 mb-1">
+              <span className="inline-block px-2 py-1 text-xs font-semibold bg-gradient-to-r from-gray-900 to-gray-700 text-white rounded-lg">
                 {post.category}
               </span>
               <span className="text-[#3C3D37] text-xs">{post.readTime}</span>
             </div>
-            <h2 className="text-xs md:text-base font-semibold text-[#181C14] mb-1 leading-tight">{post.title}</h2>
-            <p className="text-xs md:text-sm text-[#3C3D37] mb-1 leading-relaxed">{post.excerpt}</p>
+            <h2 className="font-heading text-sm md:text-base font-semibold text-[#181C14] mb-1 leading-tight">{post.title}</h2>
+            <p className="font-body text-xs md:text-sm text-[#3C3D37] mb-2 leading-relaxed">{post.excerpt}</p>
             <div className="flex justify-between items-center mt-auto">
               <span className="text-[#3C3D37] text-xs">
                 {new Date(post.date).toLocaleDateString('en-US', {
@@ -84,7 +84,7 @@ export default function BlogFilter({ blogPosts, categories }: BlogFilterProps) {
               </span>
               <Link
                 href={`/blog/${post.slug}`}
-                className="font-medium text-xs text-[#697565] border-b border-[#697565] hover:opacity-80"
+                className="font-body font-medium text-xs text-[#697565] border-b border-[#697565]"
               >
                 Read More →
               </Link>
@@ -95,14 +95,14 @@ export default function BlogFilter({ blogPosts, categories }: BlogFilterProps) {
 
       {/* Pagination */}
       {totalPages > 1 && (
-  <div className="flex flex-wrap justify-start items-center gap-1 mt-6">
+        <div className="flex flex-wrap justify-start items-center gap-1 mt-4">
           <button
             onClick={() => handlePageChange(currentPage - 1)}
             disabled={currentPage === 1}
-            className={`px-2 py-0.5 border text-xs font-medium transition-none ${
+            className={`px-3 py-1.5 border text-xs font-medium rounded-lg ${
               currentPage === 1
-                ? 'border-[#ECDFCC] text-[#ECDFCC] bg-white cursor-not-allowed'
-                : 'border-[#697565] text-[#697565] bg-white'
+                ? 'border-gray-200 text-gray-400 bg-gray-50 cursor-not-allowed'
+                : 'border-gray-200 text-[#697565] bg-white shadow-md'
             }`}
           >
             Previous
@@ -111,10 +111,10 @@ export default function BlogFilter({ blogPosts, categories }: BlogFilterProps) {
             <button
               key={page}
               onClick={() => handlePageChange(page)}
-              className={`px-2 py-0.5 border text-xs font-medium transition-none ${
+              className={`px-3 py-1.5 border text-xs font-medium rounded-lg ${
                 page === currentPage
-                  ? 'border-[#697565] bg-[#697565] text-white'
-                  : 'border-[#ECDFCC] bg-white text-black'
+                  ? 'border-gray-900 bg-gradient-to-r from-gray-900 to-gray-700 text-white'
+                  : 'border-gray-200 bg-white text-[#3C3D37] shadow-md'
               }`}
             >
               {page}
@@ -123,10 +123,10 @@ export default function BlogFilter({ blogPosts, categories }: BlogFilterProps) {
           <button
             onClick={() => handlePageChange(currentPage + 1)}
             disabled={currentPage === totalPages}
-            className={`px-2 py-0.5 border text-xs font-medium transition-none ${
+            className={`px-3 py-1.5 border text-xs font-medium rounded-lg ${
               currentPage === totalPages
-                ? 'border-[#ECDFCC] text-[#ECDFCC] bg-white cursor-not-allowed'
-                : 'border-[#697565] text-[#697565] bg-white'
+                ? 'border-gray-200 text-gray-400 bg-gray-50 cursor-not-allowed'
+                : 'border-gray-200 text-[#697565] bg-white shadow-md'
             }`}
           >
             Next
@@ -136,7 +136,7 @@ export default function BlogFilter({ blogPosts, categories }: BlogFilterProps) {
 
       {filteredPosts.length === 0 && (
         <div className="text-center py-12">
-          <p className="text-[#181C14] text-xs md:text-sm">
+          <p className="font-body text-[#181C14] text-xs md:text-sm">
             No blog posts found in the {selectedCategory} category.
           </p>
         </div>
